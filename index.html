@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner Brief — Antonio Martinez Breton</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f4f0;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    header {
+      background: #008060;
+      color: white;
+      padding: 2rem 2.5rem 1.5rem;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+    header p { font-size: 0.875rem; opacity: 0.8; margin-top: 0.25rem; }
+    .week-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.8rem;
+      margin-top: 0.75rem;
+      font-weight: 500;
+    }
+    main {
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .themes {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e5e5e5;
+    }
+    .themes h2 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+    .theme-card {
+      background: #f9f9f7;
+      border-radius: 7px;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid #008060;
+    }
+    .theme-card .label { font-size: 0.75rem; font-weight: 600; color: #008060; }
+    .theme-card .desc { font-size: 0.8rem; color: #444; margin-top: 0.2rem; }
+    .urgent-banner {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .urgent-banner .icon { font-size: 1rem; margin-top: 0.1rem; }
+    .urgent-banner strong { display: block; margin-bottom: 0.25rem; }
+    .day {
+      margin-bottom: 2rem;
+    }
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .day-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #008060;
+      white-space: nowrap;
+    }
+    .day-line {
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    .meeting {
+      background: white;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid #e8e8e8;
+    }
+    .meeting-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+    .meeting-title .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag-partner { background: #e6f4f0; color: #007a57; }
+    .tag-internal { background: #f0f0f0; color: #666; }
+    .tag-event { background: #fff0e6; color: #b85c00; }
+    .meeting ul {
+      list-style: none;
+      padding: 0;
+    }
+    .meeting ul li {
+      font-size: 0.83rem;
+      color: #444;
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .meeting ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #008060;
+      font-weight: 700;
+    }
+    .meeting ul li strong { color: #1a1a1a; }
+    .no-notes {
+      font-size: 0.8rem;
+      color: #aaa;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #aaa;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Partner Brief</h1>
+  <p>Antonio Martinez Breton · LATAM Partner Manager</p>
+  <div class="week-label">Week of March 17–24, 2026</div>
+</header>
+
+<main>
+
+  <!-- Urgent -->
+  <div class="urgent-banner">
+    <div class="icon">⚠️</div>
+    <div>
+      <strong>Urgent this week</strong>
+      Moxie contract signature before March 31 · Wualá webinar happening now · Partner town hall March 31 · Brazil handover to Marcelo April 1 · Q3 MDF opens April 1
+    </div>
+  </div>
+
+  <!-- Key Themes -->
+  <div class="themes">
+    <h2>Key Themes</h2>
+    <div class="theme-grid">
+      <div class="theme-card">
+        <div class="label">Brazil Transition</div>
+        <div class="desc">Marcelo Fischer takes over Brazil book April 1. Communicated to Alfinet, Alce.Rocks, Shakers, Buda.</div>
+      </div>
+      <div class="theme-card">
+        <div class="label">MDF Cycle</div>
+        <div class="desc">Q2 closed globally (14 exceptions). Q3 opens April 1. Multiple partners preparing briefs.</div>
+      </div>
+      <div class="theme-card">
+        <div class="label">TOTS Model Reset</div>
+        <div class="desc">Back to referral-only April 1. Agencies can still be added to TOTS-originated deals.</div>
+      </div>
+      <div class="theme-card">
+        <div class="label">April Events</div>
+        <div class="desc">Mexico April 22 (RSVP needed), São Paulo April 9, Redegal Mexico week of April 12, town hall March 31.</div>
+      </div>
+      <div class="theme-card">
+        <div class="label">Latam at Shopify</div>
+        <div class="desc">Region officially re-created. Strategic support gap noted — prior oversight has departed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monday March 17 -->
+  <div class="day">
+    <div class="day-header">
+      <span class="day-label">Monday · March 17</span>
+      <div class="day-line"></div>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Mexico Partner Meetup Planning <span class="tag tag-event">Event</span></div>
+      <ul>
+        <li>Debriefed Colombia trip</li>
+        <li>April 22 Mexico event: venue booked, <strong>RSVP system still needed</strong></li>
+        <li>Madeleine Kennedy involved; partner criteria based on store transfers</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Alfinet <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Portfolio transition to Marcelo Fischer announced, effective April 1</li>
+        <li>TOTS model: referral-only, no pipeline sharing between agencies</li>
+        <li>Stanley client: ex-CTO friction + ERP migration issues — Alfinet should document everything with Stanley IT</li>
+        <li>Marcelo invited Alfinet to April 9 São Paulo meetup</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Alce.Rocks <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Portfolio transition communicated to Igor de Andrade (Toronto-based)</li>
+        <li>MDF Q3 brief in progress</li>
+        <li>Shared news: Latam region officially re-created at Shopify</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Claude Code Setup w/ Kyle <span class="tag tag-internal">Internal</span></div>
+      <ul>
+        <li>Migrating from Cursor to VS Code + Claude Code; cost and proxy reasons</li>
+        <li>Green path checklist created; MCP server troubleshooting documented</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tuesday March 18 -->
+  <div class="day">
+    <div class="day-header">
+      <span class="day-label">Tuesday · March 18</span>
+      <div class="day-line"></div>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">AMER &amp; LATAM Monthly <span class="tag tag-internal">Internal</span></div>
+      <ul>
+        <li>Q1: 33 closed sales-assisted deals, 49 in pipeline (~$6M)</li>
+        <li>Concern about partner bookings ratio</li>
+        <li>Q2 planning via PSSE framework</li>
+        <li>Latam Q2 priorities: merchant growth via partners, more Plus deals, PMF issues</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Antonio / Michelle — Quarterly Planning <span class="tag tag-internal">Internal</span></div>
+      <p class="no-notes">Call too brief — no Gemini summary generated.</p>
+    </div>
+  </div>
+
+  <!-- Wednesday March 19 -->
+  <div class="day">
+    <div class="day-header">
+      <span class="day-label">Wednesday · March 19</span>
+      <div class="day-line"></div>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Nico-Toño · Lab51/Forus <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Uruguay under control; Colombia and Peru ops starting</li>
+        <li>Pending payments received for 2 Shopify sites</li>
+        <li><strong>Known bug:</strong> ownership transfer causes 25–30 min downtime — workaround: use Shopify mobile app</li>
+        <li>Next: 10 smaller sites needing Plus for app integrations (don't qualify by revenue)</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Lobo — Biweekly <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Q3/Q4 MDF planning: standard budget $5K, max $7K special cases</li>
+        <li>One agency per event rule confirmed</li>
+        <li>Payment origin: Shopify International Limited (Dublin) via HyperWallet</li>
+        <li>Partner town hall March 31 · Brazil handover April 1</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Lop — Biweekly <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Q2 MDF blocked; Q3 opens April 1</li>
+        <li>Argentina banking marketplace opportunity — <strong>Lop to prepare detailed doc with real numbers</strong></li>
+        <li>Retail multi-brand account: consolidation into one Plus license under discussion</li>
+        <li>B2B lubricants wholesaler: 18 service stations across Buenos Aires province</li>
+        <li>Strategic support gap for Latam — prior oversight has departed, everything paused</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">B2B Partner Spotlight <span class="tag tag-internal">Internal</span></div>
+      <ul>
+        <li>Nishtech: B2B commerce gateway for manufacturing/distribution, ERP integrations, $50K–$125K packages</li>
+        <li>Sparky introduced as co-selling partner for late-stage deal closing</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Co-Marketing Office Hours <span class="tag tag-internal">Internal</span></div>
+      <ul>
+        <li>Nick Del Rosso's 3x3 webinar series: LA Alliance program (Barrel Digital, Hosrun, To See, E-House)</li>
+        <li>MDF submission form being rebuilt; micro-events vs. MDF distinction clarified</li>
+        <li>Partner case study submission process improvements</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Thursday March 20 -->
+  <div class="day">
+    <div class="day-header">
+      <span class="day-label">Thursday · March 20</span>
+      <div class="day-line"></div>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Shakers <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Portfolio transition communicated</li>
+        <li>On track for Plus: 30+ certifications, recent Plus deals including HSM</li>
+        <li>TOTS resets to referral-only April 1; agencies can join TOTS-originated deals</li>
+        <li>Q3 MDF brief to be ready for April 1; PDF vs. marketing funds explained</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Buda <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Portfolio transition communicated</li>
+        <li>AI migration app demo: visits existing store or builds from prompt, imports catalogs, exports Figma layouts</li>
+        <li>~R$200–250/store cost; targeting April 1 launch</li>
+        <li>Potential white-label opportunity for partners and TOTVS</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Atoms — Biweekly <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Closed: Micky Form (apparel manufacturer, potential Plus + 4 other brands)</li>
+        <li>Pipeline: Cleto Reyes redesign, El Surtidor Tapicero (20 branches, NetSuite integration), Steel Honduras (multi-country), Birkenstock group</li>
+        <li>New contact: Vitex country manager</li>
+        <li>Klaviyo Mexico reseller partnership discussions ongoing</li>
+        <li>Shopify Summit in Cancún mentioned</li>
+      </ul>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Fer-Toño · Redegal <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Redegal planning Vtex→Shopify migration event in Mexico, week of April 12 (dinner in Polanco, ~25 people)</li>
+        <li><strong>Antonio to review their sales pitch deck</strong></li>
+        <li>Key message: Plus sales in Latam ≠ Spain, especially around Shopify Payments</li>
+        <li>Antonio to provide off-the-record prospect signals</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Monday March 23 -->
+  <div class="day">
+    <div class="day-header">
+      <span class="day-label">Monday · March 23</span>
+      <div class="day-line"></div>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Wualá — Biweekly <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>Argentina webinar ready: ~118 expected attendees via Zoom</li>
+        <li>Format: 35–40 min + 10 min Q&A with planted questions strategy</li>
+        <li>Post-webinar: YouTube upload, LinkedIn/newsletter, pipeline attribution via contact form</li>
+        <li>Connect at 7:30am before start</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tuesday March 24 -->
+  <div class="day">
+    <div class="day-header">
+      <span class="day-label">Tuesday · March 24</span>
+      <div class="day-line"></div>
+    </div>
+
+    <div class="meeting">
+      <div class="meeting-title">Moxie — Biweekly <span class="tag tag-partner">Partner</span></div>
+      <ul>
+        <li>PO process: person was on vacation, to be expedited on return</li>
+        <li>Full lead list needed to generate PO</li>
+        <li><strong>Priority meeting Wed 8am</strong> to finalize contract minuta with Juan Camilo Cherry</li>
+        <li><strong>Push to sign before March 31</strong></li>
+        <li>Cristina proposed small lunch event to build Q3/Q4 pipeline</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Updated March 25, 2026 · Generated from Google Calendar + Gemini meeting notes
+</footer>
+
+</body>
+</html>
