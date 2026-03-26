@@ -47,7 +47,6 @@
       main { grid-template-columns: 1fr; }
     }
 
-    /* ---- LEFT COLUMN ---- */
     .left { min-width: 0; }
 
     /* Deadlines banner */
@@ -84,6 +83,34 @@
     }
     .dl-date.urgent { color: #cc2200; }
     .dl-text { color: #444; }
+
+    /* Yesterday's highlights */
+    .yesterday {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #e8e8e8;
+    }
+    .yesterday h2 {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .yday-item {
+      font-size: 0.81rem;
+      color: #444;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #f5f5f5;
+      padding-left: 0.9rem;
+      position: relative;
+    }
+    .yday-item:last-child { border-bottom: none; }
+    .yday-item::before { content: "↳"; position: absolute; left: 0; color: #008060; font-size: 0.75rem; top: 0.35rem; }
+    .yday-item strong { color: #1a1a1a; }
 
     /* Day sections */
     .day { margin-bottom: 1.75rem; }
@@ -149,8 +176,7 @@
     .tag-event { background: #fff0e6; color: #b85c00; }
     .tag-brazil { background: #fef0f0; color: #a00000; }
     .tag-declined { background: #f5f5f5; color: #aaa; }
-    .tag-live { background: #008060; color: white; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+    .tag-new { background: #f0e8ff; color: #6600cc; }
 
     .meeting-context {
       font-size: 0.78rem;
@@ -159,7 +185,7 @@
     }
     .meeting-context strong { color: #333; }
 
-    /* ---- RIGHT COLUMN ---- */
+    /* RIGHT SIDEBAR */
     .right {}
 
     .sidebar-card {
@@ -178,7 +204,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Action items */
     .action-item {
       display: flex;
       align-items: flex-start;
@@ -201,7 +226,6 @@
     .action-urgent .action-check { border-color: #cc2200; }
     .action-urgent .action-text { color: #cc2200; font-weight: 500; }
 
-    /* Upcoming events */
     .event-row {
       display: flex;
       gap: 0.75rem;
@@ -235,7 +259,7 @@
     <h1>Partner Brief</h1>
     <p>Antonio Martinez Breton · LATAM Partner Manager</p>
   </div>
-  <div class="date-chip">Wednesday, March 25 · 2026</div>
+  <div class="date-chip">Thursday, March 26 · 2026</div>
 </header>
 
 <main>
@@ -246,7 +270,7 @@
       <h2>Deadlines &amp; Hard Dates</h2>
       <div class="deadline-row">
         <span class="dl-date urgent">Mar 31</span>
-        <span class="dl-text"><strong>Moxie contract signed</strong> — push hard with Juan Camilo Cherry, priority meeting today</span>
+        <span class="dl-text"><strong>Moxie contract signed</strong> — Nicola needs attendee list first to issue PO</span>
       </div>
       <div class="deadline-row">
         <span class="dl-date urgent">Mar 31</span>
@@ -254,11 +278,7 @@
       </div>
       <div class="deadline-row">
         <span class="dl-date">Apr 1</span>
-        <span class="dl-text"><strong>Brazil portfolio transfers to Marcelo Fischer</strong> — TOTS model resets to referral-only, Q3 MDF opens</span>
-      </div>
-      <div class="deadline-row">
-        <span class="dl-date">Apr 1</span>
-        <span class="dl-text"><strong>Q3 MDF briefs due</strong> — Lobo, Lop, Shakers all preparing submissions</span>
+        <span class="dl-text"><strong>Brazil handover to Marcelo</strong> · TOTS referral-only reset · Q3 MDF opens</span>
       </div>
       <div class="deadline-row">
         <span class="dl-date">Apr 9</span>
@@ -266,109 +286,62 @@
       </div>
       <div class="deadline-row">
         <span class="dl-date">Apr 12</span>
-        <span class="dl-text">Redegal Vtex→Shopify event in Mexico City (dinner in Polanco, ~25 people)</span>
+        <span class="dl-text">Redegal Vtex→Shopify event in Mexico City (Polanco dinner, ~25 people)</span>
       </div>
       <div class="deadline-row">
         <span class="dl-date">Apr 22</span>
-        <span class="dl-text">Mexico partner event — venue booked, <strong>RSVP system still needed</strong></span>
+        <span class="dl-text">Mexico partner event — venue booked, RSVP system still needed</span>
       </div>
+    </div>
+
+    <!-- Yesterday's highlights -->
+    <div class="yesterday">
+      <h2>From Yesterday's Meetings</h2>
+      <div class="yday-item"><strong>Moxie (Q1 debrief):</strong> Colombia events crushed it — 16 referrals vs. 10 goal, 80 attendees across Medellín + Bogotá. Nicola has recommended Q2 MDF approval but no answer yet. PO blocked: Cristina needs to send full attendee list (6 fields: email, country, first name, last name, job title, company name). Once received, PO issued end of week, then invoice can go out.</div>
+      <div class="yday-item"><strong>Check Commerce:</strong> Transition finalized with Érico. From Apr 1, Marcelo is main POC for everything including Latam expansion. Érico flagged: 100+ deals/year but only 1 Premier partner — wants improvement in partnership program. Marcelo to send scheduling suggestions next week.</div>
+      <div class="yday-item"><strong>Latech:</strong> MDF Q3 plan confirmed — they have a solid multi-tactic plan (Argentina + US event). Vtex→Shopify Plus migration is the unwritten Latam strategy. Latech building AI tools to reduce operational costs. Andrés to launch ChatGPT checkout email campaign to their Shopify Plus clients (need to warm up new domains first).</div>
+      <div class="yday-item"><strong>Getmore:</strong> April 22 Mexico event plan approved — 30–40 agencies, 2 panels: one with Miriam (Vitamina) on managing successful stores, invite 3–4 apps as guests. Q3 MDF rules much stricter. Alejandro looking to hire a mid-level BD person (MXN $60–85K, no commission) — Antonio to think of candidates.</div>
     </div>
 
     <!-- TODAY -->
     <div class="day">
       <div class="day-header">
-        <span class="day-label today">Today · Wednesday Mar 25</span>
+        <span class="day-label today">Today · Thursday Mar 26</span>
         <div class="day-line"></div>
       </div>
 
       <div class="meeting today-meeting">
-        <div class="meeting-time now">7:30am</div>
+        <div class="meeting-time now">7:00am</div>
         <div class="meeting-body">
-          <div class="meeting-title">Wualá Webinar <span class="tag tag-live">Live now</span> <span class="tag tag-event">Event</span></div>
-          <div class="meeting-context">~118 attendees on Zoom · Connect at 7:30 before start · 35–40 min + Q&A with planted questions · <strong>Post-webinar:</strong> upload to YouTube, push on LinkedIn/newsletter, track pipeline via contact form</div>
-        </div>
-      </div>
-
-      <div class="meeting today-meeting">
-        <div class="meeting-time">10:30am</div>
-        <div class="meeting-body">
-          <div class="meeting-title">Latech — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Graciela Di Rado, Andrés Harvey, Lucas, JC Bonina · Argentina agency</div>
+          <div class="meeting-title">LOP Event — Bienvenida <span class="tag tag-event">Event</span></div>
+          <div class="meeting-context">Ariel (lop.com.ar) · "Reserved 30 min — estimating 10:15am Argentina time" · Context: Argentina banking marketplace opportunity (Lop preparing doc with numbers), B2B lubricants (18 service stations BA province), retail multi-brand account consolidation into one Plus license · <strong>Q3 MDF opens Apr 1 — help them be ready to submit</strong></div>
         </div>
       </div>
 
       <div class="meeting today-meeting declined">
-        <div class="meeting-time">11:00am</div>
-        <div class="meeting-body">
-          <div class="meeting-title">Vitamina catch up <span class="tag tag-declined">Both declined</span></div>
-          <div class="meeting-context">Miriam Campos + Mayra both declined — likely cancelled</div>
-        </div>
-      </div>
-
-      <div class="meeting today-meeting">
-        <div class="meeting-time">11:30am</div>
-        <div class="meeting-body">
-          <div class="meeting-title">Moxie — Marketing Check-in <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Cristina Vélez, Alejandro Pineda, Nicola Fahy · <strong>Push on contract signature before Mar 31</strong> · PO pending: full lead list needed</div>
-        </div>
-      </div>
-
-      <div class="meeting today-meeting">
-        <div class="meeting-time">12:00pm</div>
-        <div class="meeting-body">
-          <div class="meeting-title">Check Commerce <span class="tag tag-partner">Partner</span> <span class="tag tag-brazil">Brazil</span></div>
-          <div class="meeting-context">w/ Marcelo Fischer · Érico Scorpioni (Eneu declined) · Brazil handover context: last joint intro before Apr 1</div>
-        </div>
-      </div>
-
-      <div class="meeting today-meeting">
-        <div class="meeting-time">12:30pm</div>
-        <div class="meeting-body">
-          <div class="meeting-title">Getmore — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Alejandro Moreno · Mexico-based agency</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- THURSDAY -->
-    <div class="day">
-      <div class="day-header">
-        <span class="day-label future">Thursday · Mar 26</span>
-        <div class="day-line"></div>
-      </div>
-
-      <div class="meeting">
-        <div class="meeting-time">7:00am</div>
-        <div class="meeting-body">
-          <div class="meeting-title">LOP Event — Bienvenida <span class="tag tag-event">Event</span></div>
-          <div class="meeting-context">Ariel from Lop · "Reserved 30 min, estimating 10:15am Argentina time" · Argentina banking marketplace opportunity — Lop should have numbers doc ready</div>
-        </div>
-      </div>
-
-      <div class="meeting">
         <div class="meeting-time">9:00am</div>
         <div class="meeting-body">
-          <div class="meeting-title">Nico-Toño — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Nicolás Cabieses <strong>(declined)</strong> · Lab51/Forus · If rescheduled: Uruguay OK, Colombia/Peru next, 10 smaller sites needing Plus, ownership transfer bug workaround</div>
+          <div class="meeting-title">Nico-Toño — Biweekly <span class="tag tag-partner">Partner</span> <span class="tag tag-declined">Nicolás declined</span></div>
+          <div class="meeting-context">Lab51/Forus · Likely rescheduled · If it happens: Uruguay OK, Colombia/Peru starting, 10 smaller sites need Plus, ownership transfer bug workaround (use mobile app)</div>
         </div>
       </div>
 
-      <div class="meeting">
+      <div class="meeting today-meeting">
         <div class="meeting-time">10:00am</div>
         <div class="meeting-body">
-          <div class="meeting-title">CONEXA <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">James Daintree + Nahuel Suvalski · conexa.ai — new conversation</div>
+          <div class="meeting-title">CONEXA <span class="tag tag-partner">Partner</span> <span class="tag tag-new">New</span></div>
+          <div class="meeting-context">James Daintree + Nahuel Suvalski · conexa.ai · No prior context — discovery call</div>
         </div>
       </div>
 
-      <div class="meeting">
+      <div class="meeting today-meeting">
         <div class="meeting-time">10:00am</div>
         <div class="meeting-body">
           <div class="meeting-title">DNB</div>
         </div>
       </div>
 
-      <div class="meeting">
+      <div class="meeting today-meeting">
         <div class="meeting-time">10:30am</div>
         <div class="meeting-body">
           <div class="meeting-title">XPRTS — Biweekly <span class="tag tag-partner">Partner</span></div>
@@ -376,19 +349,19 @@
         </div>
       </div>
 
-      <div class="meeting">
+      <div class="meeting today-meeting">
         <div class="meeting-time">11:00am</div>
         <div class="meeting-body">
           <div class="meeting-title">Michelle — Q2 Plan <span class="tag tag-internal">Internal</span></div>
-          <div class="meeting-context">michelle.drawert@shopify.com · Rescheduled from Mar 18 (8-sec call) · Come with Latam Q2 framing ready</div>
+          <div class="meeting-context">michelle.drawert@shopify.com · Rescheduled twice (Mar 18 was 8 sec) · Come with Latam Q2 framing: merchant growth via partners, more Plus deals, PMF issues, Latam region re-created, strategic support gap</div>
         </div>
       </div>
 
-      <div class="meeting">
+      <div class="meeting today-meeting">
         <div class="meeting-time">1:30pm</div>
         <div class="meeting-body">
           <div class="meeting-title">Co-Marketing Office Hours <span class="tag tag-internal">Internal</span></div>
-          <div class="meeting-context">Post questions to Fellow before the call · MDF form rebuild in progress, micro-events vs. MDF distinction important this quarter</div>
+          <div class="meeting-context">Post questions to Fellow before call · MDF form rebuild in progress · Micro-events vs. MDF distinction — boutique event approach gaining traction across regions (confirmed by Nicola yesterday)</div>
         </div>
       </div>
     </div>
@@ -411,7 +384,7 @@
         <div class="meeting-time">9:00am</div>
         <div class="meeting-body">
           <div class="meeting-title">Mango <span class="tag tag-partner">Partner</span> <span class="tag tag-brazil">Brazil</span></div>
-          <div class="meeting-context">w/ Marcelo Fischer · Diego (crpmango.com.br) · Last joint meeting before Brazil handover Apr 1</div>
+          <div class="meeting-context">w/ Marcelo Fischer · Diego (crpmango.com.br) · One of the last joint calls before Apr 1 handover</div>
         </div>
       </div>
 
@@ -427,7 +400,7 @@
         <div class="meeting-time">10:00am</div>
         <div class="meeting-body">
           <div class="meeting-title">Shopify + Alce + Venum <span class="tag tag-partner">Partner</span> <span class="tag tag-brazil">Brazil</span></div>
-          <div class="meeting-context">Igor (Alce.Rocks) + Andre (Venum) · Intro/deal conversation</div>
+          <div class="meeting-context">Igor (Alce.Rocks) + Andre (Venum) · Deal/intro conversation · Alce case study checkpoint also today (with Bryan Elanko at 11:30)</div>
         </div>
       </div>
 
@@ -470,19 +443,17 @@
         <span class="day-label future">Monday · Mar 30</span>
         <div class="day-line"></div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">8:00am</div>
         <div class="meeting-body">
           <div class="meeting-title">Newsletter + TOTVS Implementation Doc <span class="tag tag-internal">Admin</span></div>
         </div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">11:30am</div>
         <div class="meeting-body">
-          <div class="meeting-title">Dango — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Pablo Goldstoff + Mariana Jolles · dango.digital · Brazil</div>
+          <div class="meeting-title">Dango — Biweekly <span class="tag tag-partner">Partner</span> <span class="tag tag-brazil">Brazil</span></div>
+          <div class="meeting-context">Pablo Goldstoff + Mariana Jolles · dango.digital</div>
         </div>
       </div>
     </div>
@@ -492,7 +463,6 @@
         <span class="day-label future">Tuesday · Mar 31 — Town Hall Day</span>
         <div class="day-line"></div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">10:00am</div>
         <div class="meeting-body">
@@ -500,14 +470,12 @@
           <div class="meeting-context">Elias Manopla · simplify.com.pa · Panama</div>
         </div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">10:30am</div>
         <div class="meeting-body">
           <div class="meeting-title">1:1 Antonio / Megan <span class="tag tag-internal">Internal</span></div>
         </div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">2:30pm</div>
         <div class="meeting-body">
@@ -522,23 +490,20 @@
         <span class="day-label future">Wednesday · Apr 1 — Transition Day</span>
         <div class="day-line"></div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">9:30am</div>
         <div class="meeting-body">
           <div class="meeting-title">Lab51 — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Nicolás Valenzuela · lab51.cl · First call of new quarter — Colombia + Peru ops starting</div>
+          <div class="meeting-context">Nicolás Valenzuela · lab51.cl · Colombia + Peru starting · Q3 MDF opens today</div>
         </div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">10:00am</div>
         <div class="meeting-body">
           <div class="meeting-title">Lobo — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">fmoreno + sdaga · <strong>Q3 MDF opens today</strong> — Lobo should submit brief · Standard $5K budget, max $7K</div>
+          <div class="meeting-context">Q3 MDF opens today — Lobo should submit brief · $5K standard budget, $7K max</div>
         </div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">10:30am</div>
         <div class="meeting-body">
@@ -546,12 +511,11 @@
           <div class="meeting-context">Rodrigo Cerda, Maximiliano Dahn, Daniela Guerrero, Pablo Gomez · Large Latam agency</div>
         </div>
       </div>
-
       <div class="meeting">
         <div class="meeting-time">11:30am</div>
         <div class="meeting-body">
           <div class="meeting-title">Atoms — Biweekly <span class="tag tag-partner">Partner</span></div>
-          <div class="meeting-context">Cesar (atoms.mx) · Mexico · Follow up on Micky Form, El Surtidor Tapicero, Steel Honduras · Q3 MDF opens today</div>
+          <div class="meeting-context">Follow up: Micky Form, El Surtidor Tapicero, Steel Honduras · Q3 MDF opens today</div>
         </div>
       </div>
     </div>
@@ -567,8 +531,8 @@
       <div class="action-item action-urgent">
         <div class="action-check"></div>
         <div class="action-text">
-          Moxie contract signed before Mar 31
-          <span class="who">Juan Camilo Cherry · push today at Moxie call</span>
+          Moxie: Cristina sends attendee list
+          <span class="who">6 fields: email, country, first name, last name, job title, company · Then Nicola issues PO · Then invoice goes out</span>
         </div>
       </div>
 
@@ -576,7 +540,15 @@
         <div class="action-check"></div>
         <div class="action-text">
           RSVP system for April 22 Mexico event
-          <span class="who">Madeleine Kennedy involved</span>
+          <span class="who">Plan approved: 30-40 people, 2 panels, 3-4 app guests · Madeleine Kennedy involved</span>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="action-check"></div>
+        <div class="action-text">
+          Think of BD candidate for Getmore
+          <span class="who">Mid-level, MXN $60-85K, no commission · Send LinkedIn link to Alejandro Moreno</span>
         </div>
       </div>
 
@@ -584,7 +556,31 @@
         <div class="action-check"></div>
         <div class="action-text">
           Review Redegal sales pitch deck
-          <span class="who">Event Apr 12 in Polanco · Plus sales ≠ Spain</span>
+          <span class="who">Event Apr 12 Polanco · Key: Plus sales in Latam ≠ Spain</span>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="action-check"></div>
+        <div class="action-text">
+          Lop: Argentina banking marketplace doc
+          <span class="who">Real numbers needed from Lop — discuss at today's event</span>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="action-check"></div>
+        <div class="action-text">
+          Q3 MDF briefs ready for Apr 1
+          <span class="who">Lobo, Lop, Shakers, Latech, Getmore — submissions open Apr 1</span>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="action-check"></div>
+        <div class="action-text">
+          Latech: refine MDF brief doc
+          <span class="who">Include campaign architecture details for Shopify marketing team review</span>
         </div>
       </div>
 
@@ -599,54 +595,21 @@
       <div class="action-item">
         <div class="action-check"></div>
         <div class="action-text">
-          Lop: Argentina banking marketplace doc
-          <span class="who">Real numbers needed from Lop before Apr 1</span>
-        </div>
-      </div>
-
-      <div class="action-item">
-        <div class="action-check"></div>
-        <div class="action-text">
-          Q3 MDF briefs ready for Apr 1
-          <span class="who">Lobo, Lop, Shakers — submissions open Apr 1</span>
-        </div>
-      </div>
-
-      <div class="action-item">
-        <div class="action-check"></div>
-        <div class="action-text">
-          Stanley situation (Alfinet)
-          <span class="who">Alfinet should document everything with Stanley IT</span>
-        </div>
-      </div>
-
-      <div class="action-item">
-        <div class="action-check"></div>
-        <div class="action-text">
-          Moxie full lead list for PO generation
-          <span class="who">Cristina Vélez · needed to issue PO</span>
-        </div>
-      </div>
-
-      <div class="action-item">
-        <div class="action-check"></div>
-        <div class="action-text">
           Ownership transfer bug workaround
-          <span class="who">Communicate to affected partners: use Shopify mobile app</span>
+          <span class="who">Communicate to affected partners: use Shopify mobile app (25-30 min downtime otherwise)</span>
         </div>
       </div>
     </div>
 
     <div class="sidebar-card">
       <h3>Upcoming Events</h3>
-
       <div class="event-row">
         <span class="event-date">Mar 31</span>
         <span class="event-name">Partner Town Hall</span>
       </div>
       <div class="event-row">
         <span class="event-date">Apr 1</span>
-        <span class="event-name">Brazil handover to Marcelo · TOTS reset · Q3 MDF opens</span>
+        <span class="event-name">Brazil handover · TOTS reset · Q3 MDF opens</span>
       </div>
       <div class="event-row">
         <span class="event-date">Apr 9</span>
@@ -654,21 +617,22 @@
       </div>
       <div class="event-row">
         <span class="event-date">Apr 12</span>
-        <span class="event-name">Redegal Mexico event — Vtex→Shopify migration dinner, Polanco</span>
+        <span class="event-name">Redegal Mexico event — Vtex→Shopify dinner, Polanco</span>
       </div>
       <div class="event-row">
         <span class="event-date">Apr 22</span>
-        <span class="event-name">Mexico partner event (RSVP needed)</span>
+        <span class="event-name">Mexico partner event — RSVP needed</span>
       </div>
     </div>
 
     <div class="sidebar-card">
       <h3>Context for This Week</h3>
       <div style="font-size:0.8rem; color:#555; line-height:1.6;">
-        <p style="margin-bottom:0.5rem;"><strong>Brazil:</strong> This is the last week with Marcelo on joint calls. Handover is Apr 1 — use these calls to make warm intros.</p>
-        <p style="margin-bottom:0.5rem;"><strong>MDF:</strong> Q2 is fully closed globally. Don't promise Q2 spend to any partner. Q3 opens Apr 1 — help partners have briefs ready.</p>
-        <p style="margin-bottom:0.5rem;"><strong>TOTS:</strong> Reverts to referral-only Apr 1. Agencies can still be added to existing TOTS-originated deals.</p>
-        <p><strong>Latam:</strong> Region re-created at Shopify but strategic support gap exists — the prior region oversight role is vacant.</p>
+        <p style="margin-bottom:0.5rem;"><strong>Brazil:</strong> Final week of joint calls. Handover is Apr 1. Make warm intros count.</p>
+        <p style="margin-bottom:0.5rem;"><strong>MDF:</strong> Q2 fully closed. Q3 opens Apr 1 — stricter rules: proven track record + dedicated marketing team required.</p>
+        <p style="margin-bottom:0.5rem;"><strong>Moxie PO:</strong> Blocked on attendee list. The Q1 Colombia events hit 16 referrals (goal was 10) — this is leverage for Q2 approval.</p>
+        <p style="margin-bottom:0.5rem;"><strong>Mexico event Apr 22:</strong> Panel format confirmed — Miriam (Vitamina) + one other agency, 3-4 app guests.</p>
+        <p><strong>Latam strategy:</strong> Vtex→Shopify Plus migrations = fastest path. POS + unified commerce is the next big narrative.</p>
       </div>
     </div>
 
@@ -676,7 +640,7 @@
 </main>
 
 <footer>
-  Updated March 25, 2026 · Data from Google Calendar + Gemini meeting notes
+  Updated March 26, 2026 · Data from Google Calendar + Gemini meeting notes
 </footer>
 
 </body>
