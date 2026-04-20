@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner Brief — April 17, 2026</title>
+<title>Partner Brief — April 19, 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; font-size: 14px; line-height: 1.5; }
-  .banner { background: linear-gradient(135deg, #d97706, #ea580c); color: white; padding: 20px 28px; }
+  .banner { background: linear-gradient(135deg, #0f766e, #0891b2); color: white; padding: 20px 28px; }
   .banner h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
   .banner .sub { font-size: 13px; opacity: 0.85; margin-top: 4px; }
   .layout { display: flex; gap: 20px; padding: 20px 28px; max-width: 1400px; }
@@ -16,12 +16,13 @@
   h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; margin: 22px 0 10px; }
   h2:first-child { margin-top: 0; }
   .alert-box { background: #fef2f2; border: 1px solid #fecaca; border-left: 4px solid #ef4444; border-radius: 6px; padding: 10px 14px; margin-bottom: 12px; font-size: 13px; color: #991b1b; }
-  .alert-amber { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; color: #92400e; }
+  .alert-amber { background: #fffbeb; border: 1px solid #fde68a; border-left-color: #f59e0b; color: #92400e; }
+  .alert-green { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #22c55e; border-radius: 6px; padding: 10px 14px; margin-bottom: 12px; font-size: 13px; color: #15803d; }
   .card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
   .card.partner { border-left: 4px solid #3b82f6; }
   .card.internal { border-left: 4px solid #8b5cf6; }
   .card.fire { border-left: 4px solid #ef4444; }
-  .card.big { border-left: 4px solid #d97706; }
+  .card.big { border-left: 4px solid #0f766e; }
   .card.learning { border-left: 4px solid #06b6d4; }
   .card.admin { border-left: 4px solid #94a3b8; }
   .card.done { opacity: 0.52; }
@@ -37,10 +38,16 @@
   .tag-green { background: #dcfce7; color: #16a34a; }
   .tag-purple { background: #ede9fe; color: #7c3aed; }
   .tag-gray { background: #f1f5f9; color: #64748b; }
+  .tag-teal { background: #ccfbf1; color: #0f766e; }
   .outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
   .outcome-item { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; font-size: 12px; }
   .outcome-item strong { display: block; font-size: 12px; color: #1e293b; margin-bottom: 2px; }
   .outcome-item span { color: #64748b; }
+  .week-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 16px; }
+  .day-card { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; font-size: 12px; }
+  .day-card .day-label { font-weight: 700; color: #0f766e; font-size: 11px; text-transform: uppercase; margin-bottom: 5px; }
+  .day-card .day-item { color: #475569; padding: 2px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+  .day-card .day-item:last-child { border-bottom: none; }
   .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .partner-card { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; font-size: 12px; }
   .partner-card .name { font-weight: 700; color: #1e293b; margin-bottom: 4px; }
@@ -53,18 +60,19 @@
   .dot-red { background: #ef4444; }
   .dot-amber { background: #f59e0b; }
   .dot-blue { background: #3b82f6; }
+  .dot-teal { background: #0f766e; }
   .pipe-item { font-size: 12px; padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
   .pipe-item:last-child { border-bottom: none; }
   .pipe-item .partner-name { font-weight: 600; color: #1e293b; }
   .pipe-item .pipe-detail { color: #64748b; font-size: 11px; }
   .date-item { display: flex; justify-content: space-between; align-items: center; font-size: 12px; padding: 4px 0; border-bottom: 1px solid #f1f5f9; }
   .date-item:last-child { border-bottom: none; }
-  .date-item .when { font-weight: 700; color: #d97706; font-size: 11px; }
+  .date-item .when { font-weight: 700; color: #0f766e; font-size: 11px; }
   .scaled-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
   .scaled-table th { background: #f8fafc; color: #64748b; font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 6px 10px; text-align: left; border-bottom: 1px solid #e2e8f0; }
   .scaled-table td { padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #374151; }
   .scaled-table tr:last-child td { border-bottom: none; }
-  .momentum-box { background: linear-gradient(135deg, #d97706, #ea580c); color: white; border-radius: 8px; padding: 12px 14px; font-size: 12px; }
+  .momentum-box { background: linear-gradient(135deg, #0f766e, #0891b2); color: white; border-radius: 8px; padding: 12px 14px; font-size: 12px; }
   .momentum-box h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; margin-bottom: 8px; }
   .momentum-stat { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
   .momentum-stat:last-child { border-bottom: none; }
@@ -74,120 +82,93 @@
 <body>
 
 <div class="banner">
-  <h1>Closing Friday ⚡</h1>
-  <div class="sub">Friday, April 17, 2026 · MDF deadline 7d · Chile trip 10d · Partner Editions 17d · Playbook Week 1 closes TODAY</div>
+  <h1>Pre-week Sunday 🗓</h1>
+  <div class="sub">Sunday, April 19, 2026 · No meetings today · Big week ahead — HP emails Tue · Events Wed + Thu · MDF deadline Fri Apr 24</div>
 </div>
 
 <div class="layout">
 <div class="main">
 
-<div class="alert-box" style="background:#f0fdf4;border-color:#bbf7d0;border-left-color:#22c55e;color:#15803d;">
-  <strong>✅ PLAYBOOK WEEK 1 COMPLETE — archetypes assigned for all 38 scaled partners: 9 HP · 11 Solid · 12 Emerging · 6 Dormant. Week 2 HP outreach starts Monday.</strong>
-</div>
-
 <div class="alert-box alert-amber">
-  <strong>📅 Noon: Jay-Toño detalles del 22 — Jacobo (RPM Luxury Brands). EOW reply deadline was today — meeting is already on calendar. Be ready on April 22 details.</strong>
+  <strong>⚠️ MDF Q3 deadline: Friday Apr 24 EOD — Getmore brief arrives Wednesday, review Thursday, submit Friday. No exceptions per Marketing Miller.</strong>
 </div>
 
-<h2>Yesterday's outcomes — Apr 16</h2>
+<div class="alert-green">
+  <strong>✅ Playbook Week 1 complete — 9 HP · 11 Solid · 12 Emerging · 6 Dormant assigned. Week 2 starts tomorrow.</strong>
+</div>
+
+<h2>Yesterday — Getmore biweekly outcomes (Apr 17)</h2>
 <div class="outcome-grid">
   <div class="outcome-item">
-    <strong>Lop biweekly ✓</strong>
-    <span>Argentina onboarding cadence continues. Pipeline discussion held.</span>
+    <strong>2 MDF Q3 proposals confirmed ✓</strong>
+    <span><strong>1)</strong> Masterclass with Cubo — Vans, Levi's + non-Shopify brands. High-end format at Bistro. <strong>2)</strong> Webinar: Kumori brothers — 100% online → 20 physical stores with Shopify Plus. ~$6K budget each.</span>
   </div>
   <div class="outcome-item">
-    <strong>B2B Spotlight ✓</strong>
-    <span>Pivot (change mgmt, native-first) + Shop Trade (10–30k fixed-price quick starts) presented. Good intelligence for book.</span>
+    <strong>MDF brief timeline locked ✓</strong>
+    <span>Alejandro sends brief Wed Apr 22 → Antonio reviews Thu Apr 23 → Submit Fri Apr 24 (deadline). Key tip: mention Getmore's dedicated marketing team + track record of converting MDF → Plus opps.</span>
   </div>
   <div class="outcome-item">
-    <strong>Dinkbit × Michelle — BIG WIN 🏆</strong>
-    <span>Invoice/factura app concept fully presented. RFC validation in checkout extension + POS flow. Michelle commits to shared doc. Next: Dinkbit sends system diagram + slides.</span>
+    <strong>Wednesday Bistro event ✓</strong>
+    <span>Jay rehired by project, managing logistics. Capacity: 35 (paying) / 40 max. ~100 Cubo brands expected Thursday. César Basurto confirmed attending Wed — good face time.</span>
   </div>
   <div class="outcome-item">
-    <strong>Co-Marketing OH ✓</strong>
-    <span>Light session — mostly casual. No LATAM-specific asks. Only action: connect Lindsay separately if she missed.</span>
+    <strong>Domain / Mac intel 🔵</strong>
+    <span>Mac (Domain) exploring subcontracting Getmore for mid-tier clients — their Guadalajara team attempt failed (cultural mismatch). Lalo potentially consulting for them in LatAm. Watch this space.</span>
   </div>
   <div class="outcome-item">
-    <strong>Shawn 1:1 ✓</strong>
-    <span>Quick check-in. Gemini didn't capture — meeting ran very short.</span>
+    <strong>Invite Lalo ⚠️</strong>
+    <span>Lalo semi-retired but active — possibly consulting for Domain/LatAm. Invite to Wednesday Bistro event (he just shows up, pays own consumo). Also to Thursday huevos en cazuela + Cubo event.</span>
   </div>
   <div class="outcome-item">
-    <strong>Scaled outreach sent 📬</strong>
-    <span>2× Top 40 emails (open opps) + ICP email to 654-base. All logged in Google Sheet.</span>
+    <strong>Vancouver trip confirmed 🔵</strong>
+    <span>Alejandro hosts Antonio in Vancouver — Saturday arrive, pick up kits + breakfast + world-class sushi. Date TBD (likely late April or May).</span>
   </div>
 </div>
 
-<h2>Today's meetings — April 17 (Friday)</h2>
-
-<div class="card admin">
-  <div class="card-time">8:00 – 8:30am</div>
-  <div class="card-title">Morning admin block</div>
-  <div class="card-body">
-    <ul>
-      <li><strong>Pipeline sheet update</strong> (8:00)</li>
-      <li><strong>H2 acttrack updates</strong> (8:05)</li>
-      <li><strong>VS Daily Pulse Check</strong> (8:25)</li>
-    </ul>
+<h2>Week ahead — Apr 21–25</h2>
+<div class="week-grid">
+  <div class="day-card">
+    <div class="day-label">Mon Apr 21</div>
+    <div class="day-item">🚀 Week 2 playbook starts</div>
+    <div class="day-item">Prep HP email personalization</div>
+    <div class="day-item">Alejandro arrives CDMX (Tue)</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Tue Apr 22 🔔</div>
+    <div class="day-item">📧 HP archetype emails (9 partners)</div>
+    <div class="day-item">Personalize each before sending</div>
+    <div class="day-item">Alejandro in CDMX</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Wed Apr 23</div>
+    <div class="day-item">🎉 Bistro Chapultepec event</div>
+    <div class="day-item">~35–40 pax · Jay managing</div>
+    <div class="day-item">César Basurto attending</div>
+    <div class="day-item">📄 Getmore MDF brief arrives</div>
+    <div class="day-item">Invite Lalo!</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Thu Apr 24 🔔</div>
+    <div class="day-item">🥚 Huevos en cazuela lunch</div>
+    <div class="day-item">w/ Alejandro + Lalo + Juan</div>
+    <div class="day-item">🏆 Cubo event (~100 brands)</div>
+    <div class="day-item">📧 Solid+Emerging emails</div>
+    <div class="day-item">📋 Review Getmore MDF brief</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Fri Apr 25 🔔</div>
+    <div class="day-item">⚠️ MDF Q3 deadline EOD</div>
+    <div class="day-item">Submit ALL Q3 briefs</div>
+    <div class="day-item">📧 Dormant emails</div>
+    <div class="day-item">Alejandro departs CDMX</div>
   </div>
 </div>
 
-<div class="card big">
-  <div class="card-time">11:00 – 11:30am</div>
-  <div class="card-title">Getmore Biweekly <span class="tag tag-amber">HEADLINER</span></div>
-  <div class="card-body">
-    <span class="tag tag-blue">Alejandro Moreno</span> <span class="tag tag-gray">getmore.mx</span>
-    <ul style="margin-top:6px;">
-      <li>Both accepted · biweekly cadence</li>
-      <li>Review open pipeline + opp status</li>
-      <li>Check MSI / installments enablement status</li>
-      <li>Any MDF ideas for Q3?</li>
-    </ul>
-  </div>
-</div>
-
-<div class="card internal done">
-  <div class="card-time">11:00 – 11:45am</div>
-  <div class="card-title">Monthly PDM Team Hang <span class="tag tag-gray">OPTIONAL</span></div>
-  <div class="card-body">Social call — 17 people, Bev organizes. Conflicts directly with Getmore — skip or join late if Getmore wraps early.</div>
-</div>
-
-<div class="card fire">
-  <div class="card-time">12:00 – 12:30pm</div>
-  <div class="card-title">Jay-Toño — detalles del 22 <span class="tag tag-red">URGENT</span></div>
-  <div class="card-body">
-    <span class="tag tag-red">Jacobo</span> <span class="tag tag-gray">RPM Luxury Brands · jacob@rpmluxurybrands.com.mx</span>
-    <ul style="margin-top:6px;">
-      <li>EOW reply deadline was today — this meeting resolves it ✓</li>
-      <li>Agenda: April 22 details — event, go-live, or milestone</li>
-      <li>Prep: review any open SOW, contract, or deliverable items</li>
-    </ul>
-  </div>
-</div>
-
-<h2>Dinkbit invoice app — context bubble</h2>
-<div class="card learning">
-  <div class="card-title">🧾 Factura App — Dinkbit × Michelle Drawert (PSE)</div>
-  <div class="card-body">
-    <ul>
-      <li><strong>Problem:</strong> Mexican SAT requires digitally-signed XML factura per B2B transaction. Current Shopify = 3 open unvalidated text fields. Merchants email each other post-purchase and enter data manually — error-prone.</li>
-      <li><strong>Solution:</strong> Checkout extension capturing RFC (tax ID) + fiscal address + purchase purpose, validated in real time. Integrated at checkout page, thank-you page, post-purchase, and POS.</li>
-      <li><strong>RFC = not PII / not PCI</strong> — confirmed in call. Public record. Safe to store in metafields.</li>
-      <li><strong>Non-Plus limits TBD</strong> — Michelle to validate what checkout extensions can do outside Shopify Plus.</li>
-      <li><strong>ERP angle:</strong> Middleware layer for large merchants — validates SAT data before export to SAP / Oracle.</li>
-      <li><strong>Next:</strong> Dinkbit (José, Rafa, Edgar) sends system diagram + slides → Michelle creates shared doc → technical validation sprint begins.</li>
-    </ul>
-  </div>
-</div>
-
-<h2>Partner context — active 10</h2>
+<h2>Partner context — active watch list</h2>
 <div class="partner-grid">
   <div class="partner-card">
-    <div class="name">🟡 Getmore <span style="font-weight:400;color:#94a3b8;">· today 11am</span></div>
-    <div class="detail">Alejandro Moreno · getmore.mx · biweekly · check MSI status + MDF pipeline</div>
-  </div>
-  <div class="partner-card">
-    <div class="name">🔴 Jacobo · RPM Luxury</div>
-    <div class="detail">jacob@rpmluxurybrands.com.mx · April 22 details · noon today · EOW reply resolved</div>
+    <div class="name">🟡 Getmore (Alejandro)</div>
+    <div class="detail">2 MDF Q3 proposals ready. Brief arrives Wed. Review Thu. Submit Fri Apr 24. Mention dedicated mktg team + MDF→Plus track record. Alejandro in CDMX Tue–Thu.</div>
   </div>
   <div class="partner-card">
     <div class="name">🔴 Lab51 / Nico</div>
@@ -199,15 +180,15 @@
   </div>
   <div class="partner-card">
     <div class="name">🟡 Dinkbit (Experts)</div>
-    <div class="detail">José CEO · Rafa CTO · Edgar commercial. Factura app in motion — awaiting system diagram + slides.</div>
+    <div class="detail">José/Rafa/Edgar. Awaiting system diagram + slides. Michelle to open shared doc for factura app tech validation.</div>
+  </div>
+  <div class="partner-card">
+    <div class="name">🟡 Atoms</div>
+    <div class="detail">MDF deck review. Maida = Chile Day AI speaker (confirm). César Basurto back at Atoms — now active, making noise on social.</div>
   </div>
   <div class="partner-card">
     <div class="name">🟡 VNS (Ricardo)</div>
     <div class="detail">Premier status confirmation pending with Ops. Avalara + Markets Multient compatibility TBD.</div>
-  </div>
-  <div class="partner-card">
-    <div class="name">🟡 Atoms</div>
-    <div class="detail">MDF deck arriving today/tmrw. Review Commerce Stack proposal. Maida = Chile Day AI speaker (confirm).</div>
   </div>
   <div class="partner-card">
     <div class="name">🔵 Lobo</div>
@@ -218,16 +199,16 @@
     <div class="detail">Biweekly Apr 16 ✓. Onboarding cadence ongoing.</div>
   </div>
   <div class="partner-card">
-    <div class="name">🔵 Kik</div>
-    <div class="detail">Message to push Chile event planning. Chile trip Apr 27–28 confirmed.</div>
+    <div class="name">🔵 Domain / Mac</div>
+    <div class="detail">New intel: exploring Getmore subcontract for mid-tier clients. Lalo potentially consulting LatAm. Monitor — possible ecosystem opportunity.</div>
   </div>
 </div>
 
 <h2>Scaled motions — activity log</h2>
 <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin-bottom:18px;">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-    <span style="font-size:12px;color:#64748b;">Playbook Week 1 (Apr 14–17) · <a href="https://docs.google.com/spreadsheets/d/1NT98iqoIiwLa6XAXg8jN0NeKer2-JPKYHNUwA5YRAy4/edit" style="color:#3b82f6;text-decoration:none;">→ Full log (Google Sheet)</a></span>
-    <span style="font-size:12px;font-weight:700;color:#d97706;">4 actions this week</span>
+    <span style="font-size:12px;color:#64748b;">Week 2 starts Tue Apr 22 · <a href="https://docs.google.com/spreadsheets/d/1NT98iqoIiwLa6XAXg8jN0NeKer2-JPKYHNUwA5YRAy4/edit" style="color:#3b82f6;text-decoration:none;">→ Full log (Google Sheet)</a></span>
+    <span style="font-size:12px;font-weight:700;color:#0f766e;">5 actions Week 1</span>
   </div>
   <table class="scaled-table">
     <thead>
@@ -237,7 +218,11 @@
       <tr><td>Apr 16</td><td>Partner A</td><td>Top 40</td><td>Email</td><td>Open opp follow-up</td><td><span class="tag tag-green">Sent</span></td></tr>
       <tr><td>Apr 16</td><td>Partner B</td><td>Top 40</td><td>Email</td><td>Open opp follow-up</td><td><span class="tag tag-green">Sent</span></td></tr>
       <tr><td>Apr 16</td><td>654-base</td><td>Scaled</td><td>Email</td><td>¿A quién le vendes Shopify? Definamos tu ICP juntos</td><td><span class="tag tag-green">Sent</span></td></tr>
-      <tr><td>Apr 17</td><td>38 scaled partners</td><td>All Tiers</td><td>Strategic Planning</td><td>Archetype assignment — Playbook Week 1 ✅</td><td><span class="tag tag-green">Done</span></td></tr>
+      <tr><td>Apr 17</td><td>38 partners</td><td>All Tiers</td><td>Planning</td><td>Archetype assignment — Playbook Week 1</td><td><span class="tag tag-green">Done</span></td></tr>
+      <tr><td>Apr 17</td><td>All archetypes</td><td>All Tiers</td><td>Content</td><td>4 email templates finalized (HP · Solid · Emerging · Dormant)</td><td><span class="tag tag-green">Done</span></td></tr>
+      <tr><td>Apr 22</td><td>9 HP partners</td><td>High Performer</td><td>Email</td><td>HP archetype outreach — Week 2</td><td><span class="tag tag-amber">Scheduled</span></td></tr>
+      <tr><td>Apr 24</td><td>23 partners</td><td>Solid + Emerging</td><td>Email</td><td>Solid/Emerging outreach — Week 2</td><td><span class="tag tag-amber">Scheduled</span></td></tr>
+      <tr><td>Apr 25</td><td>6 partners</td><td>Dormant</td><td>Email</td><td>Re-engagement outreach — Week 2</td><td><span class="tag tag-amber">Scheduled</span></td></tr>
     </tbody>
   </table>
 </div>
@@ -254,7 +239,8 @@
   <div class="action-item"><div class="dot dot-red"></div><div>Confirm Maida = AI speaker Chile Day</div></div>
   <div class="action-item"><div class="dot dot-red"></div><div>Message Kik — push Chile event planning</div></div>
   <div class="action-item"><div class="dot dot-red"></div><div>Send 3× Academy coupons to César</div></div>
-  <div class="action-item"><div class="dot dot-amber"></div><div>Draft MSI partner email (Mattie → May 4–5 send)</div></div>
+  <div class="action-item"><div class="dot dot-amber"></div><div>Invite Lalo to Wednesday Bistro event</div></div>
+  <div class="action-item"><div class="dot dot-amber"></div><div>Draft MSI partner email (Mattie → May 4–5)</div></div>
   <div class="action-item"><div class="dot dot-amber"></div><div>Submit PO via Meetup approvals channel</div></div>
   <div class="action-item"><div class="dot dot-amber"></div><div>Review Atoms Commerce Stack MDF deck</div></div>
   <div class="action-item"><div class="dot dot-amber"></div><div>Confirm VNS Premier status with Ops</div></div>
@@ -265,53 +251,55 @@
   <div class="action-item"><div class="dot dot-amber"></div><div>Notify Alejandro (Moxie) when Sydney sends contract</div></div>
   <div class="action-item"><div class="dot dot-amber"></div><div>Send SOWs to Michelle</div></div>
   <div class="action-item"><div class="dot dot-amber"></div><div>Share event calendar with Pickit/Virginia</div></div>
-  <div class="action-item"><div class="dot dot-amber"></div><div>Michelle: create Dinkbit invoice app shared doc</div></div>
+  <div class="action-item"><div class="dot dot-amber"></div><div>Michelle: open Dinkbit invoice app shared doc</div></div>
+  <div class="action-item"><div class="dot dot-amber"></div><div>Review Getmore MDF brief Thu Apr 23</div></div>
   <div class="action-item"><div class="dot dot-blue"></div><div>Send Toronto invite to Lobo (May 25–29)</div></div>
   <div class="action-item"><div class="dot dot-blue"></div><div>Create Lobo/Kik WhatsApp group</div></div>
   <div class="action-item"><div class="dot dot-blue"></div><div>Confirm Chile trip meetings Apr 27–28</div></div>
   <div class="action-item"><div class="dot dot-blue"></div><div>Schedule PCC session with Michel (post Editions)</div></div>
   <div class="action-item"><div class="dot dot-blue"></div><div>Join Mauricio convincing meeting (Lobo/Felipe)</div></div>
+  <div class="action-item"><div class="dot dot-blue"></div><div>Confirm Vancouver trip date w/ Alejandro</div></div>
 </div>
 
 <div class="sidebar-section">
   <h3>Pipeline radar</h3>
-  <div class="pipe-item"><div class="partner-name">RPM Luxury Brands</div><div class="pipe-detail">Meeting today noon — April 22 details</div></div>
-  <div class="pipe-item"><div class="partner-name">Dinkbit Experts</div><div class="pipe-detail">Invoice app — tech validation sprint starting</div></div>
-  <div class="pipe-item"><div class="partner-name">Getmore</div><div class="pipe-detail">Meeting today 11am — open opps + MSI</div></div>
+  <div class="pipe-item"><div class="partner-name">Getmore — MDF Q3</div><div class="pipe-detail">2 proposals · Masterclass + Kumori webinar · Submit Fri Apr 24</div></div>
+  <div class="pipe-item"><div class="partner-name">Dinkbit Experts</div><div class="pipe-detail">Factura app — awaiting system diagram + slides from team</div></div>
   <div class="pipe-item"><div class="partner-name">Moxie (Alejandro)</div><div class="pipe-detail">Awaiting Sydney contract → notify</div></div>
   <div class="pipe-item"><div class="partner-name">Dango MX</div><div class="pipe-detail">MSI installments enablement pending</div></div>
   <div class="pipe-item"><div class="partner-name">VNS (Ricardo)</div><div class="pipe-detail">Premier + Avalara/Markets validation TBD</div></div>
+  <div class="pipe-item"><div class="partner-name">Domain / Mac</div><div class="pipe-detail">Subcontracting Getmore for mid-tier clients — emerging opp</div></div>
 </div>
 
 <div class="sidebar-section">
   <h3>MDF radar — Q3</h3>
-  <div class="pipe-item"><div class="partner-name">⏰ Run ALL Q3 briefs — Marketing Miller</div><div class="pipe-detail">Deadline: Apr 24 — 7 days</div></div>
-  <div class="pipe-item"><div class="partner-name">Atoms</div><div class="pipe-detail">Commerce Stack deck arriving today/tmrw</div></div>
-  <div class="pipe-item"><div class="partner-name">Lab51</div><div class="pipe-detail">Review pending</div></div>
-  <div class="pipe-item"><div class="partner-name">IFC</div><div class="pipe-detail">Review pending</div></div>
-  <div class="pipe-item"><div class="partner-name">Redegal</div><div class="pipe-detail">Review pending</div></div>
-  <div class="pipe-item"><div class="partner-name">VNS</div><div class="pipe-detail">Review pending</div></div>
-  <div class="pipe-item"><div class="partner-name">Lobo</div><div class="pipe-detail">Review pending</div></div>
-  <div class="pipe-item"><div class="partner-name">Kik</div><div class="pipe-detail">Chile event MDF TBD</div></div>
+  <div class="pipe-item"><div class="partner-name">⚠️ DEADLINE Fri Apr 24 EOD</div><div class="pipe-detail">Submit ALL Q3 briefs via Marketing Miller</div></div>
+  <div class="pipe-item"><div class="partner-name">Getmore ✓ Ready</div><div class="pipe-detail">Brief arrives Wed · review Thu · submit Fri</div></div>
+  <div class="pipe-item"><div class="partner-name">Atoms</div><div class="pipe-detail">Commerce Stack deck — review pending</div></div>
+  <div class="pipe-item"><div class="partner-name">Lab51 · IFC · Redegal</div><div class="pipe-detail">Briefs pending</div></div>
+  <div class="pipe-item"><div class="partner-name">VNS · Lobo · Kik</div><div class="pipe-detail">Briefs pending</div></div>
 </div>
 
 <div class="sidebar-section">
   <h3>Coming up</h3>
-  <div class="date-item"><span>MDF Q3 briefs due</span><span class="when">Apr 24 · 7d</span></div>
-  <div class="date-item"><span>Chile trip (Santiago)</span><span class="when">Apr 27–28 · 10d</span></div>
-  <div class="date-item"><span>Partner Editions</span><span class="when">May 4–5 · 17d</span></div>
-  <div class="date-item"><span>MSI email send</span><span class="when">May 4–5</span></div>
-  <div class="date-item"><span>PCC w/ Michel</span><span class="when">Post Editions</span></div>
-  <div class="date-item"><span>Toronto trip</span><span class="when">May 25–29 · 38d</span></div>
+  <div class="date-item"><span>📧 HP emails</span><span class="when">Tue Apr 22</span></div>
+  <div class="date-item"><span>🎉 Bistro event + MDF brief</span><span class="when">Wed Apr 23</span></div>
+  <div class="date-item"><span>🥚 Huevos en cazuela + Cubo</span><span class="when">Thu Apr 24</span></div>
+  <div class="date-item"><span>⚠️ MDF Q3 deadline</span><span class="when">Fri Apr 24</span></div>
+  <div class="date-item"><span>📧 Dormant emails</span><span class="when">Fri Apr 25</span></div>
+  <div class="date-item"><span>Chile trip (Santiago)</span><span class="when">Apr 27–28</span></div>
+  <div class="date-item"><span>Partner Editions</span><span class="when">May 4–5</span></div>
+  <div class="date-item"><span>Toronto trip</span><span class="when">May 25–29</span></div>
 </div>
 
 <div class="momentum-box">
   <h3>Q2 momentum</h3>
   <div class="momentum-stat"><span>Playbook Week 1</span><span class="momentum-val">✅ Complete</span></div>
-  <div class="momentum-stat"><span>Scaled sent</span><span class="momentum-val">654 + 2 Top 40</span></div>
-  <div class="momentum-stat"><span>Tech sessions</span><span class="momentum-val">Dinkbit × Michelle ✓</span></div>
-  <div class="momentum-stat"><span>Managed partners</span><span class="momentum-val">25</span></div>
-  <div class="momentum-stat"><span>Week 2 starts</span><span class="momentum-val">Mon — HP outreach</span></div>
+  <div class="momentum-stat"><span>Week 2</span><span class="momentum-val">Starts Mon</span></div>
+  <div class="momentum-stat"><span>Archetypes assigned</span><span class="momentum-val">38 partners</span></div>
+  <div class="momentum-stat"><span>Templates ready</span><span class="momentum-val">4 archetypes</span></div>
+  <div class="momentum-stat"><span>HP outreach</span><span class="momentum-val">Tue Apr 22</span></div>
+  <div class="momentum-stat"><span>MDF deadline</span><span class="momentum-val">Fri Apr 24</span></div>
 </div>
 
 </div><!-- /sidebar -->
