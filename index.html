@@ -3,400 +3,602 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partner Brief — Apr 21, 2026</title>
+  <title>Partner Brief — Wednesday Apr 22, 2026</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #1e293b; font-size: 14px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; background: #f1f5f9; color: #1e293b; }
 
+    /* BANNER */
     .banner {
-      background: linear-gradient(135deg, #b91c1c 0%, #dc2626 40%, #ea580c 100%);
-      color: white; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 40%, #a21caf 70%, #be185d 100%);
+      color: white; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between;
     }
-    .banner-left h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
-    .banner-left p { font-size: 13px; opacity: 0.88; margin-top: 3px; }
-    .banner-right { text-align: right; font-size: 12px; opacity: 0.85; line-height: 1.6; }
+    .banner-left h1 { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+    .banner-left p { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+    .banner-right { text-align: right; }
+    .banner-right .mdf-badge {
+      background: rgba(239,68,68,0.9); border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px; padding: 5px 12px; font-size: 13px; font-weight: 800;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+    .banner-right .meetup-badge {
+      background: rgba(124,58,237,0.8); border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 700; margin-top: 4px;
+    }
 
-    .alerts { padding: 10px 16px; display: flex; flex-direction: column; gap: 6px; }
-    .alert { border-radius: 8px; padding: 9px 14px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-    .alert-red    { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
-    .alert-amber  { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
-    .alert-blue   { background: #eff6ff; border: 1px solid #93c5fd; color: #1e40af; }
-    .alert-green  { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+    /* ALERTS */
+    .alerts { display: flex; gap: 8px; padding: 8px 16px; background: #1e1b4b; flex-wrap: wrap; }
+    .alert { border-radius: 5px; padding: 5px 10px; font-size: 11px; font-weight: 600; }
+    .alert.red { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+    .alert.green { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+    .alert.amber { background: #fffbeb; color: #92400e; border: 1px solid #fcd34d; }
+    .alert.blue { background: #eff6ff; color: #1e40af; border: 1px solid #93c5fd; }
+    .alert.purple { background: #faf5ff; color: #6b21a8; border: 1px solid #c4b5fd; }
 
-    .main { display: grid; grid-template-columns: 1fr 320px; gap: 14px; padding: 0 16px 20px; }
+    /* LAYOUT */
+    .layout { display: grid; grid-template-columns: 1fr 300px; gap: 12px; padding: 12px 16px; align-items: start; }
 
-    .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; margin-bottom: 8px; }
-
-    .meetings-block { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
-    .meeting-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f1f5f9; }
-    .meeting-row:last-child { border-bottom: none; }
-    .meeting-time { font-size: 11px; font-weight: 700; color: #64748b; min-width: 48px; margin-top: 2px; }
-    .meeting-body { flex: 1; }
-    .meeting-name { font-size: 13px; font-weight: 600; color: #1e293b; }
-    .meeting-name.headliner { color: #b91c1c; font-size: 14px; }
-    .meeting-name.highlight { color: #1d4ed8; }
-    .meeting-meta { font-size: 11px; color: #64748b; margin-top: 3px; line-height: 1.5; }
-    .meeting-bullets { margin-top: 4px; padding-left: 12px; }
-    .meeting-bullets li { font-size: 11px; color: #374151; line-height: 1.6; }
+    /* MEETINGS */
+    .meetings-col h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; margin-bottom: 8px; }
+    .meeting-card {
+      background: white; border-radius: 8px; border: 1px solid #e2e8f0;
+      margin-bottom: 8px; overflow: hidden;
+    }
+    .meeting-header {
+      display: flex; align-items: center; padding: 8px 12px; gap: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .meeting-time { font-size: 11px; font-weight: 700; color: #64748b; min-width: 44px; }
+    .meeting-name { font-size: 13px; font-weight: 700; color: #1e293b; flex: 1; }
+    .meeting-name.headliner { color: #7c3aed; font-size: 14px; }
+    .meeting-name.hp { color: #b91c1c; }
+    .meeting-body { padding: 8px 12px 10px; }
+    .meeting-meta { font-size: 11px; color: #64748b; margin-bottom: 6px; }
+    .meeting-bullets { list-style: none; }
+    .meeting-bullets li {
+      font-size: 11px; color: #374151; padding: 2px 0 2px 12px; position: relative; line-height: 1.5;
+    }
+    .meeting-bullets li::before { content: '•'; position: absolute; left: 2px; color: #94a3b8; }
     .meeting-bullets li span.open { color: #b91c1c; font-weight: 600; }
     .meeting-bullets li span.done { color: #16a34a; font-weight: 600; }
     .meeting-bullets li span.note { color: #6366f1; font-weight: 600; }
-    .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 99px; margin-left: 5px; vertical-align: middle; }
-    .badge-red    { background: #fee2e2; color: #991b1b; }
-    .badge-blue   { background: #dbeafe; color: #1d4ed8; }
-    .badge-amber  { background: #fef3c7; color: #92400e; }
-    .badge-green  { background: #dcfce7; color: #166534; }
-    .badge-gray   { background: #f1f5f9; color: #475569; }
-    .badge-purple { background: #ede9fe; color: #5b21b6; }
-    .cancelled { text-decoration: line-through; opacity: 0.45; }
+    .meeting-bullets li span.amber { color: #b45309; font-weight: 600; }
 
-    .scaled-block { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
-    .scaled-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f8fafc; font-size: 12px; }
-    .scaled-row:last-child { border-bottom: none; }
-    .scaled-day { font-weight: 700; min-width: 80px; color: #334155; }
-    .scaled-label { flex: 1; color: #475569; }
-    .done-check { color: #16a34a; font-weight: 700; white-space: nowrap; }
-    .pending-dot { color: #f59e0b; font-weight: 700; white-space: nowrap; }
+    /* TASK CARD */
+    .task-card {
+      background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; margin-bottom: 8px; overflow: hidden;
+    }
+    .task-header { display: flex; align-items: center; padding: 8px 12px; gap: 10px; border-bottom: 1px solid #fde68a; }
+    .task-name { font-size: 13px; font-weight: 700; color: #92400e; flex: 1; }
+    .task-body { padding: 8px 12px 10px; }
 
-    .sidebar { display: flex; flex-direction: column; gap: 14px; }
-    .sidebar-card { background: white; border-radius: 12px; padding: 14px 16px; }
-    .action-item { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; font-size: 12px; border-bottom: 1px solid #f8fafc; }
-    .action-item:last-child { border-bottom: none; }
-    .action-dot { min-width: 7px; height: 7px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
-    .dot-red    { background: #ef4444; }
-    .dot-amber  { background: #f59e0b; }
-    .dot-blue   { background: #3b82f6; }
-    .action-text { color: #374151; line-height: 1.4; }
+    /* HEADLINER CARD */
+    .headliner-card {
+      background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);
+      border: 2px solid #7c3aed; border-radius: 8px; margin-bottom: 8px; overflow: hidden;
+    }
+    .headliner-header {
+      display: flex; align-items: center; padding: 10px 12px; gap: 10px;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); border-bottom: 2px solid #7c3aed;
+    }
+    .headliner-title { font-size: 14px; font-weight: 800; color: white; flex: 1; }
+    .headliner-time { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.8); }
 
-    .pipeline-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 5px 0; font-size: 12px; border-bottom: 1px solid #f8fafc; gap: 8px; }
-    .pipeline-row:last-child { border-bottom: none; }
-    .pipeline-partner { font-weight: 600; color: #1e293b; }
-    .pipeline-detail { color: #64748b; font-size: 11px; margin-top: 1px; }
-    .pipeline-amount { font-weight: 700; color: #059669; white-space: nowrap; font-size: 11px; }
+    /* YESTERDAY BOX */
+    .yesterday-box {
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 8px; overflow: hidden;
+    }
+    .yesterday-header { background: #334155; color: white; padding: 7px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .yesterday-body { padding: 8px 12px 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .yesterday-partner { }
+    .yesterday-partner strong { font-size: 11px; color: #1e40af; font-weight: 700; display: block; margin-bottom: 3px; }
+    .yesterday-partner ul { list-style: none; }
+    .yesterday-partner ul li { font-size: 10.5px; color: #374151; padding: 1.5px 0 1.5px 10px; position: relative; line-height: 1.4; }
+    .yesterday-partner ul li::before { content: '›'; position: absolute; left: 1px; color: #94a3b8; }
 
-    .momentum-item { padding: 5px 0; font-size: 12px; border-bottom: 1px solid #f8fafc; color: #374151; }
-    .momentum-item:last-child { border-bottom: none; }
-    .momentum-item strong { color: #1e293b; }
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-card { background: white; border-radius: 8px; border: 1px solid #e2e8f0; overflow: hidden; }
+    .sidebar-header { padding: 6px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sidebar-header.red-bg { background: #fef2f2; color: #991b1b; border-bottom: 1px solid #fecaca; }
+    .sidebar-header.slate-bg { background: #f8fafc; color: #475569; border-bottom: 1px solid #e2e8f0; }
+    .sidebar-header.green-bg { background: #f0fdf4; color: #166534; border-bottom: 1px solid #bbf7d0; }
+    .sidebar-header.blue-bg { background: #eff6ff; color: #1e40af; border-bottom: 1px solid #bfdbfe; }
+    .sidebar-header.amber-bg { background: #fffbeb; color: #92400e; border-bottom: 1px solid #fde68a; }
+    .sidebar-header.purple-bg { background: #faf5ff; color: #6b21a8; border-bottom: 1px solid #e9d5ff; }
+    .sidebar-body { padding: 8px 10px; }
+    .action-item { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 5px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; margin-top: 3px; flex-shrink: 0; }
+    .dot.red { background: #ef4444; }
+    .dot.amber { background: #f59e0b; }
+    .dot.blue { background: #3b82f6; }
+    .dot.green { background: #22c55e; }
+    .action-text { font-size: 10.5px; color: #374151; line-height: 1.4; }
+    .action-partner { font-weight: 700; color: #1e293b; }
+    .mdf-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .mdf-name { font-size: 10.5px; font-weight: 600; color: #1e293b; }
+    .mdf-status { font-size: 10px; font-weight: 700; border-radius: 4px; padding: 1px 6px; }
+    .mdf-green { background: #dcfce7; color: #166534; }
+    .mdf-amber { background: #fef3c7; color: #92400e; }
+    .mdf-red { background: #fee2e2; color: #991b1b; }
+    .pipeline-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9; }
+    .pipeline-row:last-child { border-bottom: none; margin-bottom: 0; }
+    .pipeline-name { font-size: 10.5px; font-weight: 600; }
+    .pipeline-detail { font-size: 10px; color: #64748b; }
+    .cal-item { margin-bottom: 4px; }
+    .cal-item .cal-time { font-size: 10px; font-weight: 700; color: #7c3aed; }
+    .cal-item .cal-name { font-size: 10.5px; color: #1e293b; }
 
-    .mdf-bar-wrap { margin-top: 6px; }
-    .mdf-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: #64748b; margin-bottom: 3px; }
-    .mdf-bar-bg { background: #f1f5f9; border-radius: 99px; height: 7px; overflow: hidden; }
-    .mdf-bar-fill { height: 7px; border-radius: 99px; background: linear-gradient(90deg, #b91c1c, #ea580c); }
+    /* SCALED MOTIONS */
+    .scaled-table { width: 100%; border-collapse: collapse; }
+    .scaled-table th { font-size: 10px; font-weight: 700; color: #64748b; text-align: left; padding: 3px 6px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+    .scaled-table td { font-size: 10.5px; padding: 4px 6px; border-bottom: 1px solid #f1f5f9; color: #374151; }
+    .scaled-table tr:last-child td { border-bottom: none; }
+    .status-done { background: #dcfce7; color: #166534; border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; }
+    .status-today { background: #fef3c7; color: #92400e; border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; }
+    .status-pending { background: #fee2e2; color: #991b1b; border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; }
+
+    .footer { text-align: center; padding: 10px; font-size: 10px; color: #94a3b8; background: #f8fafc; border-top: 1px solid #e2e8f0; }
   </style>
 </head>
 <body>
 
+<!-- BANNER -->
 <div class="banner">
   <div class="banner-left">
-    <h1>Tuesday Apr 21 — MDF T-3 Days 🔥</h1>
-    <p>Week 2 Playbook Live · HP1 sent · Ads-Alchemy instant response · Dinkbit factura app advancing · Wualá MDF brief filed</p>
+    <h1>🇲🇽 Wednesday Apr 22, 2026 — MEETUP NIGHT</h1>
+    <p>Mexico Partner Meetup tonight · 5pm Terraza Cozumel, Roma Norte · Edgar/Dinkbit on panel</p>
   </div>
   <div class="banner-right">
-    <div>Week 2 · Day 2</div>
-    <div>MDF deadline: Fri Apr 24</div>
-    <div>Chile trip: Apr 27–28</div>
+    <div class="mdf-badge">🔥 MDF T-2 DAYS · Fri Apr 24 Hard Deadline</div>
+    <div class="meetup-badge">🎉 Ecosystem Night — ALL MX agencies attending</div>
   </div>
 </div>
 
+<!-- ALERTS -->
 <div class="alerts">
-  <div class="alert alert-red">🚨 MDF deadline in 3 days (Fri Apr 24) — still need: Atoms, Lab51, IFC, Redegal, VNS, Lobo, Kik</div>
-  <div class="alert alert-green">✅ Wualá filed MDF brief today — Q3 LinkedIn campaign $10K ($5K Shopify), 33 leads / 7 PQLs · review before submitting</div>
-  <div class="alert alert-amber">📧 Solid + Emerging emails go out TOMORROW (Wed Apr 22) — confirm templates ready</div>
-  <div class="alert alert-blue">⚡ Ads-Alchemy booked noon meeting same day HP1 sent — pm.campos + m.becerril · come prepared</div>
+  <div class="alert red">🚨 MDF: Wualá ✓ filed · Getmore brief arrives tomorrow · Atoms, Lab51, IFC, Redegal, VNS, Lobo, Kik = NEEDED by Fri</div>
+  <div class="alert amber">📧 9:00 TODAY: Send Solid (11) + Emerging (12) emails — Week 2 playbook — 23 emails</div>
+  <div class="alert purple">🎤 5pm Meetup: Edgar (Dinkbit) on panel · tonight at Terraza Cozumel, Cozumel 12, Roma Norte</div>
+  <div class="alert green">✅ Yesterday: Moxie SE intro · XPRTS 61% invoice rate · Wualá MDF filed · Ads-Alchemy HP1 done</div>
+  <div class="alert blue">👤 Juan Navarrete now Solutions Engineer (MX/LATAM) — attending Triciclo 11:30 today</div>
 </div>
 
-<div class="main">
-  <div class="left-col">
+<div class="layout">
+<div class="meetings-col">
+  <h2>Today's Schedule — Wednesday Apr 22</h2>
 
-    <div class="meetings-block">
-      <div class="section-title">Today's Meetings</div>
-
-      <!-- VS -->
-      <div class="meeting-row">
-        <div class="meeting-time">8:25</div>
-        <div class="meeting-body">
-          <div class="meeting-name">VS Daily Pulse Check</div>
-          <div class="meeting-meta">Standing daily · internal · 5 min</div>
-        </div>
+  <!-- YESTERDAY OUTCOMES -->
+  <div class="yesterday-box">
+    <div class="yesterday-header">📋 Yesterday's Key Outcomes (Apr 21)</div>
+    <div class="yesterday-body">
+      <div class="yesterday-partner">
+        <strong>🤝 Moxie Biweekly</strong>
+        <ul>
+          <li>Juan Navarrete introduced as new Solutions Engineer (MX/LATAM) — first Spanish-speaking SE, part of pilot program. Also attending Triciclo today.</li>
+          <li>Novaventa/Grupo Nutresa BLOCKED: tech provider demanding $5K (vs. $900 expected). Company can't sign contract until resolved. Jon + Jason working sales side.</li>
+          <li>PPS = 20% forever; Referral Launch = $2K once + ~3yr revenue share. Talk to Kevin on multi-brand contract structure.</li>
+          <li>Colombia events: August Medellín, September Bogotá (~150 people).</li>
+        </ul>
       </div>
-
-      <!-- TKA -->
-      <div class="meeting-row">
-        <div class="meeting-time">8:30</div>
-        <div class="meeting-body">
-          <div class="meeting-name highlight">TKA — Shopify Day Planning <span class="badge badge-blue">DONE ✓</span></div>
-          <div class="meeting-meta">Francisca Escobar (francisca@thekickass.co) · both accepted · already happened — notes captured</div>
-          <ul class="meeting-bullets">
-            <li><span class="note">From notes:</span> Francisca going through tough stretch (legal battles, personal challenges) — be empathetic</li>
-            <li><span class="note">Your rec:</span> involve Pipe + los Valencianos as much as possible to advance the event</li>
-            <li><span class="note">Timeline:</span> ~1 month hard deadline for Chile Shopify Day</li>
-            <li><span class="open">Open:</span> Flow + Transbank integration still unresolved — push for answer today</li>
-            <li><span class="open">Open:</span> Confirm Maida as AI speaker · Message Kik about event planning</li>
-          </ul>
-        </div>
+      <div class="yesterday-partner">
+        <strong>🔧 XPRTS/Dinkbit</strong>
+        <ul>
+          <li>Mexico official invoice (factura) rate = <strong>~61%</strong> (confirmed — much higher than Edgar's 10–15% estimate).</li>
+          <li>Cybex going international with Mexico as master via Shopify Markets Plus. Recommend Michelle for tech stack discussion.</li>
+          <li>B2B non-Plus selling working well: Pioneer reactivated, Corporativo medical equipment proposal sent.</li>
+          <li>Partner Editions May 5 weekend → payment feature announcements likely.</li>
+        </ul>
       </div>
-
-      <!-- MOXIE -->
-      <div class="meeting-row">
-        <div class="meeting-time">9:00</div>
-        <div class="meeting-body">
-          <div class="meeting-name">Moxie–Shopify Biweekly <span class="badge badge-amber">MIXED RSVP</span></div>
-          <div class="meeting-meta">Alejandro Pineda ✓ · Juan Navarrete (Shopify) ✓ · Cristina Velez ✗</div>
-          <ul class="meeting-bullets">
-            <li><span class="note">Context:</span> Most productive Plus agency in BoB — constant non-migration Plus opps, JBP ongoing</li>
-            <li><span class="open">Open:</span> Client Viviana — payment method issue blocking contract start. Fix = update to 3-year with free months. Sydney to send updated contract. You told Alejandro to brief Viviana and confirm she signs.</li>
-            <li><span class="open">Open:</span> Bogotá email database — Alejandro manually compiling ~100 contacts (Apolo/Hunter), still incomplete. You committed this to Nico.</li>
-            <li><span class="open">Open:</span> MP invoice # — ask Nico, then send # to Alejandro so they can pay ASAP</li>
-            <li><span class="done">Good:</span> Q2 budget approved for a client — Alejandro now has green light to start working on ideas</li>
-            <li><span class="open">Open:</span> Notify Alejandro when Sydney sends contract (add him/Viviana on CC if possible)</li>
-            <li><span class="note">FYI:</span> Academy certs required by Jan 2026 — worth checking status</li>
-          </ul>
-        </div>
+      <div class="yesterday-partner">
+        <strong>💚 Wualá</strong>
+        <ul>
+          <li>MDF brief submitted → system returned amber/red (by design — always requires human review). Addendum signed Apr 8 ✓.</li>
+          <li>Plan to submit PO before Apr 24. Approval process ~1 week after changes.</li>
+          <li>B2B features now available on all plans (not just Plus) — good for Wualá.</li>
+        </ul>
       </div>
-
-      <!-- ALBERTO -->
-      <div class="meeting-row">
-        <div class="meeting-time">9:30</div>
-        <div class="meeting-body">
-          <div class="meeting-name">Alberto Tomasso</div>
-          <div class="meeting-meta">No attendee info · no Gemini notes found</div>
-        </div>
-      </div>
-
-      <!-- XPRTS / DINKBIT — HEADLINER -->
-      <div class="meeting-row">
-        <div class="meeting-time">10:00</div>
-        <div class="meeting-body">
-          <div class="meeting-name headliner">XPRTS–Shopify Biweekly (Dinkbit) <span class="badge badge-red">HEADLINER 🔥</span></div>
-          <div class="meeting-meta">Edgar Ortiz · edgar.ortiz@dinkbit.com · both accepted · 30 min</div>
-          <ul class="meeting-bullets">
-            <li><span class="note">Team:</span> José Salame (CEO, 15 yrs, 40+ people MX + 7 in Spain) · Rafael Masri (CTO) · Edgar (Commercial — drove Shopify partnership)</li>
-            <li><span class="note">Big initiative:</span> Building a <strong>factura/invoicing app</strong> for Mexican market — RFC validation at Shopify checkout. Mexican SAT requires XML-signed facturas with exact RFC, postal code, fiscal address. Currently Shopify has 3 open text fields with no validation — they want to fix this with a checkout extension.</li>
-            <li><span class="open">Open:</span> Michelle (PSE) started a shared doc for technical validation — check if Dinkbit sent the system diagram + slides yet</li>
-            <li><span class="open">Open:</span> Open doc with Michelle still pending from your side (share after this meeting)</li>
-            <li><span class="note">Pipeline:</span> Korean pop star (40M followers) — building pre-launch site + merch ecomm with Universal Music · PM Steelway furniture company pending mesa directiva approval</li>
-            <li><span class="note">MDF:</span> Q3/Q4 budget — agreed 1000% to apply. Edgar planning TikTok Q4 campaign. Help model the brief.</li>
-            <li><span class="note">Rebrand:</span> Agency going through major internal transformation — becoming more commercially aggressive after 17 yrs of organic growth</li>
-            <li><span class="open">Open:</span> HP1 sent Apr 20 — follow up on response in this call</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- QUESTIONS TOMORROW -->
-      <div class="meeting-row">
-        <div class="meeting-time">10:45</div>
-        <div class="meeting-body">
-          <div class="meeting-name">Questions Tomorrow — Wed Event Prep</div>
-          <div class="meeting-meta">Prep session for Wednesday Bistro event</div>
-          <ul class="meeting-bullets">
-            <li><span class="open">Open:</span> Invite Lalo to Wed Bistro event — still pending</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- DISCO — CANCELLED -->
-      <div class="meeting-row">
-        <div class="meeting-time">11:00</div>
-        <div class="meeting-body">
-          <div class="meeting-name cancelled">Disco Biweekly 🪩 <span class="badge badge-gray">LIKELY CANCELLED</span></div>
-          <div class="meeting-meta cancelled">Bruno Berezaga ✗ · Marcelo Fischer ✗ · both declined · probably skip</div>
-        </div>
-      </div>
-
-      <!-- WUALÁ -->
-      <div class="meeting-row">
-        <div class="meeting-time">11:30</div>
-        <div class="meeting-body">
-          <div class="meeting-name">Wualá Biweekly <span class="badge badge-green">ALL ACCEPTED</span></div>
-          <div class="meeting-meta">César Aguirre · Pablo Bacco · both from Argentina · all 3 accepted</div>
-          <ul class="meeting-bullets">
-            <li><span class="done">Hot:</span> MDF brief filed TODAY — Q3 campaign (Jul 1–Aug 31), LinkedIn migration targeting VTEX/PrestaShop/Magento in Argentina, $10K total ($5K Shopify ask), 33 leads / 7 PQLs. Review and approve.</li>
-            <li><span class="note">Strategy:</span> 4-phase LinkedIn funnel — Awareness → Consideration (gated content) → Conversion (InMail) → Qualification. Wualá has 100+ proprietary contacts by current platform.</li>
-            <li><span class="note">Context:</span> Google/Meta hasn't worked for Plus in Argentina — LinkedIn + expert positioning is their strategy. Pablo + César building personal brands as Shopify Plus specialists.</li>
-            <li><span class="note">Webinar:</span> Recent one went well — editing into reels/shorts for LinkedIn. Post-webinar lead recovery strategy still TBD.</li>
-            <li><span class="open">Open:</span> Send 3× Academy coupons to César — still pending</li>
-            <li><span class="note">MDF tip:</span> &lt;$4K easiest approval, $4–7K questioned, &gt;$7K risky for LATAM region size</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ARDEKO -->
-      <div class="meeting-row">
-        <div class="meeting-time">12:00</div>
-        <div class="meeting-body">
-          <div class="meeting-name">Ardeko</div>
-          <div class="meeting-meta">No attendee info · no Gemini notes found</div>
-        </div>
-      </div>
-
-      <!-- ADS-ALCHEMY -->
-      <div class="meeting-row">
-        <div class="meeting-time">12:00</div>
-        <div class="meeting-body">
-          <div class="meeting-name highlight">Ads-Alchemy — HP1 Response <span class="badge badge-blue">⚡ INSTANT REPLY</span></div>
-          <div class="meeting-meta">pm.campos@ads-alchemy.com (accepted) · m.becerril@ads-alchemy.com (pending) · you organized</div>
-          <ul class="meeting-bullets">
-            <li><span class="note">Signal:</span> Booked a meeting the same day HP1 landed — strongest response in the batch. High intent.</li>
-            <li><span class="note">Profile:</span> HP archetype — #20 in scaled list. High performer, strong engagement. Come with a strategic hook ready.</li>
-            <li><span class="open">Open:</span> Parallel Ardeko meeting at 12:00 — confirm which takes priority or reschedule one</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ANDRE-TONO -->
-      <div class="meeting-row">
-        <div class="meeting-time">2:30</div>
-        <div class="meeting-body">
-          <div class="meeting-name">Andre–Toño 🥳 <span class="badge badge-gray">INTERNAL</span></div>
-          <div class="meeting-meta">Andrea Castillo · andrea.castillo@shopify.com · both accepted · 30 min</div>
-        </div>
+      <div class="yesterday-partner">
+        <strong>⚡ Ads-Alchemy (HP1 First Meeting)</strong>
+        <ul>
+          <li>Pablo Campos + Martin Becerril. Founded 2022. 130–140 active clients, 400+ brands total. MX + Spain + Colombia expansion.</li>
+          <li>Pioneers of UGC ads in Mexico. Highest collaborator access count of 40 largest MX agencies.</li>
+          <li>Martin interested in WooCommerce → Shopify migrations. Invited to Thu AI developer webinar (TODAY is Wed).</li>
+          <li><span class="open">[OPEN]</span> Antonio to send webinar invite email · Pablo + Martin to schedule recurring calendar call.</li>
+        </ul>
       </div>
     </div>
-
-    <!-- SCALED MOTIONS -->
-    <div class="scaled-block">
-      <div class="section-title">Week 2 Scaled Motions — Playbook Tracker</div>
-      <div class="scaled-row">
-        <div class="scaled-day">Mon Apr 21</div>
-        <div class="scaled-label">HP1 emails — 9 partners sent</div>
-        <div class="done-check">✓ Done (Apr 20)</div>
-      </div>
-      <div class="scaled-row">
-        <div class="scaled-day">Mon Apr 21</div>
-        <div class="scaled-label">Archetype assignment (38 partners) + Sheet tab</div>
-        <div class="done-check">✓ Done (Apr 17)</div>
-      </div>
-      <div class="scaled-row">
-        <div class="scaled-day">Mon Apr 21</div>
-        <div class="scaled-label">4 email templates finalized (HP/Solid/Emerging/Dormant)</div>
-        <div class="done-check">✓ Done (Apr 17)</div>
-      </div>
-      <div class="scaled-row">
-        <div class="scaled-day" style="color:#1d4ed8">Wed Apr 23</div>
-        <div class="scaled-label">Solid (11) + Emerging (12) emails — confirm templates</div>
-        <div class="pending-dot">→ Tomorrow</div>
-      </div>
-      <div class="scaled-row">
-        <div class="scaled-day" style="color:#b91c1c">Fri Apr 24</div>
-        <div class="scaled-label">Dormant (6) emails + ALL MDF briefs (HARD deadline)</div>
-        <div class="pending-dot">→ T-3 days 🚨</div>
-      </div>
-      <div class="scaled-row">
-        <div class="scaled-day" style="color:#7c3aed">Apr 25–27</div>
-        <div class="scaled-label">HP2 follow-up — non-responders to HP1</div>
-        <div class="pending-dot">→ Pending</div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-
-    <div class="sidebar-card">
-      <div class="section-title">MDF Radar — Deadline Fri Apr 24</div>
-      <div class="mdf-bar-wrap">
-        <div class="mdf-bar-label"><span>Days remaining</span><span style="color:#b91c1c; font-weight:700">3 days</span></div>
-        <div class="mdf-bar-bg"><div class="mdf-bar-fill" style="width:30%"></div></div>
-      </div>
-      <div style="margin-top:10px;">
-        <div class="action-item"><div class="action-dot dot-green" style="background:#16a34a"></div><div class="action-text"><strong>Wualá</strong> — brief filed today ✓ · review + approve · $10K Q3 LinkedIn</div></div>
-        <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text"><strong>Getmore</strong> — brief arrives Thu Apr 23 · review same day</div></div>
-        <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text"><strong>Atoms</strong> — review Commerce Stack MDF deck (AMBER)</div></div>
-        <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text"><strong>Lab51</strong> — confirm 15% commission for Nicolas first</div></div>
-        <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text"><strong>IFC · Redegal · VNS · Lobo · Kik</strong> — briefs still needed</div></div>
-        <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text"><strong>VNS</strong> — confirm Premier status with Ops before submitting</div></div>
-      </div>
+  <!-- 8:25 VS Daily -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">8:25</div>
+      <div class="meeting-name" style="color:#64748b;">VS Daily Pulse Check · 5 min internal</div>
     </div>
-
-    <div class="sidebar-card">
-      <div class="section-title">Open Pipeline</div>
-      <div class="pipeline-row">
-        <div><div class="pipeline-partner">Ads-Alchemy</div><div class="pipeline-detail">HP1 → noon meeting today · same-day response</div></div>
-        <div class="pipeline-amount">HP ⚡</div>
-      </div>
-      <div class="pipeline-row">
-        <div><div class="pipeline-partner">Dinkbit</div><div class="pipeline-detail">Factura app initiative · Korean pop star ecomm (40M followers) · PM Steelway furniture deal pending</div></div>
-        <div class="pipeline-amount">HP</div>
-      </div>
-      <div class="pipeline-row">
-        <div><div class="pipeline-partner">Moxie</div><div class="pipeline-detail">Constant Plus non-migration opps · Q2 budget approved · JBP ongoing</div></div>
-        <div class="pipeline-amount">Plus</div>
-      </div>
-      <div class="pipeline-row">
-        <div><div class="pipeline-partner">Wualá</div><div class="pipeline-detail">Q3 MDF brief filed today · $10K LinkedIn migration campaign ARG</div></div>
-        <div class="pipeline-amount">Review</div>
-      </div>
-      <div class="pipeline-row">
-        <div><div class="pipeline-partner">Avalara</div><div class="pipeline-detail">Confirm Markets Multient compat</div></div>
-        <div class="pipeline-amount">Blocker</div>
-      </div>
-      <div class="pipeline-row">
-        <div><div class="pipeline-partner">Lab51</div><div class="pipeline-detail">Nicolas — 15% commission confirm</div></div>
-        <div class="pipeline-amount">Pending</div>
-      </div>
-    </div>
-
-    <div class="sidebar-card">
-      <div class="section-title">Open Actions (28)</div>
-
-      <div style="font-size:10px; font-weight:700; color:#991b1b; text-transform:uppercase; letter-spacing:0.5px; margin:4px 0 3px;">Red — Overdue / Urgent</div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Reply Leonardo WhatsApp (overdue)</div></div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Get MP invoice # from Nico → send to Alejandro (Moxie)</div></div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Flow + Transbank — TKA Chile event</div></div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Confirm Maida as AI speaker — Chile Shopify Day</div></div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Message Kik — push Chile event planning</div></div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Send 3× Academy coupons to César (Wualá)</div></div>
-      <div class="action-item"><div class="action-dot dot-red"></div><div class="action-text">Invite Lalo to Wed Bistro event</div></div>
-
-      <div style="font-size:10px; font-weight:700; color:#92400e; text-transform:uppercase; letter-spacing:0.5px; margin:6px 0 3px;">Amber — This Week</div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Review Wualá MDF brief (filed today) → approve or give feedback</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Review Getmore MDF brief Thu Apr 23</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Open shared doc w/ Michelle for Dinkbit factura app</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Draft MSI partner email (Mattie → May 4–5)</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Submit PO via Meetup approvals channel</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Review Atoms Commerce Stack MDF deck</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Confirm VNS Premier status with Ops</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Confirm Avalara + Markets Multient compat</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Confirm 15% commission for Nicolas (Lab51)</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Send Rouco dev program info to Nico</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Enable MSI for Dango MX clients</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Notify Alejandro (Moxie) when Sydney sends contract</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Send SOWs to Michelle</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Share event calendar with Pickit/Virginia</div></div>
-      <div class="action-item"><div class="action-dot dot-amber"></div><div class="action-text">Michelle: open Dinkbit invoice app shared doc</div></div>
-
-      <div style="font-size:10px; font-weight:700; color:#1e40af; text-transform:uppercase; letter-spacing:0.5px; margin:6px 0 3px;">Blue — Upcoming</div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">Send Toronto invite to Lobo (May 25–29)</div></div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">Create Lobo/Kik WhatsApp group</div></div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">Confirm Chile trip meetings Apr 27–28</div></div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">Schedule PCC session with Michel (post Editions)</div></div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">Join Mauricio convincing meeting (Lobo/Felipe)</div></div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">Confirm Vancouver trip date with Alejandro</div></div>
-      <div class="action-item"><div class="action-dot dot-blue"></div><div class="action-text">HP2 follow-up emails — non-responders (Apr 25–27)</div></div>
-    </div>
-
-    <div class="sidebar-card">
-      <div class="section-title">Coming Up</div>
-      <div class="momentum-item"><strong>Wed Apr 22</strong> — Solid + Emerging emails · Bistro event</div>
-      <div class="momentum-item"><strong>Thu Apr 23</strong> — Getmore MDF brief arrives · review</div>
-      <div class="momentum-item"><strong>Fri Apr 24</strong> — 🚨 ALL MDF briefs due · Dormant emails</div>
-      <div class="momentum-item"><strong>Apr 27–28</strong> — Chile trip · TKA Shopify Day</div>
-      <div class="momentum-item"><strong>May 4–5</strong> — Partner Editions</div>
-      <div class="momentum-item"><strong>May 25–29</strong> — Toronto</div>
-    </div>
-
-    <div class="sidebar-card">
-      <div class="section-title">Momentum</div>
-      <div class="momentum-item">🚀 <strong>HP1 blast complete</strong> — 9 emails sent Apr 20</div>
-      <div class="momentum-item">⚡ <strong>Ads-Alchemy</strong> — same-day HP1 response, meeting today</div>
-      <div class="momentum-item">📝 <strong>Wualá MDF brief filed</strong> — $10K Q3 ARG campaign</div>
-      <div class="momentum-item">🧾 <strong>Dinkbit factura app</strong> — technical session done, advancing</div>
-      <div class="momentum-item">📊 <strong>38 archetypes</strong> assigned + logged in Sheet</div>
-      <div class="momentum-item">📅 <strong>3 calendar reminders</strong> set Mon/Wed/Fri</div>
-    </div>
-
   </div>
+
+  <!-- 8:30 CODEFY -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">8:30</div>
+      <div class="meeting-name hp">🔴 Meeting with Antonio — Codefy · HP Archetype #3</div>
+    </div>
+    <div class="meeting-body">
+      <div class="meeting-meta">hello@codefy.com.mx ✅ accepted · Antonio ✅ · 30 min · HP1 sent Apr 20 — first real meeting since Dec 12 2025</div>
+      <ul class="meeting-bullets">
+        <li><span class="note">[NOTE]</span> Codefy: MX agency, 7 years with Shopify, ~20 people (devs + PM + designers), app dev strategy + core stores. Recently approved to partner directory (~1.5 years ago).</li>
+        <li><span class="note">[NOTE]</span> Dec 12 session: Client migrated Advanced → Plus, weren't registered as referral partner. Antonio confirmed incentive payment ~30 days after first payment (should land ~end of Dec 2025).</li>
+        <li><span class="note">[NOTE]</span> Codefy app development strategy endorsed by Antonio — "best for scalability, move from selling hours to selling a product."</li>
+        <li><span class="note">[NOTE]</span> Wants to expand to US market with Headless/Hydrogen. Antonio's suggestion: target Latino communities in Miami + Chicago — agencies can undercut US pricing significantly.</li>
+        <li><span class="open">[OPEN]</span> Follow up on incentive payment for Advanced→Plus migration (was expected end-Dec — check if received or still outstanding). Email Antonio if not received → escalate to Partner Crediting team.</li>
+        <li><span class="open">[OPEN]</span> Antonio to send brand usage guidelines doc for events (Codefy can co-host events respecting brand, but no Shopify financial co-investment until Plus status).</li>
+        <li><span class="amber">[ACTION]</span> Key levers for Codefy growth: 1) Collaborator access on ALL stores 2) Always submit Plus referrals via form with a seller 3) Shopify Academy course completions for tier upgrade.</li>
+        <li><span class="open">[OPEN]</span> This is HP1 follow-up — goal: schedule recurring biweekly, understand current pipeline, identify Plus upgrade candidates in their portfolio.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9:00 TASK — SEND EMAILS -->
+  <div class="task-card">
+    <div class="task-header">
+      <div class="meeting-time">9:00</div>
+      <div class="task-name">📧 PLAYBOOK TASK — Send Solid (11) + Emerging (12) Emails · Week 2</div>
+    </div>
+    <div class="task-body">
+      <ul class="meeting-bullets">
+        <li><span class="amber">[TODAY]</span> <strong>Solid (11):</strong> OnSellOut, eCohete, Paulina Navarro, Proficient, Paul Armenta, Sadeira, Marketino Digital, Maíz Creativo, comcomcom, Konvertti, Snowball Partners</li>
+        <li><span class="amber">[TODAY]</span> <strong>Emerging (12):</strong> EverestUP, Saltamontes MX, NTN, Converging Works, MHA Consulting, Myshopiguru, Mindept, Bido Agency, Golden Sub, El Cultivo, Retorno Digital, Eleven Code</li>
+        <li><span class="note">[NOTE]</span> 23 total emails. Concurrent with Latech biweekly at 9:00 — send before / queue to send during meeting.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9:00 LATECH -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">9:00</div>
+      <div class="meeting-name">Latech Biweekly · Argentina Plus Agency</div>
+    </div>
+    <div class="meeting-body">
+      <div class="meeting-meta">Graciela Di Rado ✅ · Andrés Harvey (Andy) ⏳ · Lucas ⏳ · Juan Cruz Bonina ✅ · Tomasaz ✅ · 4 accepted 2 pending</div>
+      <ul class="meeting-bullets">
+        <li><span class="note">[NOTE]</span> Argentina-based Plus agency. Graciela Di Rado (founder/lead) + Juan Cruz Bonina (tech/BD). First agency in Antonio's book to use Michelle's PSE office hours.</li>
+        <li><span class="note">[NOTE]</span> <strong>Fresh event brief filed Apr 21 (yesterday!):</strong> "Ecommerce Day Argentina — Foro Colaborativo + Client Stories" · Aug 27/28 · CEC + VIP Session at private venue.</li>
+        <li><span class="note">[NOTE]</span> Event plan: VIP morning = 45-50 ecommerce decision makers (Ruby accounts — Adobe Commerce, Salesforce CC, BigCommerce, VTEX, Custom, Tienda Nube Evolución). Topics: "The Efficiency Reset: Preparing for agentic commerce" + "From search to recommendation: Strategies in the age of algorithmic discovery."</li>
+        <li><span class="note">[NOTE]</span> Afternoon: Client stories — Latech presents Ansilta case study (apparel brand migrated to Shopify Plus). Budget: $3,600 total, $1,800 Shopify ask. Goals: 10 new Plus leads, 2 PQLs. Post-event: 2-email nurture sequence.</li>
+        <li><span class="note">[NOTE]</span> Apr 8 session: B2B democratized for non-Plus (max 3 catalogs) — discussed. MDF process: AI agent evaluates briefs — Graciela agreed to send brief to Antonio first for "health check" before formal submission.</li>
+        <li><span class="note">[NOTE]</span> MDF payment mechanics: PO issued only AFTER event/campaign completes — important for their financial planning. Graciela confirmed proceeding with early-pay discount regardless.</li>
+        <li><span class="open">[OPEN]</span> Argentina banking promotions blocker: "Pillows" mattress brand won't migrate without bank promotions integration. Mobbex = high rejection rate + expensive. Shopify payments team not doing new integrations until mid-May. Monitor for May update.</li>
+        <li><span class="open">[OPEN]</span> Review Latech Ecommerce Day event brief (filed yesterday Apr 21) — run AI health check, provide feedback to Graciela before Apr 24 MDF deadline.</li>
+        <li><span class="open">[OPEN]</span> MDF Q3 brief: Graciela to meet with Andy this week to prepare. Send to Antonio for health check before formal submission. Submit Q3; Q4 window will come later.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 11:00 ARDEKO -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">11:00</div>
+      <div class="meeting-name">Ardeko</div>
+    </div>
+    <div class="meeting-body">
+      <div class="meeting-meta">No attendee info pulled · Carried from prior brief</div>
+      <ul class="meeting-bullets">
+        <li><span class="open">[OPEN]</span> Confirm agenda for this meeting. Ardeko appeared on Apr 21 brief as well — check if this is a continuation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 11:30 TRICICLO -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">11:30</div>
+      <div class="meeting-name">Triciclo/Revie Biweekly · 🆕 Juan Navarrete (SE) Attending</div>
+    </div>
+    <div class="meeting-body">
+      <div class="meeting-meta">Juan Sotres ✅ · Juan Navarrete (Shopify SE) ✅ · Renata Raya ⏳ · Mexico Plus agency + Revie app</div>
+      <ul class="meeting-bullets">
+        <li><span class="note">[NOTE]</span> Triciclo = Antonio's "agencia insignia" (flagship agency). Juan Sotres runs the agency; Renata Raya handles ops. Revie = chatbot/messaging SaaS that now generates more MRR than the agency itself.</li>
+        <li><span class="note">[NOTE]</span> <strong>Key dynamic today: Juan Navarrete (new SE) is attending.</strong> First time a dedicated SE is joining this biweekly. Opportunity: introduce Juan N. formally, set up working cadence for technical escalations (B2B, checkout, etc).</li>
+        <li><span class="note">[NOTE]</span> Apr 8 session: Shopify shifting away from Plus-only focus — opening to general Shopify. Juan Sotres noted this as positive long-term even if it complicates Plus upsells short-term.</li>
+        <li><span class="note">[NOTE]</span> B2B in Plus: can have separate or combined B2B + regular store. Advance = B2B with 3-catalog limit. This is relevant for their client pipeline.</li>
+        <li><span class="note">[NOTE]</span> Contract extension concern: Renata writing to support to request 2-month extension (was Apr 15, shifting to ~May) — to protect Premier status during Editions period. Dimension 1 Premier = safe as long as they continue working.</li>
+        <li><span class="note">[NOTE]</span> Partner Editions May 4-5: Canada visa check done. Mexican citizens may need ETA (not full visa) if they have US visa. Juan N. likely has US visa as SE. Confirm travel logistics.</li>
+        <li><span class="open">[OPEN]</span> Renata to send MDF Q3 brief to Antonio for AI health check before submitting. Q4 can come in a later window.</li>
+        <li><span class="open">[OPEN]</span> Confirm contract extension status — check with support on Premier impact if contract lapses into May.</li>
+        <li><span class="open">[OPEN]</span> Juan Sotres mentioned Colombia event ideas: Bogotá + Medellín — follow up on whether Triciclo interested in co-sponsoring Colombia Shopify events (August/September).</li>
+        <li><span class="done">[DONE]</span> Revie app growing well — generating MRR exceeding agency revenue. Juan Sotres confirmed strong momentum for 2026.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 12:00 ESTUDIOS E -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">12:00</div>
+      <div class="meeting-name hp">🔴 Meeting with Erick — EstudiosE · HP Archetype #31</div>
+    </div>
+    <div class="meeting-body">
+      <div class="meeting-meta">estudiosefotovideo@gmail.com ✅ · erick.olvera@estudiose.com ⏳ · HP1 sent Apr 20</div>
+      <ul class="meeting-bullets">
+        <li><span class="note">[NOTE]</span> EstudiosE: HP archetype #31. Erick Olvera is main contact. Photo/video studio that also does ecommerce — found via XPRTS/agencies search in Drive.</li>
+        <li><span class="open">[OPEN]</span> This is an HP1 follow-up (first real structured meeting). Goal: understand current Shopify use + pipeline, identify Plus upsell opportunity, establish recurring touchpoint.</li>
+        <li><span class="open">[OPEN]</span> No prior Gemini notes found — this appears to be a relatively cold HP archetype. Come prepared to ask about current clients, GMV range, and main pain points.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3:15 PREP -->
+  <div class="meeting-card">
+    <div class="meeting-header">
+      <div class="meeting-time">3:15</div>
+      <div class="meeting-name" style="color:#475569;">Prep Meetup — Pre-event prep session</div>
+    </div>
+    <div class="meeting-body">
+      <div class="meeting-meta">Internal prep · ~45 min buffer before 5pm meetup</div>
+      <ul class="meeting-bullets">
+        <li><span class="note">[NOTE]</span> Panel doc (Meetup Panel Questions) prepared with 3 format options: A = El Camino Premier/Plus (recommended for mixed audience), B = Deep Tech, C = Business & Growth.</li>
+        <li><span class="amber">[ACTION]</span> Confirm panel format with Edgar. Option A is recommended for tonight's mixed audience (15-18 min). Edgar presenting "his story" informally — not structured panel, casual format.</li>
+        <li><span class="note">[NOTE]</span> Panelists confirmed: Atoms (POS), GetMore (CRO), Vitamina Online (core stores), Triciclo (Revie + agency). Edgar/Dinkbit also on small separate panel.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5:00 MEETUP HEADLINER -->
+  <div class="headliner-card">
+    <div class="headliner-header">
+      <div class="headliner-time">5:00 PM</div>
+      <div class="headliner-title">🇲🇽 Mexico Partner Meetup — HEADLINER · Terraza Cozumel, Roma Norte</div>
+    </div>
+    <div class="meeting-body" style="padding: 10px 12px 12px;">
+      <div class="meeting-meta" style="color:#4f46e5; font-weight:600;">Cozumel 12, Roma Nte, CDMX · ~4 hours · ALL MX agencies ecosystem event</div>
+      <ul class="meeting-bullets">
+        <li><span class="note">[NOTE]</span> This is the big annual ecosystem event — not just top portfolio partners, but ALL Mexico-based Shopify agencies. High visibility night.</li>
+        <li><span class="note">[NOTE]</span> Edgar Ortiz (XPRTS/Dinkbit) presenting "his story" on a small informal panel at ~5:30pm. Not structured Q&A — casual format.</li>
+        <li><span class="note">[NOTE]</span> Panel doc prepared with full question sets for Atoms, GetMore, Vitamina Online, Triciclo. Tonight is a unique opportunity to connect with Solid, Emerging, and even Dormant partners in person.</li>
+        <li><span class="open">[OPEN]</span> Invite Lalo to Bistro (confirmed carry from yesterday — reminder to connect tonight if not done).</li>
+        <li><span class="open">[OPEN]</span> HP2 follow-up emails planned for Apr 25-27 for non-responders from last week's HP outreach. Use tonight's in-person connections to warm those.</li>
+        <li><span class="amber">[ACTION]</span> Spot-check: who from Triciclo/Revie is attending? Juan Sotres confirmed on panel — confirm in person at venue.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCALED MOTIONS -->
+  <div class="sidebar-card" style="margin-bottom:8px;">
+    <div class="sidebar-header slate-bg">📊 Scaled Motions Tracker — Week of Apr 21</div>
+    <div class="sidebar-body" style="padding: 0;">
+      <table class="scaled-table">
+        <thead>
+          <tr><th>Wave</th><th>Target</th><th>Count</th><th>Status</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HP1</td><td>All HP archetypes</td><td>9</td><td><span class="status-done">DONE ✓</span></td><td>Apr 20</td></tr>
+          <tr><td>Solid + Emerging</td><td>Solid (11) + Emerging (12)</td><td>23</td><td><span class="status-today">TODAY ▶</span></td><td>Apr 22</td></tr>
+          <tr><td>HP2 Follow-up</td><td>Non-responders from HP1</td><td>TBD</td><td><span class="status-pending">PENDING</span></td><td>Apr 25-27</td></tr>
+          <tr><td>Dormant</td><td>Dormant (6)</td><td>6</td><td><span class="status-pending">PENDING</span></td><td>Fri Apr 24</td></tr>
+          <tr><td>ALL MDF Briefs</td><td>Full portfolio</td><td>~8</td><td><span class="status-pending">FRI DEADLINE</span></td><td>Apr 24</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <!-- OPEN ACTIONS RED -->
+  <div class="sidebar-card">
+    <div class="sidebar-header red-bg">🔴 Critical Open Actions</div>
+    <div class="sidebar-body">
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Leonardo</span> — Reply WhatsApp (overdue)</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Moxie/Alejandro</span> — Get MP invoice # from Nico → send to Alejandro</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">TKA Chile</span> — Flow + Transbank · Chile Shopify Day event setup</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Chile Day</span> — Confirm Maida as AI speaker</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Kik</span> — Message re: Chile event planning</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Wualá/César</span> — Send 3× Academy coupons</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Ads-Alchemy</span> — Send webinar invite email to Pablo + Martin (AI webinar today!)</div>
+      </div>
+      <div class="action-item">
+        <div class="dot red"></div>
+        <div class="action-text"><span class="action-partner">Novaventa</span> — Talk to Kevin on multi-brand contract structure (PPS vs Referral)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPEN ACTIONS AMBER -->
+  <div class="sidebar-card">
+    <div class="sidebar-header amber-bg">🟡 Amber Actions</div>
+    <div class="sidebar-body">
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Wualá MDF</span> — Review brief filed Apr 21 → approve or give feedback before Apr 24</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Latech MDF</span> — Health check Ecommerce Day brief (fresh Apr 21) before deadline</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Getmore MDF</span> — Brief arrives Thu Apr 23 → review same day</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Dinkbit/Michelle</span> — Factura app shared doc → technical validation needed</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">MSI Email</span> — Mattie approval pending → send May 4-5 window</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">VNS</span> — Confirm Premier status with Ops before MDF brief</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Lab51/Nicolas</span> — Confirm 15% commission before MDF</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Atoms Commerce Stack</span> — Review MDF deck</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Triciclo</span> — Contract extension to May confirmed with support?</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Codefy</span> — Check if Dec incentive payment received; escalate if not</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Moxie/Alejandro</span> — Notify when Sydney sends Viviana 3yr contract</div>
+      </div>
+      <div class="action-item">
+        <div class="dot amber"></div>
+        <div class="action-text"><span class="action-partner">Lobo/Nico</span> — Send Rouco dev program info</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPEN ACTIONS BLUE -->
+  <div class="sidebar-card">
+    <div class="sidebar-header blue-bg">🔵 Blue (Opportunities)</div>
+    <div class="sidebar-body">
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Lobo</span> — Send Toronto invite (May 25-29)</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Lobo/Kik</span> — Create WhatsApp group</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Chile Apr 27-28</span> — Confirm meetings / trip agenda</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Michel</span> — Schedule PCC session post-Editions</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Lobo/Felipe</span> — Join Mauricio convincing meeting</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Alejandro</span> — Confirm Vancouver trip date</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">HP2</span> — Follow-up emails Apr 25-27 for non-responders</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Ads-Alchemy</span> — Schedule recurring calendar call (Pablo + Martin)</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Dango MX</span> — Enable MSI for clients</div>
+      </div>
+      <div class="action-item">
+        <div class="dot blue"></div>
+        <div class="action-text"><span class="action-partner">Pickit/Virginia</span> — Share event calendar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MDF RADAR -->
+  <div class="sidebar-card">
+    <div class="sidebar-header red-bg">🗓 Q3/Q4 MDF Radar — T-2 Days (Fri Apr 24)</div>
+    <div class="sidebar-body">
+      <div class="mdf-row"><span class="mdf-name">Wualá</span><span class="mdf-status mdf-green">FILED ✓ — review needed</span></div>
+      <div class="mdf-row"><span class="mdf-name">Latech Ecommerce Day</span><span class="mdf-status mdf-amber">BRIEF FILED Apr 21 — health check</span></div>
+      <div class="mdf-row"><span class="mdf-name">Getmore</span><span class="mdf-status mdf-amber">BRIEF DUE THU APR 23</span></div>
+      <div class="mdf-row"><span class="mdf-name">Atoms</span><span class="mdf-status mdf-red">BRIEF NEEDED</span></div>
+      <div class="mdf-row"><span class="mdf-name">Lab51</span><span class="mdf-status mdf-red">CONFIRM 15% FIRST</span></div>
+      <div class="mdf-row"><span class="mdf-name">VNS</span><span class="mdf-status mdf-red">CONFIRM PREMIER FIRST</span></div>
+      <div class="mdf-row"><span class="mdf-name">IFC</span><span class="mdf-status mdf-red">BRIEF NEEDED</span></div>
+      <div class="mdf-row"><span class="mdf-name">Redegal</span><span class="mdf-status mdf-red">BRIEF NEEDED</span></div>
+      <div class="mdf-row"><span class="mdf-name">Lobo</span><span class="mdf-status mdf-red">BRIEF NEEDED</span></div>
+      <div class="mdf-row"><span class="mdf-name">Kik</span><span class="mdf-status mdf-red">BRIEF NEEDED</span></div>
+      <div style="margin-top:6px; font-size:10px; color:#92400e; font-weight:600;">Submit PO → Meetup approvals channel</div>
+    </div>
+  </div>
+
+  <!-- PIPELINE WATCH -->
+  <div class="sidebar-card">
+    <div class="sidebar-header green-bg">💰 Pipeline Watch</div>
+    <div class="sidebar-body">
+      <div class="pipeline-row">
+        <span class="pipeline-name">Novaventa/Grupo Nutresa</span>
+        <span class="pipeline-detail" style="color:#ef4444;">🔴 BLOCKED — $5K tech cost</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-name">Cybex (Dinkbit)</span>
+        <span class="pipeline-detail" style="color:#f59e0b;">🟡 International Markets Plus needed</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-name">Corporativo (medical equipment)</span>
+        <span class="pipeline-detail" style="color:#f59e0b;">🟡 Large proposal sent by Dinkbit</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-name">Pillows (Argentine mattresses)</span>
+        <span class="pipeline-detail" style="color:#ef4444;">🔴 Banking promos blocker (Latech)</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-name">WooCommerce migrations (Ads-Alchemy)</span>
+        <span class="pipeline-detail" style="color:#3b82f6;">🔵 Martin Becerril interested</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-name">US Headless/Hydrogen (Codefy)</span>
+        <span class="pipeline-detail" style="color:#3b82f6;">🔵 Latino community US market</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMING UP -->
+  <div class="sidebar-card">
+    <div class="sidebar-header purple-bg">📅 Coming Up</div>
+    <div class="sidebar-body">
+      <div class="cal-item"><span class="cal-time">Thu Apr 23</span> <span class="cal-name">Getmore MDF brief arrives · review same day · Cron expiry reminder 9am</span></div>
+      <div class="cal-item"><span class="cal-time">Fri Apr 24</span> <span class="cal-name">🚨 ALL MDF hard deadline · Dormant emails (6)</span></div>
+      <div class="cal-item"><span class="cal-time">Apr 25-27</span> <span class="cal-name">HP2 follow-up emails for non-responders</span></div>
+      <div class="cal-item"><span class="cal-time">Apr 27-28</span> <span class="cal-name">Chile trip</span></div>
+      <div class="cal-item"><span class="cal-time">May 4-5</span> <span class="cal-name">Partner Editions (Canada) · payment feature announces</span></div>
+      <div class="cal-item"><span class="cal-time">Aug 2026</span> <span class="cal-name">Medellín Colombia event · Latech Ecommerce Day Argentina (Aug 27-28)</span></div>
+      <div class="cal-item"><span class="cal-time">Sep 2026</span> <span class="cal-name">Bogotá conference ~150 people (Moxie/Colombia)</span></div>
+      <div class="cal-item"><span class="cal-time">May 25-29</span> <span class="cal-name">Toronto · send Lobo invite</span></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="footer">
+  Apr 22 2026 · Sources: Google Calendar (split query AM+PM) · Gemini notes: Moxie Apr 21, XPRTS Apr 21, Wualá Apr 21, Ads-Alchemy Apr 21, Latech Apr 8, Latech Event Brief Apr 21, Triciclo Apr 8, Meetup Panel Questions Apr 20, Codefy Dec 12 2025 · 9 notes read
 </div>
 
 </body>
