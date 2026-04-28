@@ -3,422 +3,487 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner Brief — Mon Apr 27, 2026</title>
+<title>Partner Brief — Tuesday Apr 28, 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #1e293b; font-size: 13px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
 
   .banner {
     background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 40%, #2563eb 70%, #3b82f6 100%);
-    color: #fff;
-    padding: 18px 24px 14px;
+    padding: 28px 36px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-  .banner-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 4px; }
-  .banner-title { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
-  .banner-subtitle { font-size: 12px; opacity: 0.85; margin-top: 4px; }
-  .banner-chips { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-  .banner-chip { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; }
-  .banner-chip.hot { background: rgba(220,38,38,0.6); }
-  .banner-chip.warn { background: rgba(180,83,9,0.5); }
-  .banner-chip.go { background: rgba(5,150,105,0.5); }
-  .banner-chip.blue { background: rgba(37,99,235,0.5); }
+  .banner h1 { font-size: 26px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+  .banner .subtitle { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 6px; }
+  .banner .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.3px; }
+  .badge-blue { background: rgba(255,255,255,0.15); color: #fff; }
+  .badge-amber { background: rgba(251,191,36,0.25); color: #fde68a; }
+  .badge-red { background: rgba(239,68,68,0.25); color: #fca5a5; }
+  .badge-green { background: rgba(34,197,94,0.25); color: #86efac; }
 
-  .layout { display: flex; }
-  .main { flex: 1; min-width: 0; padding: 16px; }
-  .sidebar { width: 300px; flex-shrink: 0; background: #fff; border-left: 1px solid #e2e8f0; padding: 14px; }
+  .critical-bar {
+    background: linear-gradient(90deg, #7c1d1d 0%, #991b1b 100%);
+    border-left: 4px solid #ef4444;
+    padding: 12px 36px;
+    font-size: 13px;
+    color: #fecaca;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .critical-bar strong { color: #fff; }
 
-  .yesterday-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; margin-bottom: 14px; }
-  .yesterday-box h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin-bottom: 10px; }
-  .yesterday-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .ycard { background: #f8fafc; border-left: 3px solid #22c55e; border-radius: 4px; padding: 7px 9px; }
-  .ycard .yname { font-weight: 700; font-size: 12px; color: #0f172a; }
-  .ycard .ydesc { font-size: 11px; color: #475569; margin-top: 2px; line-height: 1.4; }
-  .ycard.amber { border-left-color: #f59e0b; }
-  .ycard.blue { border-left-color: #3b82f6; }
-  .ycard.red { border-left-color: #ef4444; }
-  .ycard.purple { border-left-color: #8b5cf6; }
+  .layout { display: grid; grid-template-columns: 1fr 320px; gap: 0; max-width: 100%; }
+  .main { padding: 24px 28px; border-right: 1px solid #1e293b; }
+  .sidebar { padding: 20px; background: #0a1628; }
 
-  .section-header { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin: 14px 0 8px; font-weight: 700; }
+  .section-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+    color: #64748b; margin-bottom: 12px; margin-top: 20px;
+  }
+  .section-label:first-child { margin-top: 0; }
 
-  .meeting-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
-  .meeting-card.internal { opacity: 0.78; }
-  .meeting-card.declined { opacity: 0.5; }
-  .meeting-card.headliner { border-color: #2563eb; box-shadow: 0 2px 10px rgba(37,99,235,0.15); }
-  .meeting-card.conflict { border-color: #dc2626; box-shadow: 0 2px 12px rgba(220,38,38,0.2); }
-  .meeting-card.chile { border-left: 3px solid #e11d48; }
-  .meeting-card.colombia { border-left: 3px solid #f59e0b; }
-  .meeting-card.brazil { border-left: 3px solid #16a34a; }
-  .meeting-card.new-partner { border-left: 3px solid #7c3aed; }
+  /* Meeting cards */
+  .card {
+    border-radius: 10px; margin-bottom: 14px; overflow: hidden;
+    border: 1px solid #1e293b;
+    background: #111827;
+  }
+  .card-intl { border-left: 4px solid #10b981; }
+  .card-solid { border-left: 4px solid #3b82f6; }
+  .card-emerging { border-left: 4px solid #f59e0b; }
+  .card-hp { border-left: 4px solid #6366f1; }
+  .card-internal { border-left: 4px solid #6b7280; }
+  .card-declined { opacity: 0.55; }
+  .card-optional { opacity: 0.7; }
 
-  .meeting-header { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px 8px; border-bottom: 1px solid #f1f5f9; }
-  .meeting-time { font-size: 11px; font-weight: 700; color: #64748b; min-width: 48px; padding-top: 1px; }
-  .meeting-info { flex: 1; }
-  .meeting-name { font-weight: 700; font-size: 13px; color: #0f172a; }
-  .meeting-meta { font-size: 11px; color: #64748b; margin-top: 2px; }
-  .meeting-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; white-space: nowrap; }
-  .badge-green { background: #dcfce7; color: #166534; }
-  .badge-amber { background: #fef3c7; color: #92400e; }
-  .badge-red { background: #fee2e2; color: #991b1b; }
-  .badge-blue { background: #dbeafe; color: #1e40af; }
-  .badge-purple { background: #ede9fe; color: #5b21b6; }
-  .badge-gray { background: #f1f5f9; color: #475569; }
-  .badge-pink { background: #fce7f3; color: #9d174d; }
-  .badge-colombia { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
-  .badge-chile { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+  .card-header {
+    padding: 12px 16px 10px;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    border-bottom: 1px solid #1e293b;
+  }
+  .card-time { font-size: 12px; font-weight: 700; color: #94a3b8; font-variant-numeric: tabular-nums; white-space: nowrap; margin-right: 10px; margin-top: 2px; }
+  .card-title { font-size: 15px; font-weight: 700; color: #f1f5f9; flex: 1; }
+  .card-subtitle { font-size: 12px; color: #64748b; margin-top: 2px; }
+  .card-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .pill { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 12px; letter-spacing: 0.2px; }
+  .pill-intl { background: #064e3b; color: #6ee7b7; }
+  .pill-solid { background: #1e3a5f; color: #93c5fd; }
+  .pill-emerging { background: #451a03; color: #fcd34d; }
+  .pill-hp { background: #1e1b4b; color: #a5b4fc; }
+  .pill-ep { background: #1a2e05; color: #86efac; }
+  .pill-internal { background: #1e293b; color: #94a3b8; }
+  .pill-first { background: #2d1a4e; color: #d8b4fe; }
+  .pill-webinar { background: #1a3a5c; color: #7dd3fc; }
+  .pill-red { background: #450a0a; color: #fca5a5; }
 
-  .meeting-bullets { padding: 8px 12px 10px; }
-  .meeting-bullets li { list-style: none; font-size: 12px; color: #334155; padding: 2px 0 2px 12px; position: relative; line-height: 1.5; }
-  .meeting-bullets li::before { content: '•'; position: absolute; left: 0; color: #94a3b8; }
-  .meeting-bullets li span.open { color: #b91c1c; font-weight: 600; }
-  .meeting-bullets li span.done { color: #16a34a; font-weight: 600; }
-  .meeting-bullets li span.note { color: #6366f1; font-weight: 600; }
-  .meeting-bullets li span.warn { color: #b45309; font-weight: 600; }
-  .meeting-bullets li span.new { color: #7c3aed; font-weight: 600; }
+  .card-body { padding: 12px 16px; }
 
-  .conflict-banner { background: #fef2f2; border-bottom: 1px solid #fca5a5; padding: 5px 12px; font-size: 11px; color: #991b1b; font-weight: 600; }
+  .attendees-row { font-size: 12px; color: #94a3b8; margin-bottom: 10px; }
+  .attendees-row a { color: #60a5fa; text-decoration: none; }
 
-  .motions-table { width: 100%; border-collapse: collapse; font-size: 12px; background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; }
-  .motions-table th { background: #f8fafc; color: #64748b; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 6px 10px; text-align: left; border-bottom: 1px solid #e2e8f0; }
-  .motions-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
-  .motions-table tr:last-child td { border-bottom: none; }
+  .bubble { border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; font-size: 12.5px; line-height: 1.55; }
+  .bubble-green { background: #052e16; border-left: 3px solid #16a34a; color: #bbf7d0; }
+  .bubble-amber { background: #1c1000; border-left: 3px solid #d97706; color: #fde68a; }
+  .bubble-blue { background: #0c1a2e; border-left: 3px solid #2563eb; color: #93c5fd; }
+  .bubble-red { background: #1a0505; border-left: 3px solid #dc2626; color: #fca5a5; }
+  .bubble-indigo { background: #0d0f2e; border-left: 3px solid #4f46e5; color: #a5b4fc; }
+  .bubble-gray { background: #111827; border-left: 3px solid #374151; color: #9ca3af; }
+  .bubble-purple { background: #1a0d2e; border-left: 3px solid #7c3aed; color: #d8b4fe; }
 
-  .sidebar h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; margin-bottom: 8px; font-weight: 700; }
-  .sidebar-section { margin-bottom: 16px; }
-  .action-item { display: flex; align-items: flex-start; gap: 7px; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11.5px; color: #334155; line-height: 1.4; }
-  .action-item:last-child { border-bottom: none; }
-  .action-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
-  .dot-red { background: #ef4444; }
+  .bubble strong { font-weight: 700; }
+  .bubble ul { list-style: none; padding-left: 0; }
+  .bubble ul li::before { content: "· "; opacity: 0.5; }
+
+  .tag-open { color: #ef4444; font-weight: 700; font-size: 11px; }
+  .tag-done { color: #22c55e; font-weight: 700; font-size: 11px; }
+  .tag-note { color: #a78bfa; font-weight: 700; font-size: 11px; }
+
+  /* Webinar infobox */
+  .infobox {
+    border-radius: 10px; padding: 16px 18px; margin-bottom: 14px;
+    background: linear-gradient(135deg, #0c1a2e, #0a2240);
+    border: 1px solid #1d4ed8;
+  }
+  .infobox h4 { font-size: 14px; font-weight: 700; color: #7dd3fc; margin-bottom: 8px; }
+  .infobox p { font-size: 13px; color: #93c5fd; line-height: 1.5; }
+  .infobox .detail { font-size: 12px; color: #64748b; margin-top: 6px; }
+
+  /* Playbook table */
+  .playbook-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+  .playbook-table th { background: #1e293b; color: #94a3b8; text-transform: uppercase; font-size: 10px; letter-spacing: 0.8px; padding: 8px 10px; text-align: left; }
+  .playbook-table td { padding: 8px 10px; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+  .playbook-table tr:hover td { background: #1a2235; }
+  .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot-green { background: #22c55e; }
   .dot-amber { background: #f59e0b; }
   .dot-blue { background: #3b82f6; }
-  .dot-purple { background: #8b5cf6; }
-  .action-partner { font-weight: 700; color: #0f172a; }
+  .dot-gray { background: #6b7280; }
+  .dot-red { background: #ef4444; }
 
-  .mdf-item { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11.5px; }
-  .mdf-item:last-child { border-bottom: none; }
-  .mdf-name { font-weight: 600; color: #0f172a; }
-  .mdf-status { font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 8px; }
+  /* Sidebar */
+  .sidebar-section { margin-bottom: 24px; }
+  .sidebar-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #475569; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 6px; }
+  .action-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #94a3b8; line-height: 1.4; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .dot-red-s { background: #ef4444; }
+  .dot-amber-s { background: #f59e0b; }
+  .dot-green-s { background: #22c55e; }
+  .dot-blue-s { background: #3b82f6; }
+  .dot-purple-s { background: #8b5cf6; }
+  .action-partner { font-weight: 600; color: #e2e8f0; display: block; }
 
-  .pipe-item { padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11.5px; }
-  .pipe-item:last-child { border-bottom: none; }
-  .pipe-name { font-weight: 700; color: #0f172a; }
-  .pipe-detail { color: #64748b; font-size: 11px; margin-top: 1px; }
+  .mdf-row { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin-bottom: 6px; padding: 5px 8px; border-radius: 6px; background: #0f1f35; }
+  .mdf-name { color: #cbd5e1; }
+  .mdf-amount { font-weight: 700; color: #fbbf24; }
+  .mdf-status { font-size: 10px; color: #64748b; }
 
-  .cal-item { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11.5px; align-items: flex-start; }
-  .cal-item:last-child { border-bottom: none; }
-  .cal-date { font-weight: 700; color: #64748b; min-width: 55px; font-size: 11px; }
-  .cal-text { color: #334155; line-height: 1.4; }
-  .cal-hot { color: #b91c1c; font-weight: 700; }
+  .pipeline-item { font-size: 12px; margin-bottom: 8px; padding: 8px 10px; background: #0f1f35; border-radius: 6px; border-left: 3px solid #2563eb; }
+  .pipeline-name { font-weight: 600; color: #93c5fd; }
+  .pipeline-detail { color: #64748b; font-size: 11px; margin-top: 2px; }
 
-  .bluebird-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 1px solid #bfdbfe; border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; }
-  .bluebird-box .bb-title { font-size: 12px; font-weight: 800; color: #1e40af; margin-bottom: 6px; }
-  .bluebird-box li { list-style: none; font-size: 11.5px; color: #1e3a8a; padding: 2px 0 2px 12px; position: relative; line-height: 1.5; }
-  .bluebird-box li::before { content: '→'; position: absolute; left: 0; color: #3b82f6; }
+  .cal-day { margin-bottom: 10px; }
+  .cal-day-label { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #475569; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .cal-item { font-size: 11px; color: #94a3b8; padding: 3px 0; display: flex; gap: 8px; }
+  .cal-time { color: #475569; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .cal-item-name { color: #94a3b8; }
+  .cal-today .cal-item-name { color: #cbd5e1; }
 
-  .critical-bar { background: linear-gradient(90deg, #fee2e2 0%, #fef3c7 100%); border-bottom: 2px solid #fca5a5; padding: 8px 16px; font-size: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-
-  .footer { background: #1e293b; color: #94a3b8; font-size: 11px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; }
-
-  .rsvp-yes { color: #16a34a; font-weight: 600; }
-  .rsvp-no { color: #dc2626; font-weight: 600; text-decoration: line-through; }
-  .rsvp-maybe { color: #d97706; font-weight: 600; }
-  .new-tag { background: #fee2e2; color: #991b1b; font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; text-transform: uppercase; }
-  .done-tag { background: #dcfce7; color: #166534; font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; text-transform: uppercase; }
-  .conflict-tag { background: #fef3c7; color: #92400e; font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; text-transform: uppercase; }
+  .footer { text-align: center; padding: 20px; font-size: 11px; color: #334155; border-top: 1px solid #1e293b; }
 </style>
 </head>
 <body>
 
-<!-- CRITICAL BAR -->
-<div class="critical-bar">
-  <strong style="color:#991b1b">🌎 CHILE TRIP TODAY</strong>
-  <span>Travel to Santiago today — TKA Shopify Day + Kinegun w/ Steve Popov at 10:30</span>
-  <span>🚀 Bluebird Campaign launches May 1–6 — prep brief this week</span>
-  <span>⚠️ CONFLICT: Nassim 1:1 + Moxie Monthly both 11:00 CST</span>
-  <span>📧 HP2 follow-ups due: Codefy, AdsolutionMKT, EstudiosE, DEV TECH, Unmade</span>
-  <span>🤝 Ally returns today — AI Growth Plan V2</span>
+<div class="banner">
+  <h1>Partner Brief — Tuesday Apr 28, 2026</h1>
+  <div class="subtitle">4 partner meetings · Megan 1:1 · Nassim 1:1 · ⚠️ Webinar invite must go out today · ⚠️ HP-3 to Rodolfo pending send</div>
+  <div class="badge-row">
+    <span class="badge badge-blue">4 partner calls</span>
+    <span class="badge badge-red">Webinar Apr 30 — invite today</span>
+    <span class="badge badge-amber">HP-3 CBI Market pending</span>
+    <span class="badge badge-green">Simplify — duty-free Plus opp</span>
+  </div>
 </div>
 
-<!-- BANNER -->
-<div class="banner">
-  <div class="banner-eyebrow">Daily Partner Brief · LATAM Book of Business · MONDAY</div>
-  <div class="banner-title">Monday Apr 27, 2026 — Chile Travel Day ✈️</div>
-  <div class="banner-subtitle">11 events · Snowball Partners (first meeting) · OneSellout · CBI Market · TKA-Chile + Steve Popov (Kinegun) · Moxie Monthly · Dango · Week 2 playbook 100% complete</div>
-  <div class="banner-chips">
-    <span class="banner-chip hot">🌎 Chile Trip Today</span>
-    <span class="banner-chip hot">⚠️ 11am Conflict</span>
-    <span class="banner-chip warn">🚀 Bluebird May 1–6</span>
-    <span class="banner-chip go">✅ Week 2 Playbook — 8 Responses</span>
-    <span class="banner-chip blue">🤝 Ally Returns Today</span>
-  </div>
+<div class="critical-bar">
+  ⚡ <strong>Critical today:</strong>
+  Send webinar invite to Top 40 (webinar is TOMORROW Thu Apr 30 10am) · Send HP-3 to Rodolfo (CBI Market) · Ask Megan about Bluebird campaign — template, Portuguese translation, Partner Powered eligibility
 </div>
 
 <div class="layout">
 <div class="main">
 
-  <!-- FRIDAY + WEEKEND OUTCOMES -->
-  <div class="yesterday-box">
-    <h3>Fri Apr 24 + Weekend — Key Outcomes</h3>
-    <div class="yesterday-grid">
-      <div class="ycard">
-        <div class="yname">✅ Week 2 Playbook 100% Complete</div>
-        <div class="ydesc">8 responses logged: 4 met in person (Vitamina Online, METARD, CBI Market, Ads-Alchemy) · 4 scheduled (Konvertti, Snowball Partners, Maíz Creativo, EverestUP). Dormant wave done: 6 emails sent.</div>
+  <div class="section-label">Today's Meetings</div>
+
+  <!-- VS Pulse -->
+  <div class="card card-internal">
+    <div class="card-header">
+      <span class="card-time">8:25</span>
+      <div style="flex:1">
+        <div class="card-title">VS Pulse</div>
+        <div class="card-subtitle">Weekly VS team check-in</div>
+        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
       </div>
-      <div class="ycard">
-        <div class="yname">📋 MDF Deadline Day — All Submitted</div>
-        <div class="ydesc">All partner MDF briefs submitted before EOD. Latech (2 campaigns: migration focus + POS) and others processed. Pending Shopify marketing review.</div>
+    </div>
+    <div class="card-body">
+      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Weekly VS team sync — standard pipeline/activity pulse.</div>
+    </div>
+  </div>
+
+  <!-- All Hands AMER/EMEA -->
+  <div class="card card-internal">
+    <div class="card-header">
+      <span class="card-time">9:00</span>
+      <div style="flex:1">
+        <div class="card-title">All Hands AMER / EMEA</div>
+        <div class="card-subtitle">Company-wide all hands</div>
+        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
       </div>
-      <div class="ycard blue">
-        <div class="yname">🤖 Infracommerce ERP w/ Michelle Drawert</div>
-        <div class="ydesc">IFC team: Julian Martel, Marcos Villaquira, Alan Kimo, Pablo Gomez. Michelle intro'd as PSE for book of business. Partner Editions imminent ("big announcements coming"). Shared Q&A sheet started (Michelle answering column D). Open: Michelle to send ERP guide + Agentic webinar + GEO/SEO playbook.</div>
+    </div>
+    <div class="card-body">
+      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> AMER/EMEA all hands — listen mode.</div>
+    </div>
+  </div>
+
+  <!-- Simplify / Elias -->
+  <div class="card card-intl">
+    <div class="card-header">
+      <span class="card-time">10:00</span>
+      <div style="flex:1">
+        <div class="card-title">Simplify / Elias Menezes</div>
+        <div class="card-subtitle">Ongoing strategic partner · International Tier</div>
+        <div class="card-pills">
+          <span class="pill pill-intl">International</span>
+          <span class="pill pill-ep">EP</span>
+          <span class="pill pill-webinar">Webinar invitee</span>
+        </div>
       </div>
-      <div class="ycard amber">
-        <div class="yname">📣 Team Check In — Bluebird Launched</div>
-        <div class="ydesc">$2,500/deal incentive for Apr 1–Jun 30. LATAM needs 57 closed-won, only 9 open opps. Launching May 1–6 via Mozart + 1:1. Antonio pushing for Partner Powered eligibility. Moxy Colombia deal at risk (Sydney Martin's last day Apr 24).</div>
+    </div>
+    <div class="card-body">
+      <div class="attendees-row">
+        <strong>Elias Menezes</strong> &lt;<a href="mailto:elias@simplify.com.br">elias@simplify.com.br</a>&gt; · Accepted
+      </div>
+
+      <div class="bubble bubble-green">
+        <strong>Context — duty-free Panama Plus client:</strong>
+        <ul>
+          <li>MVP launched ~Apr 14; Elias flagged strong growth potential — wants joint case study once Panama duty-free is activated country-wide by Shopify</li>
+          <li>Revenue potential: Plus deal. Elias is actively managing this client and invested in co-selling with Shopify</li>
+          <li>Guatemala lead in closing stages — Plus-tier deal, names not shared yet</li>
+        </ul>
+      </div>
+
+      <div class="bubble bubble-green">
+        <strong>Context — active pipeline (Apr 14 note):</strong>
+        <ul>
+          <li>Camera client deal stalled — Elias mentioned a referral via Cumbia + ShopTalk intro pending</li>
+          <li>Grupo Rafael: 20% rev share active, Elias engaged and billing</li>
+          <li>Aensa: active client under Simplify management</li>
+          <li>Mar 3 note: Elias discussing potential co-sell on 2 more clients — awaiting his confirmation</li>
+        </ul>
+      </div>
+
+      <div class="bubble bubble-amber">
+        <span class="tag-open">[OPEN]</span> <strong>Antonio:</strong> Ask Elias for update on Panama duty-free country activation — confirm timeline so you can trigger joint case study<br>
+        <span class="tag-open">[OPEN]</span> <strong>Antonio:</strong> Check Guatemala lead status — has it closed? Which AE is assigned?<br>
+        <span class="tag-open">[OPEN]</span> <strong>Antonio:</strong> Invite Elias to webinar (Apr 30, 10am CDMX) — he's Brazil-based so confirm timezone (11am São Paulo)
+      </div>
+
+      <div class="bubble bubble-blue">
+        <span class="tag-note">[OPP]</span> Duty-free Panama Plus deal = EP-tier case study. Once country activation is confirmed, co-author case study with Elias for LATAM portfolio. Could anchor Q3 EP expansion pitch.
       </div>
     </div>
   </div>
 
-  <!-- SCALED MOTIONS INFOBOX -->
-  <div class="bluebird-box">
-    <div class="bb-title">🚀 BLUEBIRD CAMPAIGN — Launching May 1–6</div>
-    <ul>
-      <li><strong>$2,500/deal</strong> for referred + closed opps, Apr 1–Jun 30 (new business only) · Mozart automated + 1:1 outreach template</li>
-      <li><strong>LATAM gap:</strong> need 57 closed-won · currently only 9 open opps · close-lost outreach also planned (Megan)</li>
-      <li><strong>Open:</strong> Push for Partner Powered eligibility · Portuguese translation (Marcelo manual if needed) · get template from Megan mid-next-week</li>
-      <li><strong>Ally returns today</strong> → AI Growth Plan V2 kick-off with Megan · goal: expand from 10–20 to 30–50 runs/quarter via growth advisors</li>
-    </ul>
-  </div>
-
-  <!-- MEETINGS -->
-  <div class="section-header">Today's Meetings — Mon Apr 27</div>
-
-  <!-- Newsletter -->
-  <div class="meeting-card internal">
-    <div class="meeting-header">
-      <div class="meeting-time">8:00</div>
-      <div class="meeting-info">
-        <div class="meeting-name internal">Newsletter</div>
-        <div class="meeting-meta">8:00–8:15 · Recurring internal task · 15 min</div>
+  <!-- Paulina Navarro -->
+  <div class="card card-solid">
+    <div class="card-header">
+      <span class="card-time">11:00</span>
+      <div style="flex:1">
+        <div class="card-title">Paulina Navarro</div>
+        <div class="card-subtitle">First meeting — Solid Performer candidate</div>
+        <div class="card-pills">
+          <span class="pill pill-solid">Solid</span>
+          <span class="pill pill-first">First meeting</span>
+        </div>
       </div>
-      <span class="meeting-badge badge-gray">Internal</span>
+    </div>
+    <div class="card-body">
+      <div class="attendees-row"><strong>Paulina Navarro</strong> · Accepted</div>
+      <div class="bubble bubble-indigo">
+        <span class="tag-note">[NOTE]</span> First intro call. No prior Gemini notes. Goal: qualify for SP archetype. Understand current book of business, Shopify client count, revenue profile, appetite for co-sell. If qualified → SP-2 Deep Dive invite (45 min).
+      </div>
+      <div class="bubble bubble-amber">
+        <span class="tag-open">[OPEN]</span> After this call: qualify SP vs HP. If SP → send SP-2 invite. Update tracker row.
+      </div>
     </div>
   </div>
 
-  <!-- VS Daily Pulse -->
-  <div class="meeting-card internal">
-    <div class="meeting-header">
-      <div class="meeting-time">8:25</div>
-      <div class="meeting-info">
-        <div class="meeting-name internal">Run VS — Daily Pulse Check 👾</div>
-        <div class="meeting-meta">8:25–8:30 · Recurring internal · 5 min</div>
+  <!-- Saltamontes MX -->
+  <div class="card card-emerging">
+    <div class="card-header">
+      <span class="card-time">11:30</span>
+      <div style="flex:1">
+        <div class="card-title">Saltamontes MX</div>
+        <div class="card-subtitle">First meeting — Emerging Partner candidate</div>
+        <div class="card-pills">
+          <span class="pill pill-emerging">Emerging</span>
+          <span class="pill pill-first">First meeting</span>
+        </div>
       </div>
-      <span class="meeting-badge badge-gray">Internal</span>
+    </div>
+    <div class="card-body">
+      <div class="attendees-row"><strong>Saltamontes MX</strong> · Accepted</div>
+      <div class="bubble bubble-indigo">
+        <span class="tag-note">[NOTE]</span> First intro call. No prior Gemini notes. Goal: assess EP archetype fit. Understand agency size, Shopify experience, verticals, growth trajectory. If qualified → EP-2 invite (60 min).
+      </div>
+      <div class="bubble bubble-amber">
+        <span class="tag-open">[OPEN]</span> After this call: qualify EP vs SP. If EP → send EP-2 invite. Update tracker row.
+      </div>
     </div>
   </div>
 
-  <!-- Santina -->
-  <div class="meeting-card internal">
-    <div class="meeting-header">
-      <div class="meeting-time">8:30</div>
-      <div class="meeting-info">
-        <div class="meeting-name internal">Santina — Antonio 1:1</div>
-        <div class="meeting-meta">8:30–9:00 · meet.google.com/ftu-eeuh-mud · 30 min</div>
+  <!-- Unmade / Alfredo -->
+  <div class="card card-hp">
+    <div class="card-header">
+      <span class="card-time">12:00</span>
+      <div style="flex:1">
+        <div class="card-title">Unmade / Alfredo</div>
+        <div class="card-subtitle">First meeting — High Performer candidate</div>
+        <div class="card-pills">
+          <span class="pill pill-hp">High Performer</span>
+          <span class="pill pill-first">First meeting</span>
+        </div>
       </div>
-      <span class="meeting-badge badge-gray">Shopify Internal</span>
     </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> Santina Farinella (<span class="rsvp-yes">santina.farinella@shopify.com ✓</span>) · Antonio (<span class="rsvp-yes">accepted ✓</span>)</li>
-      <li><span class="note">[NOTE]</span> No public context on agenda — likely onboarding/team sync</li>
-    </ul>
+    <div class="card-body">
+      <div class="attendees-row"><strong>Alfredo</strong> (Unmade) · Accepted</div>
+      <div class="bubble bubble-indigo">
+        <span class="tag-note">[NOTE]</span> First intro call. No prior Gemini notes. Goal: confirm HP archetype fit. Understand current Shopify Plus revenue, pipeline, team size. If qualified → HP-2 invite (30 min) immediately after this call.
+      </div>
+      <div class="bubble bubble-blue">
+        <span class="tag-note">[OPP]</span> HP-2 email template ready. If call confirms HP fit, send same-day — momentum matters.
+      </div>
+      <div class="bubble bubble-amber">
+        <span class="tag-open">[OPEN]</span> After call: confirm HP fit → send HP-2 (subject: "Siguiente paso: tu sesión de crecimiento estratégico con Shopify"). Update tracker.
+      </div>
+    </div>
   </div>
 
-  <!-- Snowball Partners — NEW -->
-  <div class="meeting-card headliner new-partner">
-    <div class="meeting-header">
-      <div class="meeting-time">9:00</div>
-      <div class="meeting-info">
-        <div class="meeting-name">Meeting — Snowball Partners <span class="new-tag">NEW MEETING</span></div>
-        <div class="meeting-meta">9:00–9:20 · meet.google.com/wrx-cmag-vfe · 20 min · MX</div>
+  <!-- Megan 1:1 -->
+  <div class="card card-internal">
+    <div class="card-header">
+      <span class="card-time">13:00</span>
+      <div style="flex:1">
+        <div class="card-title">Megan 1:1</div>
+        <div class="card-subtitle">Manager 1:1</div>
+        <div class="card-pills">
+          <span class="pill pill-internal">Internal</span>
+          <span class="pill pill-red">Bluebird agenda</span>
+        </div>
       </div>
-      <span class="meeting-badge badge-purple">Scaled Response</span>
     </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Martín</strong> (<span class="rsvp-yes">martin@snowballpartners.mx ✓ accepted</span>) · <strong>Alejandra</strong> (<span class="rsvp-maybe">alejandra@snowballpartners.mx ⏳ awaiting</span>) · Antonio (<span class="rsvp-yes">✓</span>)</li>
-      <li><span class="note">[NOTE]</span> Snowball scheduled this meeting in response to the Week 2 Solid archetype email — this is the first formal 1:1</li>
-      <li><span class="note">[NOTE]</span> No Gemini notes exist yet — go in fresh; discover their stage, merchant pipeline, current Shopify usage, pain points</li>
-      <li><span class="open">[OPEN]</span> Qualify: archetype fit (Solid), active merchant count, Plus prospects, interest in Bluebird Campaign — <strong>Antonio</strong></li>
-      <li><span class="open">[OPEN]</span> Assess: MDF readiness, certifications interest, co-marketing potential — <strong>Antonio</strong></li>
-    </ul>
+    <div class="card-body">
+      <div class="bubble bubble-red">
+        <span class="tag-open">[OPEN]</span> <strong>Bluebird campaign — ask Megan:</strong>
+        <ul>
+          <li>Get the email template / campaign details from Megan</li>
+          <li>Confirm Partner Powered eligibility for LATAM partners</li>
+          <li>Confirm Portuguese translation with Marcelo — or does Megan have it?</li>
+          <li>Timeline: when does the campaign go out?</li>
+        </ul>
+      </div>
+      <div class="bubble bubble-gray">
+        <span class="tag-note">[NOTE]</span> Bring activity update: 3 calls yesterday (OneSellout, Snowball, CBI Market), 4 calls today, webinar going out today for Apr 30.
+      </div>
+    </div>
   </div>
 
-  <!-- OneSellout -->
-  <div class="meeting-card">
-    <div class="meeting-header">
-      <div class="meeting-time">9:30</div>
-      <div class="meeting-info">
-        <div class="meeting-name">OneSellout — Shopify</div>
-        <div class="meeting-meta">9:30–9:50 · meet.google.com/kbz-onqu-vpn · 20 min · MX</div>
+  <!-- Nassim 1:1 -->
+  <div class="card card-internal">
+    <div class="card-header">
+      <span class="card-time">13:30</span>
+      <div style="flex:1">
+        <div class="card-title">Nassim 1:1</div>
+        <div class="card-subtitle">Cross-team 1:1</div>
+        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
       </div>
-      <span class="meeting-badge badge-amber">Post-Webinar</span>
     </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Edgar Garate</strong> (<span class="rsvp-maybe">edgar.garate@onsellout.com ⏳ awaiting</span>) · Antonio (<span class="rsvp-yes">✓ accepted</span>)</li>
-      <li><span class="note">[NOTE]</span> OneSellout was on the Apr 24 schedule as a post-AI Dev Webinar follow-up; recurring relationship — no Gemini notes available</li>
-      <li><span class="open">[OPEN]</span> Debrief on AI Dev Webinar takeaways (DevMCP, Sidekick extensions) and map to their current build pipeline — <strong>Antonio</strong></li>
-      <li><span class="open">[OPEN]</span> Check pipeline status, any active Plus opps — Bluebird Campaign eligibility? — <strong>Antonio</strong></li>
-    </ul>
+    <div class="card-body">
+      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Regular cross-team sync with Nassim. No specific agenda items noted.</div>
+    </div>
   </div>
 
-  <!-- CBI Market -->
-  <div class="meeting-card">
-    <div class="meeting-header">
-      <div class="meeting-time">10:00</div>
-      <div class="meeting-info">
-        <div class="meeting-name">Meeting — CBI Market (Rodolfo Islas)</div>
-        <div class="meeting-meta">10:00–10:30 · meet.google.com/vpg-bmwb-sfk · 30 min · MX</div>
+  <!-- Andre-Toño DECLINED -->
+  <div class="card card-internal card-declined">
+    <div class="card-header">
+      <span class="card-time">14:30</span>
+      <div style="flex:1">
+        <div class="card-title">Andre — Toño <span style="font-size:11px; color:#ef4444; font-weight:600;">DECLINED</span></div>
+        <div class="card-subtitle">Internal — declined</div>
+        <div class="card-pills"><span class="pill pill-internal">Internal</span><span class="pill pill-red">Declined</span></div>
       </div>
-      <span class="meeting-badge badge-green">Post In-Person</span>
     </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Rodolfo Islas</strong> (<span class="rsvp-yes">rodolfo@cbimarket.com ✓ accepted</span>) · Antonio (<span class="rsvp-yes">✓</span>)</li>
-      <li><span class="done">[DONE]</span> Met in person this week (Mexico Meetup / Week 2 HP archetype in-person response) — relationship warm</li>
-      <li><span class="note">[NOTE]</span> No Gemini notes available — CBI Market is in the MX book of business (HP archetype, from Top 40)</li>
-      <li><span class="open">[OPEN]</span> Follow up from in-person meeting: formalize next steps, identify active merchant pipeline, qualification for Bluebird — <strong>Antonio</strong></li>
-      <li><span class="open">[OPEN]</span> Build MDF brief interest? Certifications? Assess co-marketing fit — <strong>Antonio</strong></li>
-    </ul>
+    <div class="card-body">
+      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Declined — not attending.</div>
+    </div>
   </div>
 
-  <!-- TKA-Chile Shopify Day + Steve Popov -->
-  <div class="meeting-card headliner chile">
-    <div class="meeting-header">
-      <div class="meeting-time">10:30</div>
-      <div class="meeting-info">
-        <div class="meeting-name">TKA-Chile Shopify Day — Special Guest: Steve Popov ✈️ <span class="new-tag">CHILE TRIP</span></div>
-        <div class="meeting-meta">10:30–11:00 · meet.google.com/hpy-jwux-gwf · 30 min · Santiago CL</div>
+  <!-- APAC All Hands -->
+  <div class="card card-internal card-optional">
+    <div class="card-header">
+      <span class="card-time">19:00</span>
+      <div style="flex:1">
+        <div class="card-title">APAC All Hands</div>
+        <div class="card-subtitle">No response</div>
+        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
       </div>
-      <span class="meeting-badge badge-chile">Chile + Kinegun</span>
     </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Francisca Escobar</strong> (<span class="rsvp-yes">francisca@thekickass.co ✓</span>) · <strong>Steve Popov</strong> (<span class="rsvp-yes">steve.popov@shopify.com ✓</span>) · Antonio (<span class="rsvp-yes">✓</span>) · Calendar note: "Adding Steve to touch on Kinegun quickly!"</li>
-      <li><span class="note">[NOTE]</span> Chile trip = Apr 27–28 → TKA is organizing the <strong>Chile Shopify Day</strong> event (Francisca is lead). Previous Kickass bisemanal (Mar 27): event date approved for day 26; 100-person guest list; PQL + Shopify candidates for Plus migration; budget pending approval; Mercado Libre + Mercado Pago as past sponsors</li>
-      <li><span class="note">[NOTE]</span> Steve is the Kinegun relationship owner. On Apr 24, the TKA/Kinegun meeting had Juan Pablo declined — today's checkpoint brings Steve in to unblock</li>
-      <li><span class="open">[OPEN]</span> <strong>Kinegun update with Steve</strong>: TKA Flow + Transbank blocker — resolve path forward — <strong>Antonio + Steve</strong></li>
-      <li><span class="open">[OPEN]</span> <strong>Chile Shopify Day</strong>: confirm Antonio attendance, budget approval status, final guest list (PQL + Plus migration candidates), sponsor strategy — <strong>Antonio</strong></li>
-      <li><span class="open">[OPEN]</span> Confirm Antonio presence 98% — Francisca needed confirmation since March — <strong>Antonio to confirm officially today</strong></li>
-    </ul>
+    <div class="card-body">
+      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> APAC All Hands — no response on invite. Optional attendance from CDMX timezone.</div>
+    </div>
   </div>
 
-  <!-- CONFLICT: Nassim 1:1 -->
-  <div class="meeting-card internal conflict">
-    <div class="conflict-banner">⚠️ SCHEDULING CONFLICT — Both meetings at 11:00–11:30 CST — decide which to attend / reschedule</div>
-    <div class="meeting-header">
-      <div class="meeting-time">11:00</div>
-      <div class="meeting-info">
-        <div class="meeting-name internal">Nassim — Antonio 1:1 <span class="conflict-tag">CONFLICT</span></div>
-        <div class="meeting-meta">11:00–11:30 · meet.google.com/xwz-affh-tkn · 30 min · Internal</div>
-      </div>
-      <span class="meeting-badge badge-gray">Shopify Internal</span>
-    </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Nassim Najm</strong> (<span class="rsvp-yes">nassim.najm@shopify.com ✓</span>) · Antonio (<span class="rsvp-yes">✓</span>)</li>
-      <li><span class="open">[OPEN]</span> Reschedule if attending Moxie Monthly — confirm with Nassim — <strong>Antonio</strong></li>
-    </ul>
+  <!-- Webinar infobox -->
+  <div class="section-label" style="margin-top:28px;">This Week — Webinar</div>
+  <div class="infobox">
+    <h4>📅 Q1 Commercial Webinar #1 — Cómo Crecer tu Agencia en México</h4>
+    <p><strong>Jueves 30 de abril · 10:00–11:00 AM CDMX</strong><br>
+    Google Meet: <a href="https://meet.google.com/fwk-svpp-mwy" style="color:#60a5fa;">meet.google.com/fwk-svpp-mwy</a></p>
+    <p style="margin-top:8px; color:#7dd3fc;">Invite going out today to all Top 40. Will be recorded. Content: growth patterns of top-performing agencies, positioning strategies, underused Shopify resources.</p>
+    <div class="detail">⚠️ Send invite NOW — webinar is tomorrow. Tracker rows 43-47 updated. Mark rows 46-47 as Sent once emails go out.</div>
   </div>
 
-  <!-- CONFLICT: Monthly Moxie Marketing -->
-  <div class="meeting-card conflict colombia">
-    <div class="meeting-header">
-      <div class="meeting-time">11:00</div>
-      <div class="meeting-info">
-        <div class="meeting-name">Monthly Moxie Marketing Check-In <span class="conflict-tag">CONFLICT</span></div>
-        <div class="meeting-meta">11:00–11:30 · meet.google.com/kgd-akqx-tif · 30 min · Colombia</div>
-      </div>
-      <span class="meeting-badge badge-colombia">CO · Nicola DECLINED</span>
-    </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Alejandro Pineda</strong> (<span class="rsvp-maybe">alejandro.pineda@moxiedigital.co ⏳ awaiting</span>) · <strong>Cristina Vélez Restrepo</strong> (<span class="rsvp-maybe">cristina.velez@moxiedigital.co ⏳ awaiting</span>) · Antonio (<span class="rsvp-yes">✓</span>) · <strong>Nicola Fahy</strong> (<span class="rsvp-no">DECLINED ✗</span>)</li>
-      <li><span class="done">[DONE]</span> Q1 events were a success: Medellín + Bogotá · 80 attendees (40+40) · <strong>16 referrals vs. goal of 10</strong> · test drive canceled due to rain in Medellín but content + demo + dinner went ahead · Sidekick image demo was the crowd highlight</li>
-      <li><span class="open">[OPEN]</span> <strong>Q2 MDF status</strong>: Nicola included Q2 in March review as "admin error" since it was planned since Nov — recommendation to approve submitted, no yes yet. Nicola to share update ASAP — <strong>Nicola Fahy</strong> (follow up)</li>
-      <li><span class="open">[OPEN]</span> <strong>Novaventa/Grupo Nutresa deal</strong>: merchant stalled — legacy provider charged ~$900K–$5M for integrations (SBN system: products, promotions, loyalty). Board instructing to migrate before Oct. Jon + Jason working contract with Kevin. Antonio to check: is it a normal contract or Multi-Brand Agreement? — <strong>Antonio + Kevin</strong></li>
-      <li><span class="open">[OPEN]</span> <strong>Moxie Q2 invoice</strong>: attendee list sent → Nicola issues PO → Moxie sends invoice. Ask about expedited payment (under $10K = faster). Explore with procurement — <strong>Antonio + Nicola</strong></li>
-      <li><span class="open">[OPEN]</span> <strong>Upcoming events</strong>: Medellín (August) + Bogotá/ecommerce conference (September ~150 pax). Plan boutique format going forward. Confirm if Juan Navarrete (SE) can attend — <strong>Cristina + Antonio</strong></li>
-      <li><span class="note">[NOTE]</span> Nicola is not attending today — this is a Moxie-side debrief meeting. Agenda likely: Q2 funding update, next event planning, Novaventa progress</li>
-    </ul>
-  </div>
-
-  <!-- Dango biweekly -->
-  <div class="meeting-card brazil">
-    <div class="meeting-header">
-      <div class="meeting-time">11:30</div>
-      <div class="meeting-info">
-        <div class="meeting-name">Dango — Shopify Biweekly</div>
-        <div class="meeting-meta">11:30–12:00 · meet.google.com/kmg-mwna-cos · 30 min · AR</div>
-      </div>
-      <span class="meeting-badge badge-green">All Accepted</span>
-    </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>Pablo Goldstoff</strong> (<span class="rsvp-yes">pablo@dango.digital ✓</span>) · <strong>Mariana Jolles</strong> (<span class="rsvp-yes">mariana@dango.digital ✓</span>) · Antonio (<span class="rsvp-yes">✓</span>)</li>
-      <li><span class="note">[NOTE]</span> Last meeting Apr 13 (AR): discussed B2B Plus — non-Plus plans = catalogs only, no separate B2B instance. Confirmed deposits + checkout = Plus exclusive. Most transactions = manual bank payment, not through Shopify. MDF interest for Q3 expressed — first-time MDF users.</li>
-      <li><span class="note">[NOTE]</span> Certifications: advised Pablo NOT to invest time now — internal clarity missing. Partner Dashboard tracks credentials but not enforced. Revisit in ~Aug/Sep.</li>
-      <li><span class="open">[OPEN]</span> <strong>Enable monthly Shopify Payments (Shopify Pay) in Mexico</strong> for Dango clients — action item from Apr 13 — <strong>Antonio</strong></li>
-      <li><span class="open">[OPEN]</span> <strong>Build MDF brief together</strong> — Mariana/Pablo interested in Q3 MDF. Use MDF brief builder tool. Start with webinar or small event — <strong>Antonio + Mariana</strong></li>
-      <li><span class="open">[OPEN]</span> <strong>Bring pipeline data</strong> — action from Apr 13 — <strong>Antonio</strong></li>
-      <li><span class="note">[NOTE]</span> Dango is AR-based, B2B-focused. Mariana is operationally sharp. Good MDF candidate for Q3 if first campaign is low-pressure (webinar or email).</li>
-    </ul>
-  </div>
-
-  <!-- marketinodigital — Unknown -->
-  <div class="meeting-card new-partner">
-    <div class="meeting-header">
-      <div class="meeting-time">12:00</div>
-      <div class="meeting-info">
-        <div class="meeting-name">Meeting — Unknown Partner <span class="new-tag">IDENTIFY</span></div>
-        <div class="meeting-meta">12:00–12:20 · meet.google.com/vpg-bmwb-sfk · 20 min</div>
-      </div>
-      <span class="meeting-badge badge-purple">Unidentified</span>
-    </div>
-    <ul class="meeting-bullets">
-      <li><span class="note">[NOTE]</span> <strong>marketinodigital@gmail.com</strong> (<span class="rsvp-yes">✓ accepted</span>) · Antonio (<span class="rsvp-yes">✓</span>)</li>
-      <li><span class="warn">[WARN]</span> Contact is using a Gmail address — not a verified agency domain. Could be a Dormant or Scaled Motions respondent. Identify before the meeting — confirm who this is and why it's on the calendar.</li>
-      <li><span class="open">[OPEN]</span> Identify: check Scaled Activities log or email for context on marketinodigital — <strong>Antonio before 12pm</strong></li>
-    </ul>
-  </div>
-
-  <!-- SCALED MOTIONS -->
-  <div class="section-header">Scaled Motions — Week 2 Status (100% Complete)</div>
-  <table class="motions-table">
+  <!-- Playbook status -->
+  <div class="section-label">Playbook Status — Week 2</div>
+  <table class="playbook-table">
     <thead>
       <tr>
         <th>Archetype</th>
+        <th>Partner</th>
+        <th>Stage</th>
         <th>Status</th>
-        <th>Responses</th>
-        <th>Next Wave</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>HP (9)</strong></td>
-        <td><span class="done-tag">Done</span></td>
-        <td>Vitamina ✓ met IRL · METARD ✓ met IRL · CBI Market ✓ met IRL · Ads-Alchemy ✓ met IRL</td>
-        <td><strong>HP2 follow-ups (Apr 25–27):</strong> Codefy, AdsolutionMKT, EstudiosE, DEV TECH, Unmade — send today if not sent</td>
+        <td>HP</td>
+        <td>CBI Market (Rodolfo)</td>
+        <td>HP-3</td>
+        <td><span class="status-dot dot-amber"></span>Email drafted — send today</td>
       </tr>
       <tr>
-        <td><strong>Solid (11)</strong></td>
-        <td><span class="done-tag">Done</span></td>
-        <td>Konvertti ✓ scheduled · Snowball Partners ✓ scheduled (meeting today) · Maíz Creativo ✓ scheduled</td>
-        <td>Continue cadence — no new wave yet</td>
+        <td>HP</td>
+        <td>Vitamina Online (Miriam)</td>
+        <td>HP-2</td>
+        <td><span class="status-dot dot-amber"></span>Draft ready — send post-IRL</td>
       </tr>
       <tr>
-        <td><strong>Emerging (12)</strong></td>
-        <td><span class="done-tag">Done</span></td>
-        <td>EverestUP ✓ scheduled</td>
-        <td>Continue cadence — no new wave yet</td>
+        <td>HP</td>
+        <td>METARD (Edgar Made)</td>
+        <td>HP-2</td>
+        <td><span class="status-dot dot-amber"></span>Draft ready — send post-IRL</td>
       </tr>
       <tr>
-        <td><strong>Dormant (6)</strong></td>
-        <td><span class="done-tag">Done</span></td>
-        <td>6 emails sent Apr 24: Niklas, Matdav, Veronica Ruiz, Montalvo Wire (BCC) · JOGO / Diego Navarro (personal Sleeping Giants)</td>
-        <td>Monitor responses — no Week 3 yet</td>
+        <td>HP</td>
+        <td>Ads-Alchemy</td>
+        <td>HP-2</td>
+        <td><span class="status-dot dot-amber"></span>Draft ready — send post-IRL</td>
+      </tr>
+      <tr>
+        <td>HP</td>
+        <td>Unmade (Alfredo)</td>
+        <td>Intro → HP-2</td>
+        <td><span class="status-dot dot-blue"></span>First call today → HP-2 if qualified</td>
+      </tr>
+      <tr>
+        <td>SP</td>
+        <td>OneSellout (Edgar)</td>
+        <td>SP-2</td>
+        <td><span class="status-dot dot-green"></span>Call done Apr 27 — awaiting next step</td>
+      </tr>
+      <tr>
+        <td>SP</td>
+        <td>Snowball (Martín)</td>
+        <td>SP-2</td>
+        <td><span class="status-dot dot-green"></span>Call done Apr 27 — awaiting next step</td>
+      </tr>
+      <tr>
+        <td>SP</td>
+        <td>Paulina Navarro</td>
+        <td>Intro → SP-2</td>
+        <td><span class="status-dot dot-blue"></span>First call today → SP-2 if qualified</td>
+      </tr>
+      <tr>
+        <td>EP</td>
+        <td>Simplify (Elias)</td>
+        <td>Ongoing</td>
+        <td><span class="status-dot dot-green"></span>Active — Panama Plus case study in progress</td>
+      </tr>
+      <tr>
+        <td>EP</td>
+        <td>Saltamontes MX</td>
+        <td>Intro → EP-2</td>
+        <td><span class="status-dot dot-blue"></span>First call today → EP-2 if qualified</td>
       </tr>
     </tbody>
   </table>
@@ -428,182 +493,141 @@
 <!-- SIDEBAR -->
 <div class="sidebar">
 
-  <!-- OPEN ACTION ITEMS -->
   <div class="sidebar-section">
-    <h3>🔴 Open Action Items — This Week</h3>
+    <div class="sidebar-title">Open Action Items</div>
 
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">TKA / Kinegun</span> — TKA Flow + Transbank blocker. Resolve with Steve Popov today.</div>
+      <div class="dot dot-red-s"></div>
+      <div>
+        <span class="action-partner">CBI Market</span>
+        Send HP-3 to Rodolfo today — check-in May 17
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Moxy Colombia</span> — Q1 Plus deal at risk. Merchant confused on contract. Sydney Martin gone. Monitor + connect with Viviana.</div>
+      <div class="dot dot-red-s"></div>
+      <div>
+        <span class="action-partner">Top 40 Webinar</span>
+        Send invite NOW — Apr 30 10am CDMX (meet.google.com/fwk-svpp-mwy)
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">HP2 Follow-ups</span> — Codefy, AdsolutionMKT, EstudiosE, DEV TECH, Unmade — send today if not yet sent.</div>
+      <div class="dot dot-red-s"></div>
+      <div>
+        <span class="action-partner">Megan 1:1 (13:00)</span>
+        Bluebird: get template, confirm LATAM eligibility, Portuguese with Marcelo
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Leonardo</span> — WhatsApp response pending.</div>
+      <div class="dot dot-amber-s"></div>
+      <div>
+        <span class="action-partner">Simplify / Elias</span>
+        Duty-free Panama activation timeline → trigger case study
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Ads-Alchemy</span> — Webinar invite pending.</div>
+      <div class="dot dot-amber-s"></div>
+      <div>
+        <span class="action-partner">Vitamina Online</span>
+        Send HP-2 to Miriam (miriam@vitaminaonline.com.mx) — post-IRL follow-up
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Novaventa</span> — Kevin contract follow-up. Normal or multi-brand agreement? Check with Kevin.</div>
+      <div class="dot dot-amber-s"></div>
+      <div>
+        <span class="action-partner">METARD</span>
+        Send HP-2 to Edgar Made (edgarmade@gmail.com) — post-IRL follow-up
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Renata</span> — MDF Q3 follow-up pending.</div>
+      <div class="dot dot-amber-s"></div>
+      <div>
+        <span class="action-partner">Ads-Alchemy</span>
+        Send HP-2 to pm.campos@ads-alchemy.com — post-IRL follow-up
+      </div>
     </div>
     <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Latech</span> — Argentina bank instructions needed.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Wualá / César</span> — Academy coupons pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-red"></div>
-      <div><span class="action-partner">Moxie / Nico</span> — Mercado Pago invoice issue (separate from Nicola's PO).</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Infracommerce</span> — Michelle to send: ERP guide + Agentic Commerce webinar links + GEO/SEO playbook. Antonio to check translation viability. Shared Q&A sheet (col D).</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">VPF Gap</span> — ~$20K unpaid over 4 quarters. Marcelo to document + align with Ryan Cotton (finance).</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Bluebird Campaign</span> — Get details from Megan mid-week. Push for Partner Powered eligibility. Portuguese translation (Marcelo).</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Dango</span> — Enable monthly Shopify Payments MX. Build MDF brief together (Q3). Bring pipeline data.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Codefy</span> — Brochure + incentive payment pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Latech</span> — Ecommerce Day brief pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Lab51</span> — 15% commission follow-up.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">VN Studios</span> — Premier status discussion pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Triciclo</span> — Contract extension pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Maida Chile</span> — Speaker confirmation pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Kik Chile</span> — Open item pending.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">Dinkbit</span> — Factura app follow-up.</div>
-    </div>
-    <div class="action-item">
-      <div class="action-dot dot-amber"></div>
-      <div><span class="action-partner">MSI</span> — Email Mattie pending.</div>
+      <div class="dot dot-blue-s"></div>
+      <div>
+        <span class="action-partner">CBI Market</span>
+        Directory optimize by May 6 · Lama Bike case study by May 13 · Register Plus client by May 6
+      </div>
     </div>
   </div>
 
-  <!-- MDF RADAR -->
   <div class="sidebar-section">
-    <h3>📊 Q2 MDF Radar</h3>
-    <div class="mdf-item">
-      <span class="mdf-name">Latech</span>
-      <span class="mdf-status" style="background:#dcfce7;color:#166534">Submitted</span>
+    <div class="sidebar-title">Q3/Q4 MDF Radar</div>
+    <div class="mdf-row">
+      <span class="mdf-name">Simplify (Elias)</span>
+      <span class="mdf-amount">TBD</span>
+      <span class="mdf-status">Duty-free case study</span>
     </div>
-    <div class="mdf-item">
-      <span class="mdf-name">Moxie CO (Q2)</span>
-      <span class="mdf-status" style="background:#fef3c7;color:#92400e">Pending Approval</span>
-    </div>
-    <div class="mdf-item">
-      <span class="mdf-name">Dango (Q3)</span>
-      <span class="mdf-status" style="background:#ede9fe;color:#5b21b6">Building Brief</span>
-    </div>
-    <div class="mdf-item">
-      <span class="mdf-name">Renata MDF Q3</span>
-      <span class="mdf-status" style="background:#fee2e2;color:#991b1b">Follow-up Needed</span>
-    </div>
-    <div class="mdf-item">
-      <span class="mdf-name">Moxie CO Q1 Invoice</span>
-      <span class="mdf-status" style="background:#fef3c7;color:#92400e">Awaiting PO</span>
+    <div class="mdf-row">
+      <span class="mdf-name">CBI Market</span>
+      <span class="mdf-amount">TBD</span>
+      <span class="mdf-status">HP-3 launched</span>
     </div>
   </div>
 
-  <!-- PIPELINE WATCH -->
   <div class="sidebar-section">
-    <h3>🔭 Pipeline Watch</h3>
-    <div class="pipe-item">
-      <div class="pipe-name">Novaventa / Grupo Nutresa</div>
-      <div class="pipe-detail">Moxie CO. Integration delays (legacy SBN system). Board: migrate before Oct. Contract: 1 yr or multi-brand? Kevin/Jon/Jason.</div>
+    <div class="sidebar-title">Pipeline Watch</div>
+    <div class="pipeline-item">
+      <div class="pipeline-name">Simplify — Guatemala Plus</div>
+      <div class="pipeline-detail">Closing stages · Elias managing · Plus deal</div>
     </div>
-    <div class="pipe-item">
-      <div class="pipe-name">Moxy Colombia — ⚠️ AT RISK</div>
-      <div class="pipe-detail">Q1 Plus deal. Merchant confused on contract. AE Sydney Martin gone (Apr 24 last day). Connect Viviana. Monitor.</div>
+    <div class="pipeline-item">
+      <div class="pipeline-name">Simplify — Panama duty-free</div>
+      <div class="pipeline-detail">MVP launched · Awaiting country activation · Plus potential</div>
     </div>
-    <div class="pipe-item">
-      <div class="pipe-name">Bluebird Pipeline Gap</div>
-      <div class="pipe-detail">LATAM needs 57 closed-won deals. Only 9 open opps. Launch May 1–6. Push all partners for new biz referrals.</div>
+    <div class="pipeline-item">
+      <div class="pipeline-name">CBI Market — Lama Bike B2B</div>
+      <div class="pipeline-detail">~MXN 1M/month · Case study pending by May 13</div>
     </div>
   </div>
 
-  <!-- COMING UP -->
   <div class="sidebar-section">
-    <h3>📅 Coming Up</h3>
-    <div class="cal-item">
-      <div class="cal-date">Today</div>
-      <div class="cal-text"><span class="cal-hot">✈️ Chile Trip Day 1</span> — TKA Shopify Day + Kinegun</div>
+    <div class="sidebar-title">This Week</div>
+    <div class="cal-day cal-today">
+      <div class="cal-day-label">Tue Apr 28</div>
+      <div class="cal-item"><span class="cal-time">8:25</span><span class="cal-item-name">VS Pulse</span></div>
+      <div class="cal-item"><span class="cal-time">9:00</span><span class="cal-item-name">All Hands AMER/EMEA</span></div>
+      <div class="cal-item"><span class="cal-time">10:00</span><span class="cal-item-name">Simplify / Elias</span></div>
+      <div class="cal-item"><span class="cal-time">11:00</span><span class="cal-item-name">Paulina Navarro (intro)</span></div>
+      <div class="cal-item"><span class="cal-time">11:30</span><span class="cal-item-name">Saltamontes MX (intro)</span></div>
+      <div class="cal-item"><span class="cal-time">12:00</span><span class="cal-item-name">Unmade / Alfredo (intro)</span></div>
+      <div class="cal-item"><span class="cal-time">13:00</span><span class="cal-item-name">Megan 1:1 — Bluebird</span></div>
+      <div class="cal-item"><span class="cal-time">13:30</span><span class="cal-item-name">Nassim 1:1</span></div>
     </div>
-    <div class="cal-item">
-      <div class="cal-date">Tue Apr 28</div>
-      <div class="cal-text"><span class="cal-hot">✈️ Chile Trip Day 2</span> — meetings in Santiago</div>
+    <div class="cal-day">
+      <div class="cal-day-label">Wed Apr 29</div>
+      <div class="cal-item"><span class="cal-time">—</span><span class="cal-item-name">Follow-up day: post-calls</span></div>
     </div>
-    <div class="cal-item">
-      <div class="cal-date">Today</div>
-      <div class="cal-text">🤝 Ally returns → AI Growth Plan V2 kick-off with Megan</div>
+    <div class="cal-day">
+      <div class="cal-day-label">Thu Apr 30 🔴</div>
+      <div class="cal-item"><span class="cal-time">10:00</span><span class="cal-item-name">Webinar — Cómo Crecer tu Agencia</span></div>
     </div>
-    <div class="cal-item">
-      <div class="cal-date">May 1–6</div>
-      <div class="cal-text"><span class="cal-hot">🚀 Bluebird Campaign launch</span> — get template + eligibility details from Megan mid-week</div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-title">Next Week</div>
+    <div class="cal-day">
+      <div class="cal-day-label">May 6</div>
+      <div class="cal-item"><span class="cal-time">—</span><span class="cal-item-name">CBI: directory + Plus client portal deadline</span></div>
     </div>
-    <div class="cal-item">
-      <div class="cal-date">May (TBD)</div>
-      <div class="cal-text">🎪 Partner Editions / Dev conference — many LATAM partners attending. Marcelo positioning as LATAM partner offsite.</div>
+    <div class="cal-day">
+      <div class="cal-day-label">May 13</div>
+      <div class="cal-item"><span class="cal-time">—</span><span class="cal-item-name">CBI: Lama Bike case study deadline</span></div>
     </div>
-    <div class="cal-item">
-      <div class="cal-date">May 7</div>
-      <div class="cal-text">✴️ Mastery Period ends</div>
+    <div class="cal-day">
+      <div class="cal-day-label">May 17</div>
+      <div class="cal-item"><span class="cal-time">—</span><span class="cal-item-name">CBI Market check-in (Rodolfo)</span></div>
     </div>
   </div>
 
 </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-  <span>Partner Brief · Mon Apr 27, 2026 · LATAM Book of Business</span>
-  <span>Sources: Google Calendar · 4 Gemini notes (Dango Apr 13, Moxie Apr 21, Moxie Monthly Mar 25, Kickass Mar 27) · Session context · No new Gemini notes from weekend</span>
+  Generated Tue Apr 28, 2026 · 3 Gemini notes read (Simplify Apr 14, Simplify Mar 3, Simplify JBP Jan 7) · Transcriptions: OneSellout Apr 27, Snowball Apr 27, CBI Market Apr 27
 </div>
 
 </body>
