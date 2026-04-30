@@ -3,536 +3,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner Brief — Wednesday Apr 29, 2026</title>
+<title>Partner Brief — Thursday Apr 30, 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f5f7; color: #1a1a2e; }
 
   .banner {
-    background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 40%, #2563eb 70%, #3b82f6 100%);
-    padding: 28px 36px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 28px 32px 22px;
+    border-bottom: 4px solid #00d4ff;
   }
-  .banner h1 { font-size: 26px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
-  .banner .subtitle { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 6px; }
-  .banner .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-  .badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.3px; }
-  .badge-blue { background: rgba(255,255,255,0.15); color: #fff; }
-  .badge-amber { background: rgba(251,191,36,0.25); color: #fde68a; }
-  .badge-red { background: rgba(239,68,68,0.25); color: #fca5a5; }
-  .badge-green { background: rgba(34,197,94,0.25); color: #86efac; }
-  .badge-purple { background: rgba(139,92,246,0.25); color: #d8b4fe; }
+  .banner h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  .banner .sub { font-size: 14px; color: #a0c4d4; margin-top: 4px; }
 
   .critical-bar {
-    background: linear-gradient(90deg, #7c1d1d 0%, #991b1b 100%);
-    border-left: 4px solid #ef4444;
-    padding: 12px 36px;
+    background: #c0392b;
+    color: white;
+    padding: 10px 32px;
     font-size: 13px;
-    color: #fecaca;
-    display: flex; align-items: center; gap: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .critical-bar strong { color: #fff; }
+  .critical-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #ff6b6b; animation: pulse 1.2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
-  .layout { display: grid; grid-template-columns: 1fr 320px; gap: 0; max-width: 100%; }
-  .main { padding: 24px 28px; border-right: 1px solid #1e293b; }
-  .sidebar { padding: 20px; background: #0a1628; }
+  .mastery-bar {
+    background: linear-gradient(90deg, #6c3483, #8e44ad);
+    color: white;
+    padding: 9px 32px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .layout { display: grid; grid-template-columns: 1fr 320px; gap: 20px; padding: 20px 24px; max-width: 1200px; }
 
   .section-label {
-    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
-    color: #64748b; margin-bottom: 12px; margin-top: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #777;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 18px;
   }
   .section-label:first-child { margin-top: 0; }
 
-  .card { border-radius: 10px; margin-bottom: 14px; overflow: hidden; border: 1px solid #1e293b; background: #111827; }
-  .card-intl { border-left: 4px solid #10b981; }
-  .card-hp { border-left: 4px solid #6366f1; }
-  .card-emerging { border-left: 4px solid #f59e0b; }
-  .card-webinar { border-left: 4px solid #06b6d4; }
-  .card-internal { border-left: 4px solid #6b7280; }
-  .card-declined { opacity: 0.5; }
-
-  .card-header {
-    padding: 12px 16px 10px;
-    display: flex; align-items: flex-start; justify-content: space-between;
-    border-bottom: 1px solid #1e293b;
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid #ccc;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   }
-  .card-time { font-size: 12px; font-weight: 700; color: #94a3b8; font-variant-numeric: tabular-nums; white-space: nowrap; margin-right: 10px; margin-top: 2px; }
-  .card-title { font-size: 15px; font-weight: 700; color: #f1f5f9; flex: 1; }
-  .card-subtitle { font-size: 12px; color: #64748b; margin-top: 2px; }
-  .card-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-  .pill { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 12px; }
-  .pill-intl { background: #064e3b; color: #6ee7b7; }
-  .pill-hp { background: #1e1b4b; color: #a5b4fc; }
-  .pill-emerging { background: #451a03; color: #fcd34d; }
-  .pill-webinar { background: #0c2a35; color: #67e8f9; }
-  .pill-internal { background: #1e293b; color: #94a3b8; }
-  .pill-red { background: #450a0a; color: #fca5a5; }
-  .pill-mastery { background: #2d1a4e; color: #d8b4fe; }
+  .card.green { border-left-color: #27ae60; }
+  .card.blue { border-left-color: #2980b9; }
+  .card.orange { border-left-color: #e67e22; }
+  .card.red { border-left-color: #c0392b; }
+  .card.purple { border-left-color: #8e44ad; }
+  .card.gray { border-left-color: #bdc3c7; }
+  .card.teal { border-left-color: #16a085; }
 
-  .card-body { padding: 12px 16px; }
-  .attendees-row { font-size: 12px; color: #94a3b8; margin-bottom: 10px; }
-  .attendees-row a { color: #60a5fa; text-decoration: none; }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .card-title { font-size: 14px; font-weight: 700; }
+  .card-time { font-size: 11px; color: #888; white-space: nowrap; margin-left: 10px; }
+  .card-body { font-size: 13px; color: #444; line-height: 1.55; }
+  .card-body ul { padding-left: 16px; margin-top: 6px; }
+  .card-body ul li { margin-bottom: 3px; }
+  .card-body .people { font-size: 12px; color: #777; margin-top: 6px; font-style: italic; }
 
-  .bubble { border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; font-size: 12.5px; line-height: 1.55; }
-  .bubble-green { background: #052e16; border-left: 3px solid #16a34a; color: #bbf7d0; }
-  .bubble-amber { background: #1c1000; border-left: 3px solid #d97706; color: #fde68a; }
-  .bubble-blue { background: #0c1a2e; border-left: 3px solid #2563eb; color: #93c5fd; }
-  .bubble-red { background: #1a0505; border-left: 3px solid #dc2626; color: #fca5a5; }
-  .bubble-indigo { background: #0d0f2e; border-left: 3px solid #4f46e5; color: #a5b4fc; }
-  .bubble-gray { background: #111827; border-left: 3px solid #374151; color: #9ca3af; }
-  .bubble-purple { background: #1a0d2e; border-left: 3px solid #7c3aed; color: #d8b4fe; }
-  .bubble-cyan { background: #0a2030; border-left: 3px solid #0891b2; color: #67e8f9; }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-right: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag.hp { background: #fde8d0; color: #c0392b; }
+  .tag.sp { background: #d6eaf8; color: #1a5276; }
+  .tag.internal { background: #eaf0fb; color: #2c3e50; }
+  .tag.webinar { background: #d5f5e3; color: #145a32; font-size: 11px; }
+  .tag.declined { background: #f2f3f4; color: #aaa; text-decoration: line-through; }
 
-  .bubble strong { font-weight: 700; }
-  .bubble ul { list-style: none; padding-left: 0; }
-  .bubble ul li::before { content: "· "; opacity: 0.5; }
+  .webinar-card {
+    background: linear-gradient(135deg, #145a32, #1e8449);
+    color: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .webinar-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .webinar-card .stats { display: flex; gap: 20px; margin-top: 10px; }
+  .webinar-card .stat { text-align: center; }
+  .webinar-card .stat .num { font-size: 22px; font-weight: 800; }
+  .webinar-card .stat .lbl { font-size: 10px; opacity: 0.8; text-transform: uppercase; }
+  .webinar-card .body { font-size: 13px; opacity: 0.9; line-height: 1.5; }
 
-  .tag-open { color: #ef4444; font-weight: 700; font-size: 11px; }
-  .tag-done { color: #22c55e; font-weight: 700; font-size: 11px; }
-  .tag-note { color: #a78bfa; font-weight: 700; font-size: 11px; }
+  /* Sidebar */
+  .sidebar {}
+  .sidebar-card {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .sidebar-card h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; margin-bottom: 10px; }
+  .action-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; line-height: 1.45; }
+  .action-item .bullet { color: #e74c3c; font-size: 16px; line-height: 1; flex-shrink: 0; }
+  .action-item .bullet.blue { color: #2980b9; }
+  .action-item .bullet.green { color: #27ae60; }
+  .action-item .bullet.purple { color: #8e44ad; }
 
-  .playbook-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
-  .playbook-table th { background: #1e293b; color: #94a3b8; text-transform: uppercase; font-size: 10px; letter-spacing: 0.8px; padding: 8px 10px; text-align: left; }
-  .playbook-table td { padding: 8px 10px; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
-  .playbook-table tr:hover td { background: #1a2235; }
-  .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
-  .dot-green { background: #22c55e; } .dot-amber { background: #f59e0b; } .dot-blue { background: #3b82f6; } .dot-red { background: #ef4444; }
+  .pipeline-item { font-size: 12px; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f0f0f0; }
+  .pipeline-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .pipeline-item .partner { font-weight: 700; }
+  .pipeline-item .deal { color: #555; }
+  .pipeline-item .status { font-size: 10px; color: #e67e22; font-weight: 600; text-transform: uppercase; }
 
-  .sidebar-section { margin-bottom: 24px; }
-  .sidebar-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #475569; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 6px; }
-  .action-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #94a3b8; line-height: 1.4; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
-  .dot-red-s { background: #ef4444; } .dot-amber-s { background: #f59e0b; } .dot-blue-s { background: #3b82f6; } .dot-green-s { background: #22c55e; } .dot-purple-s { background: #8b5cf6; }
-  .action-partner { font-weight: 600; color: #e2e8f0; display: block; }
-
-  .pipeline-item { font-size: 12px; margin-bottom: 8px; padding: 8px 10px; background: #0f1f35; border-radius: 6px; border-left: 3px solid #2563eb; }
-  .pipeline-name { font-weight: 600; color: #93c5fd; }
-  .pipeline-detail { color: #64748b; font-size: 11px; margin-top: 2px; }
-
-  .cal-day { margin-bottom: 10px; }
-  .cal-day-label { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #475569; letter-spacing: 0.8px; margin-bottom: 4px; }
-  .cal-item { font-size: 11px; color: #94a3b8; padding: 3px 0; display: flex; gap: 8px; }
-  .cal-time { color: #475569; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .cal-today .cal-item { color: #cbd5e1; }
-
-  .mastery-bar { background: linear-gradient(90deg, #1e1b4b, #2e1065); border-left: 4px solid #7c3aed; padding: 10px 36px; font-size: 12px; color: #d8b4fe; }
-  .mastery-bar strong { color: #fff; }
-
-  .footer { text-align: center; padding: 20px; font-size: 11px; color: #334155; border-top: 1px solid #1e293b; }
+  .week-item { font-size: 12px; margin-bottom: 5px; color: #555; padding-left: 10px; position: relative; }
+  .week-item::before { content: '·'; position: absolute; left: 0; color: #aaa; }
+  .week-item .day { font-weight: 700; color: #333; }
 </style>
 </head>
 <body>
 
 <div class="banner">
-  <h1>Partner Brief — Wednesday Apr 29, 2026</h1>
-  <div class="subtitle">Lab51 · Lobo · Vitamina HP-2 Deep Dive · Atoms · Q1 Webinar — big day</div>
-  <div class="badge-row">
-    <span class="badge badge-blue">4 partner calls</span>
-    <span class="badge badge-cyan">Webinar at 12pm today</span>
-    <span class="badge badge-amber">Vitamina HP-2 → HP-3 draft after</span>
-    <span class="badge badge-red">Bon Graven WhatsApp for Nicolas</span>
-    <span class="badge badge-purple">Mastery Conversations Apr 30–May 7</span>
-  </div>
+  <h1>Partner Brief — Thursday, April 30</h1>
+  <div class="sub">Q2 · Webinar Day · Mastery Conversations Begin · 7 meetings</div>
 </div>
 
 <div class="critical-bar">
-  ⚡ <strong>Critical today:</strong>
-  WhatsApp Bon Graven for Nicolas (Lab51 / DBS deal) · Vitamina HP-2 Deep Dive → draft HP-3 after · Follow up with César: Commerce Stack MDF deck pending review · Push Kik on May event planning (Lobo)
+  <div class="dot"></div>
+  WEBINAR LIVE AT 10AM — "Cómo Crecer tu Agencia en México" · 62 confirmed · 138 invited · Your deck is ready
 </div>
 
 <div class="mastery-bar">
-  ✴️ <strong>Mastery Period active</strong> — Mastery Conversations window opens tomorrow Apr 30 through May 7. Check talent.shopify.io for action items.
+  ✴️ Mastery Conversations: Apr 30 – May 7 · Check talent.shopify.io · Nassim 1:1 at 11am today
 </div>
 
 <div class="layout">
-<div class="main">
+  <div class="main">
 
-  <div class="section-label">Today's Meetings</div>
+    <div class="section-label">Morning — Partner Meetings</div>
 
-  <!-- VS Pulse -->
-  <div class="card card-internal">
-    <div class="card-header">
-      <span class="card-time">8:25</span>
-      <div style="flex:1">
-        <div class="card-title">VS Daily Pulse Check</div>
-        <div class="card-subtitle">Internal · 5 min</div>
-        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Daily VS pulse. Quick standup.</div>
-    </div>
-  </div>
-
-  <!-- 333 -->
-  <div class="card card-internal">
-    <div class="card-header">
-      <span class="card-time">9:00</span>
-      <div style="flex:1">
-        <div class="card-title">333</div>
-        <div class="card-subtitle">Internal · 30 min</div>
-        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Internal meeting — no details in calendar.</div>
-    </div>
-  </div>
-
-  <!-- Lab51 -->
-  <div class="card card-intl">
-    <div class="card-header">
-      <span class="card-time">9:30</span>
-      <div style="flex:1">
-        <div class="card-title">Lab51 — Nicolas Valenzuela</div>
-        <div class="card-subtitle">Biweekly · Chile · International Partner</div>
-        <div class="card-pills">
-          <span class="pill pill-intl">International</span>
-          <span class="pill pill-hp">EP/Plus</span>
+    <!-- Producteca / Parsimotion -->
+    <div class="card blue">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Nicolas Alvarez — Producteca + Mara Ripoll (Parsimotion)</div>
+          <span class="tag sp">New</span>
         </div>
+        <div class="card-time">9:00 – 9:30 AM</div>
+      </div>
+      <div class="card-body">
+        First or early-stage meeting. Producteca is a marketplace management SaaS (Mercado Libre integrations, multi-channel inventory) from Argentina. Mara Ripoll from Parsimotion joining — likely a referral or joint context.
+        <ul>
+          <li>Understand how Producteca fits the Shopify partner ecosystem (tech partner vs. agency?)</li>
+          <li>Explore co-sell or integration angle — their merchants likely need a storefront; Shopify is the logical destination</li>
+          <li>Parsimotion context unknown — ask how they came to this call and what they're building</li>
+        </ul>
+        <div class="people">Nicolas Alvarez &amp; Ezequiel (Producteca) · Mara Ripoll (Parsimotion)</div>
       </div>
     </div>
-    <div class="card-body">
-      <div class="attendees-row">
-        <strong>Nicolas Valenzuela</strong> &lt;<a href="mailto:nicolas@lab51.cl">nicolas@lab51.cl</a>&gt; · Accepted
-      </div>
 
-      <div class="bubble bubble-green">
-        <strong>Active pipeline — 2 Plus projects in flight:</strong>
-        <ul>
-          <li>Multibrand Plus site with Forus + Oxford — launching next month (~May)</li>
-          <li>Property transfer via app: still pending — not yet done</li>
-          <li>Another Plus contract in progress</li>
-        </ul>
-      </div>
-
-      <div class="bubble bubble-green">
-        <strong>Q2 incentive campaign (confidential — not officially launched yet):</strong>
-        <ul>
-          <li>Extra one-time bonus on top of normal incentives</li>
-          <li>Applies to referred stores OR self-transferred stores that activate ownership Apr 1–Jun 30</li>
-          <li>Confirmed it's happening — share with Nicolas as heads-up</li>
-        </ul>
-      </div>
-
-      <div class="bubble bubble-amber">
-        <span class="tag-open">[OPEN]</span> <strong>DBS deal (partner-originated):</strong> Nicolas sent proposal, client shopping around comparing cheaper agencies. Nicolas asked Antonio to WhatsApp <strong>Bon Graven</strong> to vouch for Lab51 — do this today before the call or during<br><br>
-        <span class="tag-open">[OPEN]</span> <strong>Event "26" planning:</strong> Nicolas wants Shopify POS booth + Blond brand merchandise for live POS demo experience. Schedule planning meeting with Shopify team — Nicolas will send calendar invite.
-      </div>
-
-      <div class="bubble bubble-blue">
-        <span class="tag-note">[OPP]</span> Forus + Oxford multibrand Plus launch next month = double rev share activation. Confirm property transfer process with Nicolas so it counts under Q2 incentive window (before Jun 30).
-      </div>
-    </div>
-  </div>
-
-  <!-- Lobo -->
-  <div class="card card-intl">
-    <div class="card-header">
-      <span class="card-time">10:00</span>
-      <div style="flex:1">
-        <div class="card-title">Lobo Creaciones — Felipe + Sebastián</div>
-        <div class="card-subtitle">Biweekly · Chile · International Partner</div>
-        <div class="card-pills">
-          <span class="pill pill-intl">International</span>
+    <!-- Lop biweekly -->
+    <div class="card teal">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Lop biweekly — Sergio &amp; Esteban Di Stilio</div>
+          <span class="tag sp">SP</span>
         </div>
+        <div class="card-time">9:30 – 10:00 AM</div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="attendees-row">
-        <strong>Felipe Moreno</strong> &lt;<a href="mailto:fmoreno@lobocreaciones.com">fmoreno@lobocreaciones.com</a>&gt; · Accepted &nbsp;|&nbsp;
-        <strong>Sebastián Dagá</strong> &lt;<a href="mailto:sdaga@lobocreaciones.com">sdaga@lobocreaciones.com</a>&gt; · No response
-      </div>
-
-      <div class="bubble bubble-green">
-        <strong>Active deals (Apr 15 note):</strong>
+      <div class="card-body">
+        Last call (Apr 16): two new Plus deals pipeline. Grido (1,800 franchise ice cream chain) and a lubricant company (Shell license). Both innovative architecturally — multi-branch marketplace + ERP integration.
         <ul>
-          <li>Jessica Cooper / Mauricio: 5 brands (Rusty, Glove, Hansen + others) — Mauricio reticent on Shopify/loves Magento. Strategy: pitch 1 brand only first. Brands share products so 1 Plus license covers ~3 brands. Felipe wants Antonio in a conviction meeting</li>
-          <li>Hansen: outdoor brand (Norwegian competitor, Norrøna tier), Felipe managing separately</li>
-          <li>Costa Rica: Apple reseller expansion — targeting top Shopify partners</li>
+          <li><strong>Lubricants company (Shell brands):</strong> signed contract, going to Plus directly. Focus: B2B + ERP (RP18) integration. Action: send B2B Plus vs. B2B PDF — <em>you committed to this Apr 16</em></li>
+          <li><strong>Grido franchise marketplace:</strong> 1,800 branches, WhatsApp catalog + per-branch Shopify checkout. Ask for update — are they moving forward? Michel session on marketplaces is the resource</li>
+          <li><strong>Self-checkout kiosk project:</strong> API-triggered car wash machine via Shopify — exploratory, check if they want to book a tech consult</li>
+          <li><strong>World Cup tickets:</strong> Esteban has 2, 340 remaining — they were buying before the visa, check if sorted</li>
+          <li>Office Hours with Michel: block time on their calendar today for the marketplace session</li>
         </ul>
-      </div>
-
-      <div class="bubble bubble-amber">
-        <span class="tag-open">[OPEN]</span> <strong>Conviction meeting for Mauricio:</strong> Felipe wants Antonio to join — "nunca lo hemos usado esta dinámica y creemos que lo necesitamos." Schedule this.<br><br>
-        <span class="tag-open">[OPEN]</span> <strong>Toronto May 25–29:</strong> Block calendar for Lobo cowork visit — they'll send invite. Possible client visit in Chile depending on schedule.<br><br>
-        <span class="tag-open">[OPEN]</span> <strong>May event (Kik):</strong> Push Kik — venue 99% confirmed, blocks format (morning/afternoon), but no progress on planning. Antonio + Felipe + Sebastián agreed to support her.
-      </div>
-
-      <div class="bubble bubble-blue">
-        <span class="tag-note">[OPP]</span> Q3 MDF: Lobo wants to use Q3 fund. Q4: big "Shopify Day" event — speakers, merchants, partner sponsors. Antonio may attend in person. Start MDF Q3 planning conversation today.
+        <div class="people">Sergio Di Stilio · Esteban Di Stilio · Argentina</div>
       </div>
     </div>
-  </div>
 
-  <!-- MJim -->
-  <div class="card card-internal">
-    <div class="card-header">
-      <span class="card-time">10:30</span>
-      <div style="flex:1">
-        <div class="card-title">MJim</div>
-        <div class="card-subtitle">Internal · 30 min</div>
-        <div class="card-pills"><span class="pill pill-internal">Internal</span></div>
+    <div class="section-label">10:00 AM — Webinar</div>
+
+    <!-- Webinar -->
+    <div class="webinar-card">
+      <div class="card-header" style="margin-bottom:6px;">
+        <h3>🎓 Webinar: Cómo Crecer tu Agencia en México — Construye con Shopify</h3>
+        <span style="font-size:11px;opacity:0.7;white-space:nowrap;margin-left:10px;">10:00 – 11:00 AM</span>
+      </div>
+      <div class="body">
+        Your 32-slide deck is locked and loaded. Flow: El Momento México → Shopify Payments → Phase 3 Scaling → ¿Cómo consigo clientes? → ICP Tool → Certifications → 3 things this week. Tight 45 min + Q&A.
+        <br><br>
+        Top 40 partners confirmed: OnSellOut (Edgar), Codefy, EverestUp, Niklas MX, Marketino Digital, Snowball (Alejandra), Saltamontes (Samia). Notable decline: eCohete (Carlos). Also confirmed: Myshopiguru, Paul Armenta.
+        <br><br>
+        <strong>After the webinar:</strong> identify engaged attendees (who asked questions, who stayed to end) → prioritize for SP-2 / HP-2 follow-ups. Update tracker same day.
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">62</div><div class="lbl">Confirmed</div></div>
+        <div class="stat"><div class="num">67</div><div class="lbl">Pending</div></div>
+        <div class="stat"><div class="num">9</div><div class="lbl">Declined</div></div>
+        <div class="stat"><div class="num">138</div><div class="lbl">Total Invited</div></div>
       </div>
     </div>
-    <div class="card-body">
-      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Internal meeting — no details in calendar.</div>
-    </div>
-  </div>
 
-  <!-- Vitamina -->
-  <div class="card card-hp">
-    <div class="card-header">
-      <span class="card-time">11:00</span>
-      <div style="flex:1">
-        <div class="card-title">Vitamina Online — HP-2 Deep Dive</div>
-        <div class="card-subtitle">Miriam Campos + team · High Performer · Most productive LATAM Core agency</div>
-        <div class="card-pills">
-          <span class="pill pill-hp">High Performer</span>
-          <span class="pill" style="background:#1e3a5f;color:#93c5fd;">HP-2 Deep Dive</span>
+    <div class="section-label">Midday — Internal + Partners</div>
+
+    <!-- Nassim 1:1 -->
+    <div class="card purple">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Nassim — Antonio 1:1</div>
+          <span class="tag internal">Internal</span>
         </div>
+        <div class="card-time">11:00 – 11:30 AM</div>
+      </div>
+      <div class="card-body">
+        Mastery Conversations open today. This is likely your mastery conversation with Nassim. Have your narratives ready: Q2 pipeline progress, webinar execution (live today), partner activations (Vitamina HP-2 → HP-3, Lobo conviction meeting, Lab51 DBS deal). Check talent.shopify.io before joining.
       </div>
     </div>
-    <div class="card-body">
-      <div class="attendees-row">
-        <strong>Miriam Campos</strong> &lt;<a href="mailto:miriam@vitaminaonline.com.mx">miriam@vitaminaonline.com.mx</a>&gt; · Accepted &nbsp;|&nbsp;
-        Mayra &lt;mayra@vitaminaonline.com.mx&gt; · No response &nbsp;|&nbsp;
-        <strong>Edith T</strong> &lt;edith@vitaminaonline.com.mx&gt; · Accepted &nbsp;|&nbsp;
-        Gabriela Arrazola &lt;gaby@vitaminaonline.com.mx&gt; · No response
-      </div>
 
-      <div class="bubble bubble-indigo">
-        <strong>This IS the HP-2 Deep Dive.</strong> Miriam brought 3 team members. Goal: leave this call with a complete GTM plan to send as HP-3.
-        <ul>
-          <li>Vitamina = most productive LATAM Core agency — long relationship with Antonio</li>
-          <li>No formal prior Gemini notes on 1:1s — relationship predates the structured cadence</li>
-          <li>Tone: peers, not a pitch. She knows Shopify better than most.</li>
-        </ul>
-      </div>
-
-      <div class="bubble bubble-amber">
-        <span class="tag-open">[OPEN]</span> <strong>Deep Dive agenda — cover all three:</strong>
-        <ul>
-          <li>ICP refinement: which clients give highest LTV / Plus potential</li>
-          <li>Better Together story: how Vitamina positions alongside Shopify for larger merchants</li>
-          <li>Co-sell strategy: PPS pipeline, how to route Plus opps through partner portal</li>
-        </ul>
-      </div>
-
-      <div class="bubble bubble-red">
-        <span class="tag-open">[OPEN]</span> Draft HP-3 (GTM plan) for Miriam immediately after this call — same day while context is fresh. Template: ICP, Better Together story, Plus/co-sell strategy, 3 action items with deadlines, 20-day check-in date.
-      </div>
-    </div>
-  </div>
-
-  <!-- Atoms -->
-  <div class="card card-emerging">
-    <div class="card-header">
-      <span class="card-time">11:30</span>
-      <div style="flex:1">
-        <div class="card-title">Atoms — César Basurto</div>
-        <div class="card-subtitle">Biweekly · Mexico City · High Performer</div>
-        <div class="card-pills">
-          <span class="pill pill-hp">High Performer</span>
-          <span class="pill pill-red">MDF deck pending</span>
+    <!-- VNS biweekly -->
+    <div class="card orange">
+      <div class="card-header">
+        <div>
+          <div class="card-title">VNS-Shopify biweekly — Ricardo Ceci &amp; Pablo Veliz</div>
+          <span class="tag hp">HP</span>
         </div>
+        <div class="card-time">11:30 AM – 12:00 PM</div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="attendees-row">
-        <strong>César Basurto</strong> &lt;<a href="mailto:cesar@atoms.mx">cesar@atoms.mx</a>&gt; · Accepted
-      </div>
-
-      <div class="bubble bubble-green">
-        <strong>Active pipeline (Apr 15 note):</strong>
+      <div class="card-body">
+        Last call (Apr 15): VNS likely Premier as of Q2 — confirm with Ops before this call. MDF Q3 pending (eCommerce Day university event). AI campaign brief "Ecommerce + AI: The Playbook" is in review — Nicole Tuttobene left two open comments on Apr 23.
         <ul>
-          <li>Flex e-commerce: competing with 2 other agencies, director loved the pitch ("resuelve el pain exactamente") — Atoms offered Shopify partner backing as differentiator. Awaiting quote decision</li>
-          <li>Steel: proposal advancing, next steps pending</li>
-          <li>Client with 11 branches: planning hardware purchase (POS)</li>
-          <li>Vicky Form + Cloe Reyes: starting to work with both — Mexican heritage brands</li>
-          <li>Gloriaalo (AI event Apr 15): 3 strong leads including swimwear brand with 2 branches, all with follow-up meetings booked</li>
+          <li><strong>Premier status:</strong> check ops before joining — you said "voy a ver" on Apr 15. Deliver the answer today</li>
+          <li><strong>Q3 MDF (eCommerce Day):</strong> Ricardo submitting Friday. Likely approved but they may need to pick one of two proposals — brief them on the scenario</li>
+          <li><strong>AI Campaign brief ("Ecommerce + AI: The Playbook"):</strong> Nicole asked (1) has ebook copy been drafted? and (2) itemized cost breakdown for the $6K. Get answers from Ricardo; unblock these comments to move to approval</li>
+          <li><strong>PCC/Michel session:</strong> waiting on Editions (May 4–5) — confirm the plan is still to schedule after May 5</li>
+          <li><strong>Argentina payment issue (Shak client):</strong> Did they resolve via bank or Shopify support? Follow up</li>
         </ul>
-      </div>
-
-      <div class="bubble bubble-amber">
-        <span class="tag-open">[OPEN]</span> <strong>Commerce Stack MDF deck:</strong> César promised to send before official MDF submission. New agent reviewing — Antonio must review before César submits. Confirm if deck arrived; if not, ask for it today.<br><br>
-        <span class="tag-open">[OPEN]</span> <strong>Commerce Stack event — early July, Atoms anniversary:</strong> 100 people, Polanco, panel format (merchants + partner sponsors). Clavijo + TikTok co-sponsors confirmed. César needs MDF budget from Shopify + Clavio + TikTok + 1 more.<br><br>
-        <span class="tag-open">[OPEN]</span> <strong>Flex deal:</strong> Offer to join a call as Shopify partner — César said the director was very receptive to the Shopify angle.
-      </div>
-
-      <div class="bubble bubble-blue">
-        <span class="tag-note">[OPP]</span> Commerce Stack (July): if Atoms gets MDF approved, this is a high-visibility event in Polanco for 100+ people. Antonio potentially attending in person — flag for calendar.
+        <div class="people">Ricardo Ceci · Pablo Veliz · VN Studios · Argentina/Uruguay</div>
       </div>
     </div>
-  </div>
 
-  <!-- Webinar -->
-  <div class="card card-webinar">
-    <div class="card-header">
-      <span class="card-time">12:00</span>
-      <div style="flex:1">
-        <div class="card-title">Q1 Commercial Webinar #1 — Cómo Crecer tu Agencia en México</div>
-        <div class="card-subtitle">1.5 hours · You're hosting · All Top 40 invited</div>
-        <div class="card-pills">
-          <span class="pill pill-webinar">Webinar</span>
-          <span class="pill" style="background:#0c2a35;color:#67e8f9;">Q1 Commercial #1</span>
+    <!-- MaryFrances -->
+    <div class="card gray">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Antonio / MaryFrances</div>
+          <span class="tag internal">Internal</span>
         </div>
+        <div class="card-time">12:00 – 12:30 PM</div>
+      </div>
+      <div class="card-body">
+        Internal sync with MaryFrances Duggins. Good timing to debrief on webinar (happening right before) and align on any Mastery-related items.
       </div>
     </div>
-    <div class="card-body">
-      <div class="bubble bubble-cyan">
-        <strong>Content:</strong> Growth patterns of top-performing agencies · Positioning strategies · Underused Shopify resources · Lead generation<br><br>
-        <strong>Link:</strong> <a href="https://meet.google.com/fwk-svpp-mwy" style="color:#67e8f9;">meet.google.com/fwk-svpp-mwy</a> · Being recorded for partners who can't attend live.<br><br>
-        <span class="tag-note">[NOTE]</span> Nicolas (Lab51) and Samia (Saltamontes) both confirmed as attendees. Record and share link after.
+
+    <!-- Jorge / Proficient — DECLINED -->
+    <div class="card gray">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Jorge — Toño (Proficient)</div>
+          <span class="tag declined">Declined</span>
+        </div>
+        <div class="card-time">12:30 – 1:00 PM</div>
+      </div>
+      <div class="card-body" style="color:#aaa;">
+        Jorge (jorge@weareproficient.com) declined. Reschedule.
       </div>
     </div>
-  </div>
 
-  <!-- Endeavor Day DECLINED -->
-  <div class="card card-internal card-declined">
-    <div class="card-header">
-      <span class="card-time">14:45</span>
-      <div style="flex:1">
-        <div class="card-title">Endeavor Day 2026 — Estadio Banorte <span style="font-size:11px;color:#ef4444;font-weight:600;">DECLINED</span></div>
-        <div class="card-subtitle">External event — declined</div>
-        <div class="card-pills"><span class="pill pill-red">Declined</span></div>
+    <div class="section-label">Afternoon</div>
+
+    <!-- Fhouse -->
+    <div class="card blue">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Fhouse</div>
+          <span class="tag sp">Partner</span>
+        </div>
+        <div class="card-time">5:00 – 5:45 PM</div>
+      </div>
+      <div class="card-body">
+        No prior Gemini notes found. Go in prepared to listen — understand their current Shopify usage, client profile, and what they're building toward. Standard discovery frame: ICP, deal volume, pain points, what would make Shopify more sellable for them.
       </div>
     </div>
-    <div class="card-body">
-      <div class="bubble bubble-gray"><span class="tag-note">[NOTE]</span> Declined. Speakers: Diana Flores, Robinson Canó, Daniel Vogel (Bitso), Miguel Layún et al.</div>
-    </div>
+
   </div>
 
-  <!-- Playbook status -->
-  <div class="section-label" style="margin-top:28px;">Playbook Status — Week 2</div>
-  <table class="playbook-table">
-    <thead>
-      <tr><th>Archetype</th><th>Partner</th><th>Stage</th><th>Status</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>HP</td><td>Vitamina Online (Miriam)</td><td>HP-2 Deep Dive</td><td><span class="status-dot dot-blue"></span>In session today → HP-3 draft after</td></tr>
-      <tr><td>HP</td><td>CBI Market (Rodolfo)</td><td>HP-3</td><td><span class="status-dot dot-green"></span>Sent Apr 28 · Check-in May 17</td></tr>
-      <tr><td>HP</td><td>METARD (Edgar Made)</td><td>HP-2</td><td><span class="status-dot dot-green"></span>Sent Apr 28 · Awaiting response</td></tr>
-      <tr><td>HP</td><td>Ads-Alchemy</td><td>HP-2</td><td><span class="status-dot dot-green"></span>Sent Apr 28 · Awaiting response</td></tr>
-      <tr><td>HP</td><td>Unmade (Alfredo)</td><td>HP-2</td><td><span class="status-dot dot-amber"></span>Drafted — send today</td></tr>
-      <tr><td>SP</td><td>Paulina Navarro</td><td>SP-2</td><td><span class="status-dot dot-amber"></span>Drafted — send today</td></tr>
-      <tr><td>SP</td><td>Saltamontes (Samia)</td><td>SP-2</td><td><span class="status-dot dot-amber"></span>Drafted — send today</td></tr>
-      <tr><td>SP</td><td>OneSellout (Edgar)</td><td>SP-2</td><td><span class="status-dot dot-green"></span>Done · Webinar invite sent</td></tr>
-      <tr><td>SP</td><td>Snowball (Martín)</td><td>SP-2</td><td><span class="status-dot dot-green"></span>Done · Webinar invite sent</td></tr>
-      <tr><td>EP</td><td>Simplify (Elias)</td><td>Ongoing</td><td><span class="status-dot dot-green"></span>Panama duty-free activation pending</td></tr>
-    </tbody>
-  </table>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
 
-</div>
+    <div class="sidebar-card">
+      <h4>🔥 Open Action Items</h4>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+      <div class="action-item">
+        <div class="bullet">●</div>
+        <div><strong>Bon Graven WhatsApp</strong> — vouch for Lab51 (Nicolas) on DBS deal. Nicolas asked explicitly yesterday.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet">●</div>
+        <div><strong>Lop — B2B Plus vs B2B PDF</strong> — you committed Apr 16. Send before or during 9:30 call.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet blue">●</div>
+        <div><strong>VNS Premier status</strong> — check with Ops before 11:30 call. Ricardo is expecting your answer.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet blue">●</div>
+        <div><strong>VNS AI Campaign brief</strong> — Nicole's 2 comments unresolved (ebook drafted? + itemized costs). Unblock today.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet green">●</div>
+        <div><strong>Vitamina HP-3</strong> — draft GTM plan for Miriam after yesterday's HP-2 Deep Dive.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet green">●</div>
+        <div><strong>Lobo — conviction meeting</strong> — schedule with Mauricio (Rusty/Glove/Hansen), Felipe + Antonio. Urgency: Kik event coming.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet blue">●</div>
+        <div><strong>Atoms — MDF deck</strong> — confirm César sent Commerce Stack deck; new agent reviewing.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet purple">●</div>
+        <div><strong>Lop — Michel Office Hours</strong> — book for Sergio/Esteban on marketplace + inventory topics. Set up today.</div>
+      </div>
+    </div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-title">Open Action Items</div>
-    <div class="action-item">
-      <div class="dot dot-red-s"></div>
-      <div><span class="action-partner">Lab51 — NOW</span>WhatsApp Bon Graven to vouch for Lab51 on DBS deal (Nicolas asked explicitly)</div>
+    <div class="sidebar-card">
+      <h4>📊 Pipeline Watch</h4>
+      <div class="pipeline-item">
+        <div class="partner">Lab51 / Nicolas</div>
+        <div class="deal">DBS deal — needs Bon Graven WhatsApp vouch</div>
+        <div class="status">Action required</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Lobo / Mauricio</div>
+        <div class="deal">Q3/Q4 Shopify Day + Kik event</div>
+        <div class="status">Conviction meeting needed</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Lop / Esteban</div>
+        <div class="deal">Lubricants Co (Shell) → Plus · Grido (1,800 franchise marketplace)</div>
+        <div class="status">New Plus pipeline</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Simplify / Panama</div>
+        <div class="deal">Duty-free activation → joint case study</div>
+        <div class="status">In progress</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Atoms / César</div>
+        <div class="deal">Flex deal + Commerce Stack MDF</div>
+        <div class="status">Pending review</div>
+      </div>
     </div>
-    <div class="action-item">
-      <div class="dot dot-red-s"></div>
-      <div><span class="action-partner">Vitamina — After 11am call</span>Draft HP-3 GTM plan for Miriam same day</div>
+
+    <div class="sidebar-card">
+      <h4>📅 This Week</h4>
+      <div class="week-item"><span class="day">Mon Apr 28</span> — IRL event · HP-2 emails sent (Vitamina, METARD, Ads-Alchemy)</div>
+      <div class="week-item"><span class="day">Tue Apr 29</span> — Lab51, Lobo, Vitamina HP-2, Atoms calls · Webinar deck added to tracker</div>
+      <div class="week-item"><span class="day">Thu Apr 30</span> — WEBINAR 10am · Nassim 1:1 (Mastery) · Lop + VNS biweeklies · Fhouse</div>
     </div>
-    <div class="action-item">
-      <div class="dot dot-red-s"></div>
-      <div><span class="action-partner">Atoms — Commerce Stack MDF</span>Check if César sent deck; review before he submits</div>
+
+    <div class="sidebar-card">
+      <h4>📅 Next Week</h4>
+      <div class="week-item">May 4–5 — Shopify Editions (announcements: Payments MX, B2B, etc.)</div>
+      <div class="week-item">May 6 — CBI Market: directory + Plus client portal deadline</div>
+      <div class="week-item">May 7 — Mastery Conversations close</div>
+      <div class="week-item">May 13 — CBI Market: Lama Bike case study deadline</div>
+      <div class="week-item">May 17 — CBI Market check-in</div>
+      <div class="week-item">May 25–29 — Toronto (block calendar — Lop/Esteban going too)</div>
     </div>
-    <div class="action-item">
-      <div class="dot dot-amber-s"></div>
-      <div><span class="action-partner">Lobo — Kik event</span>Push Kik to accelerate May event planning</div>
+
+    <div class="sidebar-card">
+      <h4>🎓 Mastery Season</h4>
+      <div style="font-size:12px;color:#555;line-height:1.6;">
+        Apr 30 – May 7<br>
+        <strong>Nassim 1:1 at 11am today</strong> — have narratives ready: webinar execution, pipeline activations, Q2 health.<br><br>
+        <a href="https://talent.shopify.io" style="color:#8e44ad;font-weight:600;">talent.shopify.io →</a>
+      </div>
     </div>
-    <div class="action-item">
-      <div class="dot dot-amber-s"></div>
-      <div><span class="action-partner">Lobo — Mauricio conviction</span>Schedule join call for Rusty/Glove/Hansen prospect</div>
-    </div>
-    <div class="action-item">
-      <div class="dot dot-amber-s"></div>
-      <div><span class="action-partner">Unmade · Paulina · Samia</span>Send HP-2 / SP-2 drafts (ready — pending send)</div>
-    </div>
-    <div class="action-item">
-      <div class="dot dot-purple-s"></div>
-      <div><span class="action-partner">Mastery Period</span>Opens Apr 30 — check talent.shopify.io for action items</div>
-    </div>
-    <div class="action-item">
-      <div class="dot dot-blue-s"></div>
-      <div><span class="action-partner">Lab51 — Toronto</span>Block calendar May 25–29 (Lobo visit + potential client in Chile)</div>
-    </div>
-    <div class="action-item">
-      <div class="dot dot-blue-s"></div>
-      <div><span class="action-partner">Lab51 — Q2 incentive</span>Share confidential Q2 activation bonus with Nicolas (Apr 1–Jun 30 window)</div>
-    </div>
+
   </div>
-
-  <div class="sidebar-section">
-    <div class="sidebar-title">Pipeline Watch</div>
-    <div class="pipeline-item">
-      <div class="pipeline-name">Atoms — Flex e-commerce</div>
-      <div class="pipeline-detail">Director loved pitch · Competing vs 2 agencies · Awaiting quote · Antonio can join call</div>
-    </div>
-    <div class="pipeline-item">
-      <div class="pipeline-name">Lobo — Mauricio (Rusty/Glove/Hansen)</div>
-      <div class="pipeline-detail">5 brands · Magento-loyal · Strategy: 1 brand first · Conviction meeting needed</div>
-    </div>
-    <div class="pipeline-item">
-      <div class="pipeline-name">Lab51 — Forus + Oxford multibrand Plus</div>
-      <div class="pipeline-detail">Launch ~May · Property transfer pending · Q2 incentive window</div>
-    </div>
-    <div class="pipeline-item">
-      <div class="pipeline-name">Lab51 — DBS (partner-originated)</div>
-      <div class="pipeline-detail">Proposal sent · Shopping cheaper agencies · Bon Graven voucher needed</div>
-    </div>
-    <div class="pipeline-item">
-      <div class="pipeline-name">Simplify — Guatemala Plus</div>
-      <div class="pipeline-detail">Closing stages · Elias managing · Plus deal</div>
-    </div>
-  </div>
-
-  <div class="sidebar-section">
-    <div class="sidebar-title">This Week</div>
-    <div class="cal-day cal-today">
-      <div class="cal-day-label">Wed Apr 29 — Today</div>
-      <div class="cal-item"><span class="cal-time">9:30</span><span>Lab51 / Nicolas</span></div>
-      <div class="cal-item"><span class="cal-time">10:00</span><span>Lobo / Felipe + Sebastián</span></div>
-      <div class="cal-item"><span class="cal-time">11:00</span><span>Vitamina HP-2 Deep Dive</span></div>
-      <div class="cal-item"><span class="cal-time">11:30</span><span>Atoms / César</span></div>
-      <div class="cal-item"><span class="cal-time">12:00</span><span>🔴 Webinar — Cómo Crecer tu Agencia</span></div>
-    </div>
-    <div class="cal-day">
-      <div class="cal-day-label">Thu Apr 30 🟣</div>
-      <div class="cal-item"><span class="cal-time">—</span><span>Mastery Conversations open</span></div>
-    </div>
-  </div>
-
-  <div class="sidebar-section">
-    <div class="sidebar-title">Next Week</div>
-    <div class="cal-day">
-      <div class="cal-day-label">May 6</div>
-      <div class="cal-item"><span class="cal-time">—</span><span>CBI: directory + Plus portal deadline</span></div>
-    </div>
-    <div class="cal-day">
-      <div class="cal-day-label">May 7</div>
-      <div class="cal-item"><span class="cal-time">—</span><span>Mastery Conversations close</span></div>
-    </div>
-    <div class="cal-day">
-      <div class="cal-day-label">May 13</div>
-      <div class="cal-item"><span class="cal-time">—</span><span>CBI: Lama Bike case study deadline</span></div>
-    </div>
-    <div class="cal-day">
-      <div class="cal-day-label">May 25–29</div>
-      <div class="cal-item"><span class="cal-time">—</span><span>Toronto (Shopify summit + Lobo visit)</span></div>
-    </div>
-  </div>
-
-</div>
-</div>
-
-<div class="footer">
-  Generated Wed Apr 29, 2026 · 4 Gemini notes read (Lab51 Apr 29, Lobo Apr 15, Codefy/IRL Apr 22, Atoms Apr 15)
 </div>
 
 </body>
