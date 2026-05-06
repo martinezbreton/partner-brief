@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner Brief — Monday May 4, 2026</title>
+<title>Partner Brief — Wednesday May 6, 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f5f7; color: #1a1a2e; }
@@ -17,8 +17,8 @@
   .banner h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
   .banner .sub { font-size: 14px; color: #a0c4d4; margin-top: 4px; }
 
-  .editions-bar {
-    background: linear-gradient(90deg, #1a1a2e, #16213e, #0f3460);
+  .critical-bar {
+    background: #c0392b;
     color: white;
     padding: 10px 32px;
     font-size: 13px;
@@ -27,19 +27,11 @@
     align-items: center;
     gap: 10px;
   }
-  .editions-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #00d4ff; animation: pulse 1.2s infinite; }
+  .critical-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #ff6b6b; animation: pulse 1.2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
   .mastery-bar {
     background: linear-gradient(90deg, #6c3483, #8e44ad);
-    color: white;
-    padding: 9px 32px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .ooo-bar {
-    background: #f39c12;
     color: white;
     padding: 9px 32px;
     font-size: 13px;
@@ -76,6 +68,7 @@
   .card.teal { border-left-color: #16a085; }
   .card.gold { border-left-color: #f39c12; }
   .card.navy { border-left-color: #0f3460; }
+  .card.chile { border-left-color: #d62828; }
 
   .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
   .card-title { font-size: 14px; font-weight: 700; }
@@ -99,33 +92,21 @@
   .tag.sp { background: #d6eaf8; color: #1a5276; }
   .tag.internal { background: #eaf0fb; color: #2c3e50; }
   .tag.send { background: #d5f5e3; color: #145a32; }
-  .tag.editions { background: #d6eaf8; color: #0f3460; }
+  .tag.new { background: #fef9e7; color: #b7950b; }
+  .tag.chile { background: #fde8e8; color: #922b21; }
+  .tag.enterprise { background: #1a1a2e; color: #00d4ff; font-size: 10px; }
 
-  .send-card {
+  .win-flag {
     background: linear-gradient(135deg, #145a32, #1e8449);
     color: white;
     border-radius: 10px;
-    padding: 18px 20px;
+    padding: 14px 18px;
     margin-bottom: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
-  .send-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-  .send-card .body { font-size: 13px; opacity: 0.9; line-height: 1.6; }
-  .send-card ul { padding-left: 16px; margin-top: 8px; }
-  .send-card ul li { margin-bottom: 5px; }
-
-  .editions-card {
-    background: linear-gradient(135deg, #0f2027, #0f3460);
-    color: white;
-    border-radius: 10px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  .editions-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-  .editions-card .body { font-size: 13px; opacity: 0.9; line-height: 1.6; }
-  .editions-card ul { padding-left: 16px; margin-top: 8px; }
-  .editions-card ul li { margin-bottom: 5px; }
+  .win-flag .label { font-size: 10px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 
   /* Sidebar */
   .sidebar-card {
@@ -158,104 +139,220 @@
 <body>
 
 <div class="banner">
-  <h1>Partner Brief — Monday, May 4</h1>
-  <div class="sub">Q2 · Shopify Editions · Send Day · OOO May 4–5 · 1 meeting</div>
+  <h1>Partner Brief — Wednesday, May 6</h1>
+  <div class="sub">Q2 · 8 meetings · CBI Market deadline today · Mastery closes tomorrow</div>
 </div>
 
-<div class="editions-bar">
+<div class="critical-bar">
   <div class="dot"></div>
-  SHOPIFY EDITIONS — Today &amp; Tomorrow · Major product announcements · Payments MX, B2B, and more
-</div>
-
-<div class="ooo-bar">
-  📴 OOO registered May 4–5 — light on partner meetings. Focus: send emails, send recording, Amanda sync, watch Editions.
+  CBI MARKET — Directory + Plus client portal deadline TODAY · Mastery Conversations close TOMORROW May 7
 </div>
 
 <div class="mastery-bar">
-  ✴️ Mastery Conversations close May 7 — 3 days left
+  ✴️ Mastery Period closes May 7 — last day tomorrow · Check talent.shopify.io
 </div>
 
 <div class="layout">
   <div class="main">
 
-    <div class="section-label">Morning — Send Tasks</div>
+    <div class="section-label">Morning — Sends Pending</div>
 
-    <!-- Send emails -->
-    <div class="send-card">
-      <div class="card-header" style="margin-bottom:8px;">
-        <h3>📤 Send: 6 Partner Emails</h3>
-        <span style="font-size:11px;opacity:0.7;white-space:nowrap;margin-left:10px;">9:00 AM · Reminder</span>
-      </div>
-      <div class="body">
-        All 6 emails are drafted and ready in the sheet. Open, copy, send.
-        <ul>
-          <li><strong>HP-3 Vitamina</strong> → miriam@vitaminaonline.com.mx — GTM plan: Gran Vía Plus migration, B2B positioning, MDF Q4 planning</li>
-          <li><strong>Nudge HP-2 METARD</strong> → edgarmade@gmail.com — sent la semana pasada, no response</li>
-          <li><strong>Nudge HP-2 Ads-Alchemy</strong> → pm.campos@ads-alchemy.com — same</li>
-          <li><strong>Nudge SP-2 Paulina Navarro</strong> → paulinanavarro.web@gmail.com — sent el jueves pasado</li>
-          <li><strong>Nudge SP-2 Saltamontes</strong> → samiamaron@gmail.com — same</li>
-          <li><strong>Nudge HP-2 Unmade</strong> → alfredo@unmade.mx — same, includes Woo/Magento migration docs context</li>
-        </ul>
-        <div style="margin-top:10px;"><a href="https://docs.google.com/spreadsheets/d/1bVsHoRa16DqTp4-tdh4ol5GnE12x5sSqPjLj5s0CVWI/edit" style="color:#a9dfbf;font-weight:600;">Open email sheet →</a></div>
-      </div>
-    </div>
-
-    <!-- Send recording -->
+    <!-- Send reminders still showing -->
     <div class="card green">
       <div class="card-header">
         <div>
-          <div class="card-title">Enviar grabación del webinar al grupo</div>
+          <div class="card-title">Sends pendientes — si no salieron el lunes</div>
           <span class="tag send">Send</span>
         </div>
-        <div class="card-time">9:30 AM · Reminder</div>
+        <div class="card-time">7:00 – 8:00 AM</div>
       </div>
       <div class="card-body">
-        Send the recording of "Cómo Crecer con Shopify como Agencia — México" to all 62 registrants + 138 invited.
+        Calendar still shows both send reminders from Monday. If these went out on May 4 — ignore. If not, send now before the meetings start.
         <ul>
-          <li>Add a short note — highlight the Q&A, mention the next webinar in the series</li>
-          <li>Good moment to nudge anyone who registered but didn't attend to watch async</li>
-          <li>This is a warm touchpoint — use it to tee up SP-2 / HP-2 conversations with engaged attendees</li>
+          <li><strong>Grabación del webinar</strong> → 62 registrants</li>
+          <li><strong>6 emails</strong> — HP-3 Vitamina + 5 nudges · <a href="https://docs.google.com/spreadsheets/d/1bVsHoRa16DqTp4-tdh4ol5GnE12x5sSqPjLj5s0CVWI/edit" style="color:#1a8a4a;font-weight:600;">sheet →</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="section-label">10:00 AM — Internal</div>
+    <div class="section-label">8:30 AM — TKA Chile</div>
 
-    <!-- Amanda biweekly -->
+    <!-- TKA Chile -->
+    <div class="card chile">
+      <div class="card-header">
+        <div>
+          <div class="card-title">TKA Chile — Shopify Day weekly checkpoint</div>
+          <span class="tag chile">Chile</span>
+        </div>
+        <div class="card-time">8:30 – 9:00 AM</div>
+      </div>
+      <div class="card-body">
+        Weekly checkpoint with Francisca (The Kick Ass Co., Chile) on Shopify Day planning. Weekly cadence means something is actively in motion — check progress and unblock anything.
+        <ul>
+          <li>What's the status on venue, agenda, partner invites?</li>
+          <li>Any Shopify resources or support needed from Antonio's side?</li>
+          <li>Timeline to event — what's the target date?</li>
+        </ul>
+        <div class="people">Francisca · thekickass.co · Chile</div>
+      </div>
+    </div>
+
+    <div class="section-label">9:00 AM — Latech</div>
+
+    <!-- Latech biweekly -->
     <div class="card blue">
       <div class="card-header">
         <div>
-          <div class="card-title">Amanda–Antonio biweekly</div>
-          <span class="tag internal">Internal</span>
+          <div class="card-title">Latech — biweekly</div>
+          <span class="tag sp">Partner</span>
+        </div>
+        <div class="card-time">9:00 – 9:30 AM</div>
+      </div>
+      <div class="card-body">
+        Full team on this one — Graciela Di Rado, Andrés Harvey, Lucas, JC Bonina, Tomas. Andrés and Lucas haven't confirmed yet.
+        <ul>
+          <li>Understand what's in their active pipeline — any Plus deals or migrations?</li>
+          <li>Editions announcements from this week — anything relevant to surface for their clients?</li>
+          <li>PPS — are they actively co-selling or just referring?</li>
+          <li>Any blockers or support needed from Shopify side?</li>
+        </ul>
+        <div class="people">Graciela Di Rado · Andrés Harvey · Lucas Martin · JC Bonina · Tomas Az · Latech Factory · Argentina</div>
+      </div>
+    </div>
+
+    <div class="section-label">9:30 AM — Marketino Digital</div>
+
+    <!-- Marketino Digital -->
+    <div class="card orange">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Marketino Digital</div>
+          <span class="tag new">New</span>
+        </div>
+        <div class="card-time">9:30 – 9:50 AM</div>
+      </div>
+      <div class="card-body">
+        First or early meeting with Marketino Digital (marketinodigital@gmail.com) — hasn't confirmed yet. Top 40 partner. Discovery mode.
+        <ul>
+          <li>What's their current book of business? Active Shopify stores?</li>
+          <li>Any deals in pipeline — clients evaluating upgrade or migration?</li>
+          <li>How are they finding clients today? What would make Shopify more sellable for them?</li>
+        </ul>
+        <div class="people">Marketino Digital · marketinodigital@gmail.com</div>
+      </div>
+    </div>
+
+    <div class="section-label">10:00 AM — METARD / Edgar</div>
+
+    <!-- METARD HP-2 -->
+    <div class="card red">
+      <div class="card-header">
+        <div>
+          <div class="card-title">METARD — Edgar Made · HP-2 Deep Dive</div>
+          <span class="tag hp">HP-2</span>
         </div>
         <div class="card-time">10:00 – 10:30 AM</div>
       </div>
       <div class="card-body">
-        Biweekly sync with Amanda Bankes. Good Editions week touchpoint — align on any partner-facing comms around the announcements.
+        Edgar responded to the nudge and booked — the cadence is working. This is the HP-2 Deep Dive. Go in to understand his pipeline and see where Shopify can accelerate a deal.
         <ul>
-          <li>Shopify Editions announcements: what's the partner comms plan for Payments MX, B2B updates?</li>
-          <li>Any enablement assets coming out this week partners should know about?</li>
-          <li>CBI Market deadlines this week — May 6 directory + client portal (tomorrow)</li>
+          <li>What opportunities does he have in pipeline right now? Any clients evaluating Plus or migrating from another platform?</li>
+          <li>What's been blocking him from closing — capacity, technical complexity, pricing conversations?</li>
+          <li>Intro to PPS — how Shopify supports him in the sales process, not just post-sale</li>
+          <li>Walk out with a clear next step: HP-3 GTM plan, intro to a resource, or specific follow-up</li>
         </ul>
-        <div class="people">Amanda Bankes · Shopify</div>
+        <div class="people">Edgar Made · edgarmade@gmail.com · METARD</div>
       </div>
     </div>
 
-    <div class="section-label">All Day — Editions Watch</div>
+    <div class="section-label">10:30 AM — Fito Espitia</div>
 
-    <!-- Shopify Editions -->
-    <div class="editions-card">
-      <h3>🚀 Shopify Editions — May 4–5</h3>
-      <div class="body">
-        Major product announcement window. Watch for anything partner-relevant to forward to your book immediately while it's hot.
+    <!-- Fito Espitia -->
+    <div class="card blue">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Fito Espitia</div>
+          <span class="tag new">New</span>
+        </div>
+        <div class="card-time">10:30 – 11:00 AM</div>
+      </div>
+      <div class="card-body">
+        Rescheduled from May 1 (Labor Day). Fito hasn't confirmed yet. No prior notes — full discovery.
         <ul>
-          <li><strong>Payments MX:</strong> Any updates to Shopify Payments Mexico availability, fees, or chargeback process? (Vitamina raised chargebacks specifically — forward anything relevant)</li>
-          <li><strong>B2B:</strong> Updates to B2B native features, Plus vs. non-Plus availability, gateway requirements?</li>
-          <li><strong>Checkout Extensibility:</strong> New apps, features, or migration timelines?</li>
-          <li><strong>Markets / Headless:</strong> Anything relevant for Lop's multi-brand use cases?</li>
-          <li><strong>Partner Program:</strong> Revenue share changes, tier updates, PPS news?</li>
+          <li>Agency, freelancer, or tech partner?</li>
+          <li>Existing Shopify relationship — what have they built?</li>
+          <li>Client profile — what kind of merchants do they work with?</li>
+          <li>Any active pipeline worth accelerating?</li>
         </ul>
-        Good content to prep for next week's cadence touchpoints and for the May webinar in the series.
+        <div class="people">Fito Espitia · fitoespitia@gmail.com</div>
+      </div>
+    </div>
+
+    <div class="section-label">11:00 AM — XPRTS / Dinkbit</div>
+
+    <!-- XPRTS -->
+    <div class="card teal">
+      <div class="card-header">
+        <div>
+          <div class="card-title">XPRTS — Shopify biweekly</div>
+          <span class="tag sp">Partner</span>
+        </div>
+        <div class="card-time">11:00 – 11:30 AM</div>
+      </div>
+      <div class="card-body">
+        Biweekly with Edgar Ortiz (Dinkbit / XPRTS). Both confirmed.
+        <ul>
+          <li>Pipeline update — what's moving? Any Plus deals or platform migrations?</li>
+          <li>Editions announcements — anything from this week relevant to their clients or positioning?</li>
+          <li>Any Shopify support or resources needed?</li>
+        </ul>
+        <div class="people">Edgar Ortiz · edgar.ortiz@dinkbit.com · XPRTS / Dinkbit</div>
+      </div>
+    </div>
+
+    <div class="section-label">11:30 AM — Triciclo / Revie</div>
+
+    <!-- Triciclo -->
+    <div class="card purple">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Triciclo / Revie — biweekly</div>
+          <span class="tag sp">Partner</span>
+        </div>
+        <div class="card-time">11:30 AM – 12:00 PM</div>
+      </div>
+      <div class="card-body">
+        Biweekly with Renata Raya and Juan Sotres. Renata hasn't confirmed. Good moment to connect post-Editions.
+        <ul>
+          <li>Any active deals or client projects to surface?</li>
+          <li>Revie — what's their product angle? Any co-sell opportunities?</li>
+          <li>Editions week — any announcements they want to discuss or use with clients?</li>
+        </ul>
+        <div class="people">Renata Raya · Juan Sotres · triciclo.mx</div>
+      </div>
+    </div>
+
+    <div class="section-label">12:00 PM — Luis Castro / América Móvil</div>
+
+    <!-- América Móvil -->
+    <div class="card navy">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Luis Castro — América Móvil</div>
+          <span class="tag enterprise">Enterprise</span>
+        </div>
+        <div class="card-time">12:00 – 12:30 PM</div>
+      </div>
+      <div class="card-body">
+        This is a big one. Luis Castro from América Móvil (one of the largest telcos in LATAM — Telcel, Claro, TracFone). Luis hasn't confirmed yet. No prior notes — go in with ears open.
+        <ul>
+          <li>What's the context for this meeting — partnership, co-sell, or a specific deal?</li>
+          <li>América Móvil has distribution reach across Mexico and LATAM — understand if there's a channel or bundling angle</li>
+          <li>Are they exploring Shopify for internal use, for a client, or as a partner/reseller?</li>
+          <li>Who else in their org is involved? Who's the decision maker?</li>
+          <li>Walk out with clarity on what the next step is and who owns it</li>
+        </ul>
+        <div class="people">Luis Castro · luis.castro@americamovil.com · América Móvil</div>
       </div>
     </div>
 
@@ -268,20 +365,16 @@
       <h4>🔥 Open Action Items</h4>
 
       <div class="action-item">
-        <div class="bullet green">●</div>
-        <div><strong>TODAY — Send 6 emails</strong> — HP-3 Vitamina + 5 nudges. Sheet is ready.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet green">●</div>
-        <div><strong>TODAY — Send webinar recording</strong> to all 62 registrants.</div>
+        <div class="bullet">●</div>
+        <div><strong>TODAY — CBI Market</strong> directory + Plus client portal deadline. Don't miss it.</div>
       </div>
       <div class="action-item">
         <div class="bullet gold">●</div>
-        <div><strong>May 6 — CBI Market</strong> directory + Plus client portal deadline. Tomorrow.</div>
+        <div><strong>TOMORROW — Mastery closes</strong> (May 7). Any follow-up actions from your conversation with Megan.</div>
       </div>
       <div class="action-item">
-        <div class="bullet gold">●</div>
-        <div><strong>May 7 — Mastery closes</strong> — 3 days left.</div>
+        <div class="bullet green">●</div>
+        <div><strong>Sends</strong> — webinar recording + 6 emails. If not sent Mon, send now.</div>
       </div>
       <div class="action-item">
         <div class="bullet">●</div>
@@ -293,7 +386,7 @@
       </div>
       <div class="action-item">
         <div class="bullet blue">●</div>
-        <div><strong>VNS Premier status</strong> — check with Ops.</div>
+        <div><strong>VNS Premier status</strong> — check with Ops. Ricardo waiting.</div>
       </div>
       <div class="action-item">
         <div class="bullet blue">●</div>
@@ -312,14 +405,19 @@
     <div class="sidebar-card">
       <h4>📊 Pipeline Watch</h4>
       <div class="pipeline-item">
+        <div class="partner">METARD / Edgar</div>
+        <div class="deal">HP-2 Deep Dive today — responded to nudge</div>
+        <div class="status">In cadence — 10am</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">América Móvil / Luis</div>
+        <div class="deal">Unknown — enterprise/telco angle. Big one to clarify.</div>
+        <div class="status">First meeting — 12pm</div>
+      </div>
+      <div class="pipeline-item">
         <div class="partner">Lab51 / Nicolas</div>
         <div class="deal">DBS deal — needs Bon Graven WhatsApp vouch</div>
         <div class="status">Action required</div>
-      </div>
-      <div class="pipeline-item">
-        <div class="partner">Lobo / Mauricio</div>
-        <div class="deal">Q3/Q4 Shopify Day + Kik event</div>
-        <div class="status">Conviction meeting needed</div>
       </div>
       <div class="pipeline-item">
         <div class="partner">Lop / Esteban</div>
@@ -328,22 +426,22 @@
       </div>
       <div class="pipeline-item">
         <div class="partner">Vitamina / Miriam</div>
-        <div class="deal">Gran Vía: 3 Advance → 1 Plus (new store, 20% rev share)</div>
-        <div class="status">HP-3 sending today</div>
+        <div class="deal">Gran Vía: 3 Advance → 1 Plus (20% rev share)</div>
+        <div class="status">HP-3 sent</div>
       </div>
       <div class="pipeline-item">
-        <div class="partner">Atoms / César</div>
-        <div class="deal">Flex deal + Commerce Stack MDF</div>
-        <div class="status">Pending review</div>
+        <div class="partner">Lobo / Mauricio</div>
+        <div class="deal">Q3/Q4 Shopify Day + Kik event</div>
+        <div class="status">Conviction meeting needed</div>
       </div>
     </div>
 
     <div class="sidebar-card">
       <h4>📅 This Week</h4>
-      <div class="week-item"><span class="day">Mon May 4</span> — OOO · Send emails + recording · Editions Day 1 · Amanda sync</div>
-      <div class="week-item"><span class="day">Tue May 5</span> — OOO · Editions Day 2 · Cinco de Mayo observance</div>
-      <div class="week-item"><span class="day">Wed May 6</span> — <span class="urgent">CBI Market: directory + Plus client portal deadline</span></div>
-      <div class="week-item"><span class="day">Thu May 7</span> — <span class="urgent">Mastery Conversations close</span></div>
+      <div class="week-item"><span class="day">Mon May 4</span> — OOO · Editions Day 1 · Send emails + recording</div>
+      <div class="week-item"><span class="day">Tue May 5</span> — OOO · Editions Day 2 · Cinco de Mayo</div>
+      <div class="week-item"><span class="day">Wed May 6</span> — 8 meetings · <span class="urgent">CBI Market deadline</span></div>
+      <div class="week-item"><span class="day">Thu May 7</span> — <span class="urgent">Mastery closes</span></div>
       <div class="week-item"><span class="day">Wed May 13</span> — CBI Market: Lama Bike case study deadline</div>
     </div>
 
@@ -352,14 +450,13 @@
       <div class="week-item">May 17 — CBI Market check-in</div>
       <div class="week-item">May 25–29 — Toronto (Lop/Esteban going too)</div>
       <div class="week-item">Jun/Jul — MDF Q4 window opens (Vitamina event planning)</div>
-      <div class="week-item">Sep — Webinar series final session</div>
     </div>
 
     <div class="sidebar-card">
-      <h4>🎓 Mastery — Closing Week</h4>
+      <h4>🎓 Mastery — Last Day Tomorrow</h4>
       <div style="font-size:12px;color:#555;line-height:1.6;">
-        Closes May 7 — 3 days.<br><br>
-        Your conversation with Megan happened Friday May 1. If any follow-up actions came out of it, get them in before Thursday.<br><br>
+        Closes May 7.<br><br>
+        If anything came out of your conversation with Megan that needs a follow-up action, get it done today or tomorrow morning.<br><br>
         <a href="https://talent.shopify.io" style="color:#8e44ad;font-weight:600;">talent.shopify.io →</a>
       </div>
     </div>
