@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Brief — Wed Apr 1, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a2e; font-size: 14px; }
+
+  .critical-banner { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 14px 24px; display: flex; align-items: center; gap: 16px; border-bottom: 3px solid #e94560; }
+  .critical-banner .badge { background: #e94560; color: white; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 3px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+  .critical-banner .badge.q2 { background: #7c3aed; }
+  .critical-banner .items { display: flex; gap: 20px; flex-wrap: wrap; }
+  .critical-banner .item { font-size: 12px; color: #e2e8f0; }
+  .critical-banner .item strong { color: #fbbf24; }
+  .critical-banner .item .dot-red { color: #f87171; }
+  .critical-banner .item .dot-amber { color: #fbbf24; }
+
+  header { background: white; padding: 16px 24px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 20px; font-weight: 700; color: #1a1a2e; }
+  header .meta { font-size: 12px; color: #64748b; display: flex; gap: 16px; }
+  header .meta span { display: flex; align-items: center; gap: 4px; }
+
+  .layout { display: flex; gap: 0; max-width: 100%; }
+  .main { flex: 1; padding: 20px 24px; min-width: 0; }
+  .sidebar { width: 300px; min-width: 300px; background: white; border-left: 1px solid #e2e8f0; padding: 16px; overflow-y: auto; }
+
+  h2 { font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #e2e8f0; }
+
+  .meeting-card { background: white; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .meeting-card.next { border-left: 4px solid #3b82f6; }
+  .meeting-card.upcoming { border-left: 4px solid #94a3b8; }
+  .meeting-card.fire { border-left: 4px solid #ef4444; }
+  .meeting-header { padding: 12px 16px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .meeting-time { font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap; min-width: 50px; }
+  .meeting-info { flex: 1; }
+  .meeting-info h3 { font-size: 14px; font-weight: 700; color: #1a1a2e; margin-bottom: 2px; }
+  .meeting-info .contact { font-size: 12px; color: #64748b; }
+  .meeting-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .tag-blue { background: #dbeafe; color: #1d4ed8; }
+  .tag-red { background: #fee2e2; color: #dc2626; }
+  .tag-amber { background: #fef3c7; color: #b45309; }
+  .tag-green { background: #dcfce7; color: #166534; }
+  .tag-gray { background: #f1f5f9; color: #475569; }
+  .tag-purple { background: #ede9fe; color: #6d28d9; }
+
+  .pending-list { padding: 0 16px 12px; }
+  .pending-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; font-size: 12px; line-height: 1.4; }
+  .pending-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 3px; flex-shrink: 0; }
+  .dot-red { background: #ef4444; }
+  .dot-amber { background: #f59e0b; }
+  .dot-blue { background: #3b82f6; }
+  .dot-green { background: #22c55e; }
+  .dot-purple { background: #8b5cf6; }
+
+  .bubble { border-radius: 6px; padding: 8px 12px; margin: 4px 16px 8px; font-size: 12px; line-height: 1.5; }
+  .bubble-green { background: #f0fdf4; border-left: 3px solid #22c55e; }
+  .bubble-amber { background: #fffbeb; border-left: 3px solid #f59e0b; }
+  .bubble-blue { background: #eff6ff; border-left: 3px solid #3b82f6; }
+  .bubble-red { background: #fef2f2; border-left: 3px solid #ef4444; }
+  .bubble-purple { background: #faf5ff; border-left: 3px solid #8b5cf6; }
+  .bubble strong { font-weight: 700; }
+
+  .context-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 24px; }
+  .context-card { background: white; border-radius: 10px; border: 1px solid #e2e8f0; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .context-card h4 { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+
+  /* Sidebar */
+  .sidebar h2 { font-size: 11px; }
+  .sched-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid #f1f5f9; font-size: 12px; }
+  .sched-item:last-child { border-bottom: none; }
+  .sched-time { color: #64748b; white-space: nowrap; font-weight: 600; min-width: 42px; }
+  .sched-name { color: #1a1a2e; }
+  .sched-name.fire { color: #ef4444; font-weight: 600; }
+
+  .action-item { display: flex; align-items: flex-start; gap: 6px; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; line-height: 1.4; }
+  .action-item:last-child { border-bottom: none; }
+  .action-partner { font-weight: 700; color: #475569; }
+  .action-text { color: #1a1a2e; }
+
+  .pipeline-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+  .pipeline-row:last-child { border-bottom: none; }
+  .pipeline-partner { font-weight: 600; color: #475569; }
+  .pipeline-stage { font-size: 10px; padding: 1px 6px; border-radius: 10px; }
+  .stage-hot { background: #fee2e2; color: #dc2626; }
+  .stage-warm { background: #fef3c7; color: #b45309; }
+  .stage-cold { background: #f1f5f9; color: #475569; }
+
+  .mdf-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+  .mdf-row:last-child { border-bottom: none; }
+  .mdf-partner { font-weight: 600; }
+  .mdf-status { font-size: 10px; padding: 1px 6px; border-radius: 10px; }
+  .mdf-approved { background: #dcfce7; color: #166534; }
+  .mdf-pending { background: #fef3c7; color: #b45309; }
+  .mdf-completed { background: #e0e7ff; color: #3730a3; }
+
+  .cal-item { padding: 4px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+  .cal-item:last-child { border-bottom: none; }
+  .cal-date { font-weight: 700; color: #475569; }
+  .cal-event { color: #1a1a2e; }
+
+  .q2-box { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border-radius: 10px; padding: 16px; margin-bottom: 20px; color: white; }
+  .q2-box h3 { font-size: 13px; font-weight: 700; color: #a5b4fc; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .q2-metric { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
+  .q2-metric:last-child { border-bottom: none; }
+  .q2-label { color: #c7d2fe; }
+  .q2-val { font-weight: 700; color: #fbbf24; }
+  .q2-val.green { color: #86efac; }
+  .q2-val.red { color: #fca5a5; }
+
+  .kali-notice { background: #fef9c3; border: 1px solid #fde047; border-radius: 6px; padding: 8px 12px; font-size: 11px; color: #713f12; margin-bottom: 12px; }
+
+  .footer { text-align: center; padding: 16px; font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0; background: white; margin-top: 20px; }
+  .section-label { font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- CRITICAL BANNER -->
+<div class="critical-banner">
+  <span class="badge q2">Q2 · Day 1</span>
+  <span class="badge" style="background:#ef4444;">🔥 Atoms</span>
+  <div class="items">
+    <div class="item"><span class="dot-red">●</span> <strong>Atoms:</strong> Micky Form + Steel + Cleto — propose Plus, confirm presentations</div>
+    <div class="item"><span class="dot-amber">●</span> <strong>Lobo:</strong> Marcelo Brazil handoff effective today — align on handoff</div>
+    <div class="item"><span class="dot-amber">●</span> <strong>Lab51:</strong> Forus 10 sites — ownership transfer bug workaround</div>
+    <div class="item"><span class="dot-red">●</span> <strong>Kali OOO Apr 1–7</strong> — escalation path unclear</div>
+  </div>
+</div>
+
+<header>
+  <h1>Partner Brief — Wednesday, April 1, 2026</h1>
+  <div class="meta">
+    <span>📅 Q2 Day 1</span>
+    <span>🤝 7 partner meetings</span>
+    <span>🔥 1 fire partner (Atoms)</span>
+    <span>⚠️ Kali OOO Apr 1–7</span>
+  </div>
+</header>
+
+<div class="layout">
+<div class="main">
+
+<!-- TODAY'S MEETINGS -->
+<h2>Today's Meetings</h2>
+
+<!-- 8:25am Brazil Quick -->
+<div class="meeting-card upcoming">
+  <div class="meeting-header">
+    <div class="meeting-time">8:25am</div>
+    <div class="meeting-info">
+      <h3>🇧🇷 Brazil Quick Sync</h3>
+      <div class="contact">Internal Brazil team check-in</div>
+    </div>
+    <span class="meeting-tag tag-gray">5 min</span>
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>Confirm <strong>Marcelo transition</strong> effective today — he takes Brazil, Antonio focuses Spanish-speaking + Mexico ecosystem</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span>Any Brazil partner urgent items before handoff?</span></div>
+  </div>
+</div>
+
+<!-- 9:00am Leonardo -->
+<div class="meeting-card upcoming">
+  <div class="meeting-header">
+    <div class="meeting-time">9:00am</div>
+    <div class="meeting-info">
+      <h3>Leonardo 1:1</h3>
+      <div class="contact">Leonardo — 1:1 biweekly</div>
+    </div>
+    <span class="meeting-tag tag-blue">30 min</span>
+  </div>
+  <div class="bubble-amber bubble">
+    <strong>Note:</strong> Mar 27 meeting recorded by Gemini but transcript was unreadable (insufficient recognized-language audio). No Gemini summary available — context below from memory.
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>Review Q2 partner priorities and territory focus with new Marcelo/Brazil division</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span>Align on Atoms Premier Partner push — is this a Q2 commitment?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>MDF Q3 pipeline: Atoms brief in progress, Lobo joint event proposal</span></div>
+  </div>
+</div>
+
+<!-- 9:30am Lab51 -->
+<div class="meeting-card next">
+  <div class="meeting-header">
+    <div class="meeting-time">9:30am</div>
+    <div class="meeting-info">
+      <h3>Lab51 Biweekly</h3>
+      <div class="contact">Nicolas Valenzuela (Lab51) — Shopify biweekly</div>
+    </div>
+    <span class="meeting-tag tag-blue">30 min</span>
+  </div>
+  <div class="bubble-green bubble">
+    <strong>Context (Mar 19):</strong> Forus project — 10 smaller sites needing Plus for app integration. Don't qualify by revenue but need Plus functionality. Payments received for 2 sites (30-day delay on rest).
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-red"></div><span><strong>Ownership transfer bug:</strong> site goes down 25–30 min during transfer. Workaround: use Shopify Mobile App for transfer. Share with Nico.</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span><strong>App review backlog</strong> flagged by Nico — follow up on status / escalation path</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>Forus remaining 8 sites: payment timing and Plus eligibility path — any update?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span>B2B announcement Apr 29 — 3 catalog limit for Core/Advanced. Relevant for Forus multi-site clients?</span></div>
+  </div>
+</div>
+
+<!-- 10:00am Lobo -->
+<div class="meeting-card next">
+  <div class="meeting-header">
+    <div class="meeting-time">10:00am</div>
+    <div class="meeting-info">
+      <h3>Lobo Bisemanal</h3>
+      <div class="contact">Felipe Moreno + Sebastián Dagá (Lobo)</div>
+    </div>
+    <span class="meeting-tag tag-amber">30 min · Transition</span>
+  </div>
+  <div class="bubble-amber bubble">
+    <strong>Key transition (effective today):</strong> Marcelo takes Brazil, Antonio focuses Spanish-speaking + Mexico ecosystem. This is the first Lobo meeting under new territory structure.
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span><strong>MDF Q3 joint event proposal:</strong> Lobo wants joint event with 2 other agencies. Rule: must be separate events, not same MDF line. No Q2 approvals pending.</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>MDF budget context: standard $5K, record was $7K. Share Q3 timeline and approval process.</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span><strong>Hillary meeting</strong> — was this scheduled? Follow up.</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>Confirm how territory transition affects their Shopify contact for Brazil-originated deals</span></div>
+  </div>
+</div>
+
+<!-- 10:30am IFC -->
+<div class="meeting-card upcoming">
+  <div class="meeting-header">
+    <div class="meeting-time">10:30am</div>
+    <div class="meeting-info">
+      <h3>IFC Biweekly</h3>
+      <div class="contact">IFC — Shopify biweekly</div>
+    </div>
+    <span class="meeting-tag tag-gray">30 min</span>
+  </div>
+  <div class="bubble-amber bubble">
+    <strong>No Gemini notes found</strong> for IFC in past 7 days. Review your notes before this call.
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>Q2 pipeline review — any active deals or proposals in flight?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span>MDF Q3 planning — has IFC submitted or discussed any proposals?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>B2B for all plans (Apr 29) — does this impact any IFC client use cases?</span></div>
+  </div>
+</div>
+
+<!-- 11:30am Atoms -->
+<div class="meeting-card fire">
+  <div class="meeting-header">
+    <div class="meeting-time">11:30am</div>
+    <div class="meeting-info">
+      <h3>🔥 Atoms Bisemanal</h3>
+      <div class="contact">César Basurto (Atoms) — Shopify biweekly</div>
+    </div>
+    <span class="meeting-tag tag-red">30 min · FIRE</span>
+  </div>
+  <div class="bubble-red bubble">
+    <strong>Goal: Premier Partner status.</strong> Active pipeline with 4+ hot deals. Becoming Klaviyo reseller MX. MDF Q1 campaign completed (95 leads, 12 PQLs — exceeded targets).
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-red"></div><span><strong>Micky Form</strong> (vertical integrator, 4+ brands): propose Plus upgrade — wait until after 1 month implementation. Timing: is the month up?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-red"></div><span><strong>Steel</strong> (Honduras, all-country Plus): Monday presentation happened — what's the outcome?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-red"></div><span><strong>El Surtidor Tapicero</strong> (20 branches, B2B+B2C, NetSuite): day-of presentation was Mar 20 — get outcome + next steps</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span><strong>Cleto Reyes</strong> (boxing gloves, redesign): success management proposal + Plus later — status?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span><strong>Vitex director</strong> (country manager MX/Peru/Colombia, met César at dinner): warm follow-up — has César reached out?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span><strong>Birkenstock group</strong> (larger group): any movement?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span><strong>Shopify Academy coupons:</strong> Antonio to send 3 × 100% discount coupons — done?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span><strong>Pricing/SOW:</strong> send lost SOWs to Michelle for analysis tool — hourly rate too high vs young devs</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>MDF Q3 brief in preparation — review format + timeline with César</span></div>
+    <div class="pending-item"><div class="pending-dot dot-purple"></div><span>Hiring: account manager + commercial person — offer any Shopify partner network connections?</span></div>
+  </div>
+  <div class="bubble-green bubble">
+    <strong>Q1 MDF WIN:</strong> Hot Sale 2026 campaign — 95 leads (target 60), 12 PQLs (target 10), $5K USD, partner Envia.com, Monterrey event + webinar. ✅ COMPLETED
+  </div>
+</div>
+
+<!-- 2:00pm VNS -->
+<div class="meeting-card upcoming">
+  <div class="meeting-header">
+    <div class="meeting-time">2:00pm</div>
+    <div class="meeting-info">
+      <h3>VNS Biweekly</h3>
+      <div class="contact">VNS — Shopify biweekly</div>
+    </div>
+    <span class="meeting-tag tag-gray">30 min</span>
+  </div>
+  <div class="bubble-amber bubble">
+    <strong>No Gemini notes found</strong> for VNS in past 7 days. Review your notes before this call.
+  </div>
+  <div class="pending-list">
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>Q2 kickoff — pipeline review and any new opportunities?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-amber"></div><span>MDF Q3 planning — any events or campaigns in discussion?</span></div>
+    <div class="pending-item"><div class="pending-dot dot-blue"></div><span>B2B all-plan announcement (Apr 29) — relevant for VNS client portfolio?</span></div>
+  </div>
+</div>
+
+<!-- PARTNER CONTEXT CARDS -->
+<div class="section-label">Partner Context</div>
+<div class="context-grid">
+
+  <!-- Lab51 context -->
+  <div class="context-card">
+    <h4>🏢 Lab51 — Nicolas Valenzuela</h4>
+    <div class="bubble-green bubble" style="margin:0 0 6px;">
+      <strong>Forus project:</strong> 10 smaller sites needing Plus for app integration. 2 sites paid (30-day delay on rest). Don't qualify by revenue but need Plus functionality.
+    </div>
+    <div class="bubble-amber bubble" style="margin:0 0 6px;">
+      <strong>Bug:</strong> Ownership transfer = 25–30 min downtime. Workaround: Shopify Mobile App.
+    </div>
+    <div class="bubble-blue bubble" style="margin:0;">
+      <strong>Watch:</strong> App review backlog flagged. B2B 3-catalog limit (Apr 29) may be relevant for multi-site setup.
+    </div>
+  </div>
+
+  <!-- Lobo context -->
+  <div class="context-card">
+    <h4>🐺 Lobo — Felipe Moreno + Sebastián Dagá</h4>
+    <div class="bubble-amber bubble" style="margin:0 0 6px;">
+      <strong>Territory shift (Apr 1):</strong> Marcelo takes Brazil. Antonio = Spanish-speaking + Mexico ecosystem going forward.
+    </div>
+    <div class="bubble-green bubble" style="margin:0 0 6px;">
+      <strong>MDF history:</strong> Standard $5K, record $7K. No Q2 approvals. Q3 joint-event idea (3 agencies) — must be separate events.
+    </div>
+    <div class="bubble-blue bubble" style="margin:0;">
+      <strong>MDF rule:</strong> Only 1 agency per event, but separate events same week = OK.
+    </div>
+  </div>
+
+  <!-- Atoms context -->
+  <div class="context-card">
+    <h4>⚡ Atoms — César Basurto</h4>
+    <div class="bubble-red bubble" style="margin:0 0 6px;">
+      <strong>Pipeline:</strong> Micky Form (4+ brands, Plus), Cleto Reyes (redesign+Plus), El Surtidor Tapicero (20 branches, B2B+NetSuite), Steel (Honduras all-country), Birkenstock group, Vitex director warm lead.
+    </div>
+    <div class="bubble-green bubble" style="margin:0 0 6px;">
+      <strong>Win:</strong> Q1 MDF Hot Sale 2026 — 95 leads/12 PQLs, exceeded both targets. $5K with Envia.com.
+    </div>
+    <div class="bubble-blue bubble" style="margin:0;">
+      <strong>Path:</strong> Premier Partner goal. Klaviyo reseller MX. Hiring account mgr + commercial. Pricing concern: hourly rate vs cheap devs — Michelle's SOW tool.
+    </div>
+  </div>
+
+  <!-- Michelle / Product updates -->
+  <div class="context-card">
+    <h4>📣 Michelle — Q2 Product Updates</h4>
+    <div class="bubble-purple bubble" style="margin:0 0 6px;">
+      <strong>B2B all plans — Apr 29:</strong> 3 catalog limit for Core/Advanced. Game-changer for SMB clients. Share with all partners.
+    </div>
+    <div class="bubble-blue bubble" style="margin:0 0 6px;">
+      <strong>Webinar series:</strong> "How to demo" + "B2B refresher" (May/Jun). Format: 30 min, Google Meet, recorded.
+    </div>
+    <div class="bubble-green bubble" style="margin:0;">
+      <strong>entic partner:</strong> AI-enthusiastic, US merchants, ChatGPT checkout pilot candidates. Michelle setting up POC discovery call.
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <div class="kali-notice">⚠️ <strong>Kali OOO Apr 1–7</strong> — confirm escalation path for urgent partner issues this week.</div>
+
+  <h2>Today's Schedule</h2>
+  <div style="margin-bottom:16px;">
+    <div class="sched-item"><span class="sched-time">8:25am</span><span class="sched-name">🇧🇷 Brazil Quick</span></div>
+    <div class="sched-item"><span class="sched-time">9:00am</span><span class="sched-name">Leonardo 1:1</span></div>
+    <div class="sched-item"><span class="sched-time">9:30am</span><span class="sched-name">Lab51 biweekly</span></div>
+    <div class="sched-item"><span class="sched-time">10:00am</span><span class="sched-name">Lobo bisemanal</span></div>
+    <div class="sched-item"><span class="sched-time">10:30am</span><span class="sched-name">IFC biweekly</span></div>
+    <div class="sched-item"><span class="sched-time">11:30am</span><span class="sched-name fire">🔥 Atoms bisemanal</span></div>
+    <div class="sched-item"><span class="sched-time">2:00pm</span><span class="sched-name">VNS biweekly</span></div>
+  </div>
+
+  <h2>Open Action Items</h2>
+  <div style="margin-bottom:16px;">
+    <div class="action-item"><span class="pending-dot dot-red" style="margin-top:3px;"></span><div><span class="action-partner">Atoms · </span><span class="action-text">Send 3× Shopify Academy 100% coupons to César</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-red" style="margin-top:3px;"></span><div><span class="action-partner">Atoms · </span><span class="action-text">Get Steel Monday presentation outcome</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-red" style="margin-top:3px;"></span><div><span class="action-partner">Atoms · </span><span class="action-text">El Surtidor Tapicero — get Mar 20 presentation result</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-amber" style="margin-top:3px;"></span><div><span class="action-partner">Lab51 · </span><span class="action-text">Share ownership transfer workaround (mobile app) with Nico</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-amber" style="margin-top:3px;"></span><div><span class="action-partner">Lobo · </span><span class="action-text">Confirm Hillary meeting was scheduled</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-amber" style="margin-top:3px;"></span><div><span class="action-partner">Atoms · </span><span class="action-text">Lost SOWs → Michelle for pricing analysis tool</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-blue" style="margin-top:3px;"></span><div><span class="action-partner">All · </span><span class="action-text">Share B2B all-plans announcement (Apr 29) with partners</span></div></div>
+    <div class="action-item"><span class="pending-dot dot-blue" style="margin-top:3px;"></span><div><span class="action-partner">Atoms · </span><span class="action-text">MDF Q3 brief — review format + submit by deadline</span></div></div>
+  </div>
+
+  <h2>Q3/Q4 MDF Radar</h2>
+  <div style="margin-bottom:16px;">
+    <div class="mdf-row"><span class="mdf-partner">Atoms</span><span class="mdf-status mdf-pending">Q3 Brief Prep</span></div>
+    <div class="mdf-row"><span class="mdf-partner">Lobo</span><span class="mdf-status mdf-pending">Joint Event (3 agencies)</span></div>
+    <div class="mdf-row"><span class="mdf-partner">Atoms Q1</span><span class="mdf-status mdf-completed">✅ Completed</span></div>
+    <div class="mdf-row"><span class="mdf-partner">IFC</span><span class="mdf-status" style="background:#f1f5f9;color:#475569;">No intel</span></div>
+    <div class="mdf-row"><span class="mdf-partner">VNS</span><span class="mdf-status" style="background:#f1f5f9;color:#475569;">No intel</span></div>
+  </div>
+
+  <h2>Pipeline Watch</h2>
+  <div style="margin-bottom:16px;">
+    <div class="pipeline-row"><span class="pipeline-partner">Micky Form (Atoms)</span><span class="pipeline-stage stage-hot">Plus Proposal</span></div>
+    <div class="pipeline-row"><span class="pipeline-partner">Steel (Atoms)</span><span class="pipeline-stage stage-hot">All-country Plus</span></div>
+    <div class="pipeline-row"><span class="pipeline-partner">El Surtidor (Atoms)</span><span class="pipeline-stage stage-hot">B2B+NetSuite</span></div>
+    <div class="pipeline-row"><span class="pipeline-partner">Cleto Reyes (Atoms)</span><span class="pipeline-stage stage-warm">Redesign+Plus</span></div>
+    <div class="pipeline-row"><span class="pipeline-partner">Vitex director</span><span class="pipeline-stage stage-warm">Warm lead</span></div>
+    <div class="pipeline-row"><span class="pipeline-partner">Birkenstock grp (Atoms)</span><span class="pipeline-stage stage-warm">In discussion</span></div>
+    <div class="pipeline-row"><span class="pipeline-partner">Forus 10 sites (Lab51)</span><span class="pipeline-stage stage-warm">Plus eligibility</span></div>
+  </div>
+
+  <h2>Coming Up</h2>
+  <div style="margin-bottom:16px;">
+    <div class="cal-item"><span class="cal-date">Apr 7 · </span><span class="cal-event">Kali returns from OOO</span></div>
+    <div class="cal-item"><span class="cal-date">Apr 29 · </span><span class="cal-event">B2B for all plans announced</span></div>
+    <div class="cal-item"><span class="cal-date">May/Jun · </span><span class="cal-event">B2B refresher webinar (Michelle)</span></div>
+    <div class="cal-item"><span class="cal-date">Q3 · </span><span class="cal-event">MDF brief deadlines (Atoms, Lobo)</span></div>
+  </div>
+
+  <div class="q2-box">
+    <h3>Q2 Opening State</h3>
+    <div class="q2-metric"><span class="q2-label">Hot pipeline deals</span><span class="q2-val">6 (Atoms-heavy)</span></div>
+    <div class="q2-metric"><span class="q2-label">Premier targets</span><span class="q2-val">Atoms 🎯</span></div>
+    <div class="q2-metric"><span class="q2-label">Territory change</span><span class="q2-val">Marcelo → Brazil</span></div>
+    <div class="q2-metric"><span class="q2-label">Big product drop</span><span class="q2-val">B2B Apr 29</span></div>
+    <div class="q2-metric"><span class="q2-label">Q1 MDF closed</span><span class="q2-val green">Atoms ✅</span></div>
+  </div>
+
+</div>
+</div>
+
+<div class="footer">
+  Brief generated: Wed Apr 1, 2026 · Q2 Day 1 · 7 meetings · Sources: Google Calendar (2-call split query), Gemini notes: Lab51 Mar 19, Lobo Mar 19, Atoms Mar 20, Michelle Q2 plan Mar 27 · IFC/VNS: no notes available
+</div>
+</body>
+</html>

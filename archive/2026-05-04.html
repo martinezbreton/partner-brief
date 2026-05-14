@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Brief — Monday May 4, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f5f7; color: #1a1a2e; }
+
+  .banner {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 28px 32px 22px;
+    border-bottom: 4px solid #00d4ff;
+  }
+  .banner h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  .banner .sub { font-size: 14px; color: #a0c4d4; margin-top: 4px; }
+
+  .editions-bar {
+    background: linear-gradient(90deg, #1a1a2e, #16213e, #0f3460);
+    color: white;
+    padding: 10px 32px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .editions-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #00d4ff; animation: pulse 1.2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .mastery-bar {
+    background: linear-gradient(90deg, #6c3483, #8e44ad);
+    color: white;
+    padding: 9px 32px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .ooo-bar {
+    background: #f39c12;
+    color: white;
+    padding: 9px 32px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .layout { display: grid; grid-template-columns: 1fr 320px; gap: 20px; padding: 20px 24px; max-width: 1200px; }
+
+  .section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #777;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 18px;
+  }
+  .section-label:first-child { margin-top: 0; }
+
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid #ccc;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .card.green { border-left-color: #27ae60; }
+  .card.blue { border-left-color: #2980b9; }
+  .card.orange { border-left-color: #e67e22; }
+  .card.red { border-left-color: #c0392b; }
+  .card.purple { border-left-color: #8e44ad; }
+  .card.gray { border-left-color: #bdc3c7; }
+  .card.teal { border-left-color: #16a085; }
+  .card.gold { border-left-color: #f39c12; }
+  .card.navy { border-left-color: #0f3460; }
+
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .card-title { font-size: 14px; font-weight: 700; }
+  .card-time { font-size: 11px; color: #888; white-space: nowrap; margin-left: 10px; }
+  .card-body { font-size: 13px; color: #444; line-height: 1.55; }
+  .card-body ul { padding-left: 16px; margin-top: 6px; }
+  .card-body ul li { margin-bottom: 3px; }
+  .card-body .people { font-size: 12px; color: #777; margin-top: 6px; font-style: italic; }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-right: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag.hp { background: #fde8d0; color: #c0392b; }
+  .tag.sp { background: #d6eaf8; color: #1a5276; }
+  .tag.internal { background: #eaf0fb; color: #2c3e50; }
+  .tag.send { background: #d5f5e3; color: #145a32; }
+  .tag.editions { background: #d6eaf8; color: #0f3460; }
+
+  .send-card {
+    background: linear-gradient(135deg, #145a32, #1e8449);
+    color: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .send-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .send-card .body { font-size: 13px; opacity: 0.9; line-height: 1.6; }
+  .send-card ul { padding-left: 16px; margin-top: 8px; }
+  .send-card ul li { margin-bottom: 5px; }
+
+  .editions-card {
+    background: linear-gradient(135deg, #0f2027, #0f3460);
+    color: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .editions-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .editions-card .body { font-size: 13px; opacity: 0.9; line-height: 1.6; }
+  .editions-card ul { padding-left: 16px; margin-top: 8px; }
+  .editions-card ul li { margin-bottom: 5px; }
+
+  /* Sidebar */
+  .sidebar-card {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .sidebar-card h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; margin-bottom: 10px; }
+  .action-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; line-height: 1.45; }
+  .action-item .bullet { color: #e74c3c; font-size: 16px; line-height: 1; flex-shrink: 0; }
+  .action-item .bullet.blue { color: #2980b9; }
+  .action-item .bullet.green { color: #27ae60; }
+  .action-item .bullet.purple { color: #8e44ad; }
+  .action-item .bullet.gold { color: #f39c12; }
+
+  .pipeline-item { font-size: 12px; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f0f0f0; }
+  .pipeline-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .pipeline-item .partner { font-weight: 700; }
+  .pipeline-item .deal { color: #555; }
+  .pipeline-item .status { font-size: 10px; color: #e67e22; font-weight: 600; text-transform: uppercase; }
+
+  .week-item { font-size: 12px; margin-bottom: 5px; color: #555; padding-left: 10px; position: relative; }
+  .week-item::before { content: '·'; position: absolute; left: 0; color: #aaa; }
+  .week-item .day { font-weight: 700; color: #333; }
+  .week-item .urgent { color: #c0392b; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>Partner Brief — Monday, May 4</h1>
+  <div class="sub">Q2 · Shopify Editions · Send Day · OOO May 4–5 · 1 meeting</div>
+</div>
+
+<div class="editions-bar">
+  <div class="dot"></div>
+  SHOPIFY EDITIONS — Today &amp; Tomorrow · Major product announcements · Payments MX, B2B, and more
+</div>
+
+<div class="ooo-bar">
+  📴 OOO registered May 4–5 — light on partner meetings. Focus: send emails, send recording, Amanda sync, watch Editions.
+</div>
+
+<div class="mastery-bar">
+  ✴️ Mastery Conversations close May 7 — 3 days left
+</div>
+
+<div class="layout">
+  <div class="main">
+
+    <div class="section-label">Morning — Send Tasks</div>
+
+    <!-- Send emails -->
+    <div class="send-card">
+      <div class="card-header" style="margin-bottom:8px;">
+        <h3>📤 Send: 6 Partner Emails</h3>
+        <span style="font-size:11px;opacity:0.7;white-space:nowrap;margin-left:10px;">9:00 AM · Reminder</span>
+      </div>
+      <div class="body">
+        All 6 emails are drafted and ready in the sheet. Open, copy, send.
+        <ul>
+          <li><strong>HP-3 Vitamina</strong> → miriam@vitaminaonline.com.mx — GTM plan: Gran Vía Plus migration, B2B positioning, MDF Q4 planning</li>
+          <li><strong>Nudge HP-2 METARD</strong> → edgarmade@gmail.com — sent la semana pasada, no response</li>
+          <li><strong>Nudge HP-2 Ads-Alchemy</strong> → pm.campos@ads-alchemy.com — same</li>
+          <li><strong>Nudge SP-2 Paulina Navarro</strong> → paulinanavarro.web@gmail.com — sent el jueves pasado</li>
+          <li><strong>Nudge SP-2 Saltamontes</strong> → samiamaron@gmail.com — same</li>
+          <li><strong>Nudge HP-2 Unmade</strong> → alfredo@unmade.mx — same, includes Woo/Magento migration docs context</li>
+        </ul>
+        <div style="margin-top:10px;"><a href="https://docs.google.com/spreadsheets/d/1bVsHoRa16DqTp4-tdh4ol5GnE12x5sSqPjLj5s0CVWI/edit" style="color:#a9dfbf;font-weight:600;">Open email sheet →</a></div>
+      </div>
+    </div>
+
+    <!-- Send recording -->
+    <div class="card green">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Enviar grabación del webinar al grupo</div>
+          <span class="tag send">Send</span>
+        </div>
+        <div class="card-time">9:30 AM · Reminder</div>
+      </div>
+      <div class="card-body">
+        Send the recording of "Cómo Crecer con Shopify como Agencia — México" to all 62 registrants + 138 invited.
+        <ul>
+          <li>Add a short note — highlight the Q&A, mention the next webinar in the series</li>
+          <li>Good moment to nudge anyone who registered but didn't attend to watch async</li>
+          <li>This is a warm touchpoint — use it to tee up SP-2 / HP-2 conversations with engaged attendees</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-label">10:00 AM — Internal</div>
+
+    <!-- Amanda biweekly -->
+    <div class="card blue">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Amanda–Antonio biweekly</div>
+          <span class="tag internal">Internal</span>
+        </div>
+        <div class="card-time">10:00 – 10:30 AM</div>
+      </div>
+      <div class="card-body">
+        Biweekly sync with Amanda Bankes. Good Editions week touchpoint — align on any partner-facing comms around the announcements.
+        <ul>
+          <li>Shopify Editions announcements: what's the partner comms plan for Payments MX, B2B updates?</li>
+          <li>Any enablement assets coming out this week partners should know about?</li>
+          <li>CBI Market deadlines this week — May 6 directory + client portal (tomorrow)</li>
+        </ul>
+        <div class="people">Amanda Bankes · Shopify</div>
+      </div>
+    </div>
+
+    <div class="section-label">All Day — Editions Watch</div>
+
+    <!-- Shopify Editions -->
+    <div class="editions-card">
+      <h3>🚀 Shopify Editions — May 4–5</h3>
+      <div class="body">
+        Major product announcement window. Watch for anything partner-relevant to forward to your book immediately while it's hot.
+        <ul>
+          <li><strong>Payments MX:</strong> Any updates to Shopify Payments Mexico availability, fees, or chargeback process? (Vitamina raised chargebacks specifically — forward anything relevant)</li>
+          <li><strong>B2B:</strong> Updates to B2B native features, Plus vs. non-Plus availability, gateway requirements?</li>
+          <li><strong>Checkout Extensibility:</strong> New apps, features, or migration timelines?</li>
+          <li><strong>Markets / Headless:</strong> Anything relevant for Lop's multi-brand use cases?</li>
+          <li><strong>Partner Program:</strong> Revenue share changes, tier updates, PPS news?</li>
+        </ul>
+        Good content to prep for next week's cadence touchpoints and for the May webinar in the series.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>🔥 Open Action Items</h4>
+
+      <div class="action-item">
+        <div class="bullet green">●</div>
+        <div><strong>TODAY — Send 6 emails</strong> — HP-3 Vitamina + 5 nudges. Sheet is ready.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet green">●</div>
+        <div><strong>TODAY — Send webinar recording</strong> to all 62 registrants.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet gold">●</div>
+        <div><strong>May 6 — CBI Market</strong> directory + Plus client portal deadline. Tomorrow.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet gold">●</div>
+        <div><strong>May 7 — Mastery closes</strong> — 3 days left.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet">●</div>
+        <div><strong>Bon Graven WhatsApp</strong> — vouch for Lab51 (Nicolas) on DBS deal.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet">●</div>
+        <div><strong>Lop — B2B Plus vs B2B PDF</strong> — committed Apr 16. Still pending.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet blue">●</div>
+        <div><strong>VNS Premier status</strong> — check with Ops.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet blue">●</div>
+        <div><strong>VNS AI Campaign brief</strong> — Nicole's 2 unresolved comments.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet purple">●</div>
+        <div><strong>Lobo — conviction meeting</strong> — schedule Mauricio + Felipe + Antonio.</div>
+      </div>
+      <div class="action-item">
+        <div class="bullet blue">●</div>
+        <div><strong>Atoms — MDF deck</strong> — confirm César sent Commerce Stack deck.</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>📊 Pipeline Watch</h4>
+      <div class="pipeline-item">
+        <div class="partner">Lab51 / Nicolas</div>
+        <div class="deal">DBS deal — needs Bon Graven WhatsApp vouch</div>
+        <div class="status">Action required</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Lobo / Mauricio</div>
+        <div class="deal">Q3/Q4 Shopify Day + Kik event</div>
+        <div class="status">Conviction meeting needed</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Lop / Esteban</div>
+        <div class="deal">Lubricants Co (Shell) → Plus · Grido (1,800 franchise marketplace)</div>
+        <div class="status">New Plus pipeline</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Vitamina / Miriam</div>
+        <div class="deal">Gran Vía: 3 Advance → 1 Plus (new store, 20% rev share)</div>
+        <div class="status">HP-3 sending today</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Atoms / César</div>
+        <div class="deal">Flex deal + Commerce Stack MDF</div>
+        <div class="status">Pending review</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>📅 This Week</h4>
+      <div class="week-item"><span class="day">Mon May 4</span> — OOO · Send emails + recording · Editions Day 1 · Amanda sync</div>
+      <div class="week-item"><span class="day">Tue May 5</span> — OOO · Editions Day 2 · Cinco de Mayo observance</div>
+      <div class="week-item"><span class="day">Wed May 6</span> — <span class="urgent">CBI Market: directory + Plus client portal deadline</span></div>
+      <div class="week-item"><span class="day">Thu May 7</span> — <span class="urgent">Mastery Conversations close</span></div>
+      <div class="week-item"><span class="day">Wed May 13</span> — CBI Market: Lama Bike case study deadline</div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>📅 Looking Ahead</h4>
+      <div class="week-item">May 17 — CBI Market check-in</div>
+      <div class="week-item">May 25–29 — Toronto (Lop/Esteban going too)</div>
+      <div class="week-item">Jun/Jul — MDF Q4 window opens (Vitamina event planning)</div>
+      <div class="week-item">Sep — Webinar series final session</div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🎓 Mastery — Closing Week</h4>
+      <div style="font-size:12px;color:#555;line-height:1.6;">
+        Closes May 7 — 3 days.<br><br>
+        Your conversation with Megan happened Friday May 1. If any follow-up actions came out of it, get them in before Thursday.<br><br>
+        <a href="https://talent.shopify.io" style="color:#8e44ad;font-weight:600;">talent.shopify.io →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
