@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner Brief — Thursday May 14, 2026</title>
+<title>Partner Brief — Thursday May 14, 2026 (Burst Day 1)</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f5f7; color: #1a1a2e; }
@@ -17,104 +17,70 @@
   .banner h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
   .banner .sub { font-size: 14px; color: #a0c4d4; margin-top: 4px; }
 
-  .alert {
-    padding: 10px 24px;
-    font-size: 13px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .alert { padding: 10px 24px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
   .alert.critical { background: #c0392b; color: white; }
-  .alert.warning { background: #e67e22; color: white; }
-  .alert.info { background: #2980b9; color: white; }
-  .alert.success { background: #16a085; color: white; }
+  .alert.warning  { background: #e67e22; color: white; }
+  .alert.info     { background: #2980b9; color: white; }
+  .alert.success  { background: #16a085; color: white; }
 
-  .layout { display: grid; grid-template-columns: 1fr 320px; gap: 20px; padding: 20px 24px; max-width: 1200px; }
+  .layout { display: grid; grid-template-columns: 1fr 340px; gap: 20px; padding: 20px 24px; max-width: 1280px; }
 
-  .section-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #777;
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 18px;
-  }
+  .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: #777; font-weight: 700; margin-bottom: 10px; margin-top: 18px; }
   .section-label:first-child { margin-top: 0; }
 
-  .card {
-    background: white;
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-    border-left: 4px solid #ccc;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .card.green { border-left-color: #27ae60; }
-  .card.blue { border-left-color: #2980b9; }
+  .card { background: white; border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; border-left: 4px solid #ccc; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .card.green  { border-left-color: #27ae60; }
+  .card.blue   { border-left-color: #2980b9; }
   .card.orange { border-left-color: #e67e22; }
-  .card.red { border-left-color: #c0392b; }
+  .card.red    { border-left-color: #c0392b; }
   .card.purple { border-left-color: #8e44ad; }
-  .card.gray { border-left-color: #bdc3c7; }
-  .card.teal { border-left-color: #16a085; }
-  .card.gold { border-left-color: #f39c12; }
-  .card.navy { border-left-color: #1a5276; }
+  .card.gray   { border-left-color: #bdc3c7; }
+  .card.teal   { border-left-color: #16a085; }
+  .card.gold   { border-left-color: #f39c12; }
+  .card.navy   { border-left-color: #1a5276; }
 
-  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 10px; }
   .card-title { font-size: 14px; font-weight: 700; }
-  .card-time { font-size: 11px; color: #888; white-space: nowrap; margin-left: 10px; }
+  .card-time { font-size: 11px; color: #888; white-space: nowrap; }
   .card-body { font-size: 13px; color: #444; line-height: 1.55; }
   .card-body ul { padding-left: 16px; margin-top: 6px; }
-  .card-body ul li { margin-bottom: 3px; }
-  .card-body .people { font-size: 12px; color: #777; margin-top: 6px; font-style: italic; }
+  .card-body ul li { margin-bottom: 4px; }
+  .card-body .people { font-size: 12px; color: #777; margin-top: 8px; font-style: italic; }
+  .card-body .ctx { background: #eef9f0; border-left: 3px solid #27ae60; padding: 6px 10px; margin: 6px 0; font-size: 12px; border-radius: 3px; }
+  .card-body .ctx-amber { background: #fdf6e3; border-left: 3px solid #f39c12; padding: 6px 10px; margin: 6px 0; font-size: 12px; border-radius: 3px; }
+  .card-body .ctx-blue  { background: #eaf2fa; border-left: 3px solid #2980b9; padding: 6px 10px; margin: 6px 0; font-size: 12px; border-radius: 3px; }
+  .card-body .ctx-red   { background: #fbeae8; border-left: 3px solid #c0392b; padding: 6px 10px; margin: 6px 0; font-size: 12px; border-radius: 3px; }
 
-  .tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 10px;
-    margin-right: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .tag.hp { background: #fde8d0; color: #c0392b; }
-  .tag.sp { background: #d6eaf8; color: #1a5276; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-right: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tag.hp       { background: #fde8d0; color: #c0392b; }
+  .tag.sp       { background: #d6eaf8; color: #1a5276; }
   .tag.internal { background: #eaf0fb; color: #2c3e50; }
-  .tag.new { background: #e8f8f5; color: #0e6655; }
-  .tag.chile { background: #fde8e8; color: #922b21; }
-  .tag.brazil { background: #fef9e7; color: #b7950b; }
-  .tag.cadence { background: #d5f5e3; color: #145a32; }
-  .tag.burst { background: #e8f0fe; color: #1a5276; }
-  .tag.travel { background: #fef5e7; color: #784212; }
+  .tag.new      { background: #e8f8f5; color: #0e6655; }
+  .tag.burst    { background: #e8f0fe; color: #1a5276; }
+  .tag.travel   { background: #fef5e7; color: #784212; }
   .tag.conflict { background: #fadbd8; color: #922b21; }
-  .tag.skip { background: #f2f3f4; color: #555; }
+  .tag.skip     { background: #f2f3f4; color: #555; }
+  .tag.done     { background: #d5f5e3; color: #145a32; }
+  .tag.live     { background: #fdebd0; color: #b9770e; }
 
-  /* Sidebar */
-  .sidebar-card {
-    background: white;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin-bottom: 14px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
+  .sidebar-card { background: white; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
   .sidebar-card h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; margin-bottom: 10px; }
   .action-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; line-height: 1.45; }
   .action-item .bullet { color: #e74c3c; font-size: 16px; line-height: 1; flex-shrink: 0; }
-  .action-item .bullet.blue { color: #2980b9; }
-  .action-item .bullet.green { color: #27ae60; }
+  .action-item .bullet.blue   { color: #2980b9; }
+  .action-item .bullet.green  { color: #27ae60; }
   .action-item .bullet.purple { color: #8e44ad; }
-  .action-item .bullet.gold { color: #f39c12; }
+  .action-item .bullet.gold   { color: #f39c12; }
   .action-item .bullet.urgent { color: #c0392b; font-weight: 700; }
 
-  .pipeline-item { font-size: 12px; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f0f0f0; }
+  .pipeline-item { font-size: 12px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
   .pipeline-item:last-child { border-bottom: none; margin-bottom: 0; }
   .pipeline-item .partner { font-weight: 700; }
   .pipeline-item .deal { color: #555; }
   .pipeline-item .status { font-size: 10px; color: #e67e22; font-weight: 600; text-transform: uppercase; }
   .pipeline-item .status.hot { color: #c0392b; }
   .pipeline-item .status.win { color: #16a085; }
+  .pipeline-item .status.blue { color: #2980b9; }
 
   .week-item { font-size: 12px; margin-bottom: 5px; color: #555; padding-left: 10px; position: relative; }
   .week-item::before { content: '·'; position: absolute; left: 0; color: #aaa; }
@@ -126,276 +92,334 @@
   .stat-box { flex: 1; background: #f8f9fa; border-radius: 6px; padding: 8px; text-align: center; }
   .stat-box .num { font-size: 18px; font-weight: 700; color: #16a085; }
   .stat-box .label { font-size: 10px; color: #777; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #999; }
 </style>
 </head>
 <body>
 
 <div class="banner">
   <h1>Partner Brief — Thursday, May 14</h1>
-  <div class="sub">Toronto · AMER &amp; LATAM Scaled Burst Day 1 · Internal day · Alli Stewart in the room → live PoC window</div>
+  <div class="sub">Toronto · AMER &amp; LATAM Scaled Burst Day 1 · Alli Stewart in the room → the PoC moment</div>
 </div>
 
 <div class="alert critical">
-  🔥 BURST DAY 1 — All-day with Megan, Marcelo, Alli Stewart, Michelle Drawert, Alli Burg. Internal day, no external partners. Team Dinner @ Bar Reyna 5pm.
+  🎯 <strong>TODAY'S #1 MOVE:</strong> Walk Alli Stewart through the LATAM Send Sheet + Website Analysis tab in person. Phase 1 Manual MVP shipped Monday — 48 sites diagnosed, 38/50 reached. She authored the framework. This is the live PoC window.
 </div>
 <div class="alert warning">
-  ⚠️ 11:00 Shawn biweekly — Shawn DECLINED (OOO May 11–16). Skip / cancel the slot.
+  ✅ DONE — Burst opener at 9:09am: ECD Digital (Zak Cassady-Dorion). Revenue audit motion aligned, 90-day Platinum push, Brazilian expansion. Next steps below.
 </div>
 <div class="alert info">
-  📅 12:00 CONFLICT — MaryFrances 1:1 vs AMER Partnership All Hands. Pick one. Room calls it.
+  📅 12:00 PM CONFLICT — MaryFrances 1:1 ↔ AMER Partnership All Hands. Pick one.
+</div>
+<div class="alert info">
+  ✈️ Tomorrow 6:15 PM — Flight AC 993 → Mexico City. Burst wraps at 4:00 PM. Tight turnaround on packing/checkout from the Revery.
 </div>
 
 <div class="layout">
   <div class="main">
 
-    <div class="section-label">All Day — Toronto / Burst Day 1</div>
+    <div class="section-label">All Day — Toronto / Burst Day 1 of 2</div>
 
     <div class="card navy">
       <div class="card-header">
         <div>
-          <div class="card-title">🚀 AMER &amp; LATAM Scaled Partnerships — Burst Day 1</div>
-          <span class="tag burst">Toronto</span>
-          <span class="tag travel">In-person</span>
+          <div class="card-title">🚀 AMER &amp; LATAM Scaled Partnerships — Day 1</div>
+          <div style="margin-top: 4px;"><span class="tag burst">Toronto · 620 King</span> <span class="tag travel">In-person</span></div>
         </div>
         <div class="card-time">4:00 AM – 4:00 PM</div>
       </div>
       <div class="card-body">
-        L09 Terra Nova room, 620 King Toronto. Day 1 of 2. Megan Nobrega champions. RSVPs accepted: <strong>Alli Stewart, Marcelo Fischer, Megan, Michelle Drawert</strong>. Niklas declined.
-        <ul>
-          <li><strong>Today is the Alli Stewart window.</strong> She's the author of the 5-dim coaching framework. You shipped Phase 1 of it for LATAM on Monday — 48 sites diagnosed, 38/50 partners reached in one day. <strong>Walk her through the Send Sheet in person.</strong> Memory's been flagging this follow-up for a week.</li>
-          <li><strong>Share with Megan</strong> as a LATAM-specific operating win — Phase 1 Manual MVP works without waiting for Gumloop. Replicable across other regions.</li>
-          <li><strong>Day 1 = setup + alignment.</strong> Heavier programming presumably Friday. Use today for the 1:1 pull-asides.</li>
-          <li><strong>Burst Vault:</strong> vault.shopify.io/irl/bursts/3379</li>
-        </ul>
+        <strong>L09 Terra Nova room</strong>, 9th floor. Day 1 of 2. Megan champions. <strong>RSVPs accepted:</strong> Alli Stewart, Marcelo Fischer, Megan Nobrega, Michelle Drawert, Alli Burg. Niklas declined.
+        <div class="ctx">
+          <strong>Why this week matters →</strong> First IRL for the newly-formed AMER &amp; LATAM Scaled team. Programming around strategic build-out, AI for partner/program experience, Q1 wins, Q2/H2 plans. Burst Vault: <a href="https://vault.shopify.io/irl/bursts/3379-AMER-LATAM-Scaled-Partnerships">3379</a>.
+        </div>
+        <div class="ctx-amber">
+          <strong>Alli Stewart pull-aside (priority of the week) →</strong> Phase 1 of her 5-dimension AI Coaching Framework is live for LATAM. 48 partner sites analyzed via WebFetch on May 12. Score distribution: 10 high (28–32), 18 mid, 10 critical (≤12). Dominant gap across 26/38 partners: <strong>"Better Together Story"</strong>. 17 personalized emails went out, plus a Blanket Send to the 21 holds. Sheet: <code style="font-size:11px;">1EII0jzx_4e0O1scEyHHdh2W5LqoJhmeB0Kk6OU9rBvk</code>. Ask her to validate the rubric + co-sign the rollout note to Megan.
+        </div>
+        <div class="ctx-blue">
+          <strong>Megan asks →</strong> Frame as a LATAM-specific operating win — Phase 1 Manual MVP works without waiting for Gumloop. Replicable across regions. Tie back to the May 8 Team Check-In open item (you, Alli, Michelle) to document cross-sell / sales friction with screenshots.
+        </div>
         <div class="people">Megan Nobrega (champion) · Alli Stewart · Marcelo Fischer · Michelle Drawert · Alli Burg</div>
       </div>
     </div>
 
-    <div class="section-label">11:00 AM — Shawn biweekly</div>
+    <div class="section-label">9:09 AM — ✅ DONE</div>
+
+    <div class="card teal">
+      <div class="card-header">
+        <div>
+          <div class="card-title">ECD Digital — Zak Cassady-Dorion (Burst opener)</div>
+          <div style="margin-top: 4px;"><span class="tag done">Wrapped</span> <span class="tag new">Net-new partner</span></div>
+        </div>
+        <div class="card-time">9:09 AM EDT</div>
+      </div>
+      <div class="card-body">
+        Founder of ECD Digital, fully-remote 35-person agency, <strong>90% based in LATAM</strong> (Mexico City + Colombia leadership). Killed all B2B work Jan 1 — exclusively DTC now. Klaviyo's go-to partner.
+        <div class="ctx">
+          <strong>Pipeline / numbers →</strong> 145 YTD leads from Klaviyo · 44% close rate · 1 open Shopify migration · clients $2M–$75M annual revenue (newer cohort avg $25M) · 14 Home &amp; Garden clients but diversified into F&amp;B, beauty, apparel · case study: doubled conversion + 37% AOV lift.
+        </div>
+        <div class="ctx-amber">
+          <strong>Aligned →</strong> ECD provides <strong>free revenue audits</strong> for any Shopify migration opportunity to support AE closes. Submitting leads via partner dashboard so commercial gets assigned. Goal: <strong>Platinum Partner status within 90 days</strong>.
+        </div>
+        <div class="ctx-blue">
+          <strong>Brazilian play →</strong> ECD will act as the sales team for Klaviyo's incoming Brazilian leads — native-language LATAM team captures &amp; migrates to Shopify. Klaviyo + Shopify virtual event May 28 on global markets functionality.
+        </div>
+        <div class="ctx-red">
+          <strong>[OPEN] Next steps →</strong>
+          <ul style="margin-top: 4px; padding-left: 16px;">
+            <li>Group: facilitate the dev meeting between Klaviyo + Shopify (push Zak forward)</li>
+            <li>Toronto room: 20-day check-in with Zak · share transcript · schedule follow-up call</li>
+            <li>Zak: review Klaviyo + Postpilot lead lists, submit via partner dashboard</li>
+            <li>Group: assign AE to newly submitted leads</li>
+          </ul>
+        </div>
+        <div class="ctx">
+          <strong>Soft asks →</strong> Shopify employees on the ECD podcast (commerce AI products, LATAM brand migration story). Reminded Zak of the current quarter promo: $2,500 per net-new Plus deal submitted &amp; closed.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">10:00 AM — Burst block</div>
+
+    <div class="card gray">
+      <div class="card-header">
+        <div>
+          <div class="card-title">DNB (Burst block)</div>
+        </div>
+        <div class="card-time">10:00 – 10:30 AM</div>
+      </div>
+      <div class="card-body">Working block inside the Burst — likely Day 1 deep-dive / next agency.</div>
+    </div>
+
+    <div class="section-label">11:00 AM — Shawn 1:1</div>
 
     <div class="card red">
       <div class="card-header">
         <div>
           <div class="card-title">Shawn–Antonio ☕️ biweekly</div>
-          <span class="tag conflict">Shawn OOO</span>
-          <span class="tag skip">Skip</span>
+          <div style="margin-top: 4px;"><span class="tag conflict">Shawn OOO</span> <span class="tag skip">Skip</span></div>
         </div>
         <div class="card-time">11:00 – 11:30 AM</div>
       </div>
       <div class="card-body">
-        Shawn declined — he's OOO May 11–16. The recurring slot is live but the other side isn't. Don't sit on the Meet link.
-        <ul>
-          <li><strong>Action:</strong> Decline / mark as skipped. Use the 30 min to prep the Alli Stewart PoC walk-through, or grab face time with someone in the room.</li>
-        </ul>
+        Shawn declined — OOO <strong>May 11–16</strong>. Recurring slot is live but the other side isn't.
+        <div class="ctx-amber">
+          <strong>Use the 30 min →</strong> Prep the Alli Stewart walk-through, or grab face time with Megan / Marcelo on the Q3/Q4 plan.
+        </div>
       </div>
     </div>
 
-    <div class="section-label">12:00 PM — Pick one</div>
+    <div class="section-label">12:00 PM — Choose one</div>
 
     <div class="card orange">
       <div class="card-header">
         <div>
-          <div class="card-title">⚠️ Conflict: MaryFrances 1:1 vs AMER Partnership All Hands</div>
-          <span class="tag conflict">Choose</span>
+          <div class="card-title">⚠️ Conflict — MaryFrances 1:1 vs AMER Partnership All Hands</div>
+          <div style="margin-top: 4px;"><span class="tag conflict">Pick</span></div>
         </div>
-        <div class="card-time">12:00 – 12:30/13:00 PM</div>
+        <div class="card-time">12:00 – 12:30 / 1:00 PM</div>
       </div>
       <div class="card-body">
-        Two events stacked at 12:00 — MaryFrances Duggins 1:1 (30 min, both accepted) and AMER Partnership All Hands (60 min, 60 attendees, you're <code>needsAction</code>).
-        <ul>
-          <li><strong>MaryFrances 1:1</strong> — both confirmed, smaller commitment, you'd be ghosting if you skip silently. Tim Matteson organizes the All Hands.</li>
-          <li><strong>All Hands</strong> — 60-person org-wide, Megan is on the invite. Day-1-of-burst optics matter, but you're already in the room with the leadership table.</li>
-          <li><strong>Suggested:</strong> Take MaryFrances (the commitment with explicit reciprocity), watch All Hands recording or get the Slack summary. Decline the All Hands now so Tim knows.</li>
-        </ul>
+        <div class="ctx-blue">
+          <strong>MaryFrances 1:1 (30 min)</strong> — cadence with maryfrances.duggins@shopify.com. Both accepted.
+        </div>
+        <div class="ctx-blue">
+          <strong>AMER Partnership All Hands (60 min)</strong> — Tim Matteson organizes. Alli Burg accepted; most of AMER on needsAction. You're on needsAction. Likely AMER-wide programming, not LATAM-critical.
+        </div>
+        <div class="ctx-amber">
+          <strong>Likely call →</strong> Take MaryFrances live (the room cuts in/out of All Hands anyway). Catch the All Hands recording later if anything sticky.
+        </div>
       </div>
     </div>
 
-    <div class="section-label">1:30 PM — Co-Marketing Office Hours</div>
+    <div class="section-label">1:30 PM — Co-Marketing</div>
 
-    <div class="card gray">
+    <div class="card gold">
       <div class="card-header">
         <div>
           <div class="card-title">Co-Marketing Office Hours</div>
-          <span class="tag internal">Internal · Optional</span>
+          <div style="margin-top: 4px;"><span class="tag internal">Optional</span></div>
         </div>
         <div class="card-time">1:30 – 2:00 PM</div>
       </div>
       <div class="card-body">
-        Vicki Tone's weekly co-marketing Q&amp;A. You're <code>needsAction</code>. Drop in only if you have a question pending — otherwise hold the time for burst hallway track.
+        Vicki Tone hosts. Open Q&amp;A on partner co-marketing. Alli Stewart on needsAction, Bharati accepted.
+        <div class="ctx-amber">
+          <strong>Bring if attending →</strong> Latech MDF ($3,500 approved, doc pending to send), Grace's Latam-US structure question for Andrea, Wualá's client breakfast plan with Pablo Bacco.
+        </div>
       </div>
     </div>
 
     <div class="section-label">2:00 PM — Town Hall</div>
 
-    <div class="card gray">
+    <div class="card purple">
       <div class="card-header">
         <div>
           <div class="card-title">Shopify Town Hall</div>
-          <span class="tag internal">All-hands</span>
+          <div style="margin-top: 4px;"><span class="tag internal">ShopifyTV</span></div>
         </div>
-        <div class="card-time">2:00 – 3:00 PM · ShopifyTV</div>
+        <div class="card-time">2:00 – 3:00 PM</div>
       </div>
-      <div class="card-body">
-        Watch on ShopifyTV (tv.shopify.io). Likely group-watch in the burst room.
+      <div class="card-body">Watch on tv.shopify.io. Background-able during the Burst.</div>
+    </div>
+
+    <div class="section-label">4:00 PM — Block</div>
+
+    <div class="card gray">
+      <div class="card-header">
+        <div>
+          <div class="card-title">block triciclo</div>
+        </div>
+        <div class="card-time">4:00 – 7:00 PM</div>
       </div>
+      <div class="card-body">Personal block. Burst formal day ends 4pm; Dinner at 5pm.</div>
     </div>
 
     <div class="section-label">5:00 PM — Team Dinner</div>
 
-    <div class="card teal">
+    <div class="card green">
       <div class="card-header">
         <div>
-          <div class="card-title">🍷 Team Dinner — Bar Reyna</div>
-          <span class="tag burst">In-person</span>
+          <div class="card-title">🍽️ Team Dinner @ Bar Reyna</div>
+          <div style="margin-top: 4px;"><span class="tag travel">Yorkville</span></div>
         </div>
         <div class="card-time">5:00 – 7:50 PM</div>
       </div>
       <div class="card-body">
-        Bar Reyna, 158 Cumberland St, Yorkville. <strong>All 5 accepted</strong> — Megan, Marcelo, Alli Burg, Michelle Drawert, you. Organized by Megan.
-        <ul>
-          <li><strong>This is the dinner you came for.</strong> Day-1 relationship dinner — table will be small (5), conversation will go places the room can't.</li>
-          <li><strong>Bring up:</strong> Top 50 sprint result (38/50 in one day) + the Alli Stewart loop-in plan as a regional template.</li>
-          <li><strong>Ask Megan:</strong> what does "win" look like for Q3 on LATAM Scaled — to anchor the rest of the burst around her priorities.</li>
-        </ul>
-        <div class="people">Megan Nobrega · Marcelo Fischer · Alli Burg · Michelle Drawert</div>
+        <strong>158 Cumberland St, Toronto</strong>. Megan hosting. RSVPs: Marcelo, Alli Burg, Megan, Michelle, you — all accepted.
+        <div class="ctx">
+          <strong>Use the dinner →</strong> Soft pull-aside with Alli Burg on Top 50 sprint progress (she's AMER-side). And one-on-one moment with Michelle on the May 8 Team Check-In open items (launch-issues partners, pivotal-moments definition).
+        </div>
       </div>
     </div>
 
-    <div class="section-label">Tomorrow — Burst Day 2 + Fly Home</div>
+    <div class="section-label">Tomorrow — Friday May 15</div>
 
-    <div class="card blue">
+    <div class="card navy">
       <div class="card-header">
         <div>
-          <div class="card-title">Friday May 15 preview</div>
-          <span class="tag burst">Day 2</span>
-          <span class="tag travel">YYZ → MEX</span>
+          <div class="card-title">Burst Day 2 + Flight Home</div>
+          <div style="margin-top: 4px;"><span class="tag travel">Flight 6:15pm</span></div>
         </div>
-        <div class="card-time">06:15 – 18:15</div>
+        <div class="card-time">Day 2 wraps 4pm · AC 993 6:15pm</div>
       </div>
       <div class="card-body">
         <ul>
-          <li><strong>06:15–13:00</strong> Burst DNB block — programming day</li>
-          <li><strong>08:00</strong> Pipeline sheet update / <strong>08:05</strong> H2 acttrack updates (5-min slots, do before walking in)</li>
-          <li><strong>11:00</strong> Getmore biweekly — the only external partner meeting of the trip. Conflicts with PDM Monthly team hang — keep Getmore.</li>
-          <li><strong>18:15 AC 993 YYZ → MEX</strong> (lands 23:25). Pack out of Revery before the burst close at 4pm.</li>
+          <li><strong>6:15am – 1:00pm:</strong> Burst DNB</li>
+          <li><strong>11:00am:</strong> Monthly team hang <em>and</em> Getmore Biweekly (another conflict — Getmore is the active partner-facing one)</li>
+          <li><strong>4:00pm:</strong> Burst Day 2 closes</li>
+          <li><strong>6:15pm:</strong> <strong>AC 993 → Mexico City</strong> (arrives 11:25pm local). Check out of the Revery before the Burst close OR drop bags at L09 in the morning.</li>
         </ul>
       </div>
     </div>
 
   </div>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
 
     <div class="sidebar-card">
-      <h4>🎯 Top Move Today</h4>
-      <div class="action-item">
-        <div class="bullet urgent">●</div>
-        <div><strong>Walk Alli Stewart through the LATAM Sheet</strong> in person — first time you've shared physical space. Send Sheet + Website Analysis tab = Phase 1 PoC.</div>
+      <h4>Open Action Items — Top 50 Sprint</h4>
+      <div class="action-item"><div class="bullet urgent">●</div><div><strong>CBI Market</strong> — HP-4 by <strong>May 17</strong> (Saturday). Two days left.</div></div>
+      <div class="action-item"><div class="bullet">●</div><div><strong>Acromatico</strong> — Triangulum commission · Fonart letter signature · gov call</div></div>
+      <div class="action-item"><div class="bullet">●</div><div><strong>EverestUP</strong> — POS hardware info · Ricardo/Starronic intro</div></div>
+      <div class="action-item"><div class="bullet">●</div><div><strong>METARD</strong> — Riwi founder intro</div></div>
+      <div class="action-item"><div class="bullet gold">●</div><div><strong>Lab51</strong> — Bon Graven WhatsApp</div></div>
+      <div class="action-item"><div class="bullet gold">●</div><div><strong>Lop</strong> — B2B Plus PDF</div></div>
+      <div class="action-item"><div class="bullet blue">●</div><div><strong>Atoms</strong> — MDF</div></div>
+      <div class="action-item"><div class="bullet blue">●</div><div><strong>Lama Bike</strong> — Case study (due May 13, slipped)</div></div>
+      <div class="action-item"><div class="bullet blue">●</div><div><strong>VNS</strong> — Premier follow-up</div></div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Open from Recent Gemini</h4>
+      <div class="action-item"><div class="bullet purple">●</div><div><strong>Latech / Grace</strong> — Send MDF response doc (Grace di Rado will detail LATAM-US structure for Andrea, CC you)</div></div>
+      <div class="action-item"><div class="bullet purple">●</div><div><strong>Jamak / Jose Mijares</strong> — Send Michelle's engineering form + Magento vs Plus comparative</div></div>
+      <div class="action-item"><div class="bullet purple">●</div><div><strong>Moxie / Nico</strong> — Notify on Q2 lead campaign for invoicing · Q3 MDF status (deadline Apr 24 already slipped)</div></div>
+      <div class="action-item"><div class="bullet purple">●</div><div><strong>Dinkbit MSI</strong> — Receive 2-3 alpha merchant candidates from Edgar/Rafael (was due May 8)</div></div>
+      <div class="action-item"><div class="bullet purple">●</div><div><strong>Dango</strong> — Review client docs from Mariana (36-brand Plus expansion question; doesn't fit guidelines)</div></div>
+      <div class="action-item"><div class="bullet purple">●</div><div><strong>Team Check-In (May 8)</strong> — You + Alli + Michelle: compile cross-sell / sales friction with quotes &amp; screenshots</div></div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Pipeline Watch</h4>
+      <div class="pipeline-item">
+        <div class="partner">ECD Digital <span class="status blue">90-day Plat</span></div>
+        <div class="deal">New. Klaviyo's go-to. 145 leads YTD, 44% close. 1 open Shopify migration. Brazilian expansion via LATAM team.</div>
       </div>
-      <div class="action-item">
-        <div class="bullet gold">●</div>
-        <div><strong>At dinner</strong>: anchor Megan on what Q3 "win" looks like for LATAM Scaled, so the rest of the burst aligns to it.</div>
+      <div class="pipeline-item">
+        <div class="partner">Wualá <span class="status">Plus prospect</span></div>
+        <div class="deal">Pablo Bacco planning client breakfast next 1-2 weeks · migration plan in motion · prioritize Plus close per Editions Q2 promo</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Dango <span class="status">Blocked</span></div>
+        <div class="deal">36-brand structure incompatible with Plus expansion model (same-brand restriction). Awaiting client docs from Mariana to find a path.</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Dinkbit MSI <span class="status hot">Alpha</span></div>
+        <div class="deal">Edgar/Rafael shortlisting 2-3 alpha merchants (high-AOV, Shopify Payments MX). Michelle clarifying payout cadence + final fees with Product.</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Jamak <span class="status">Select</span></div>
+        <div class="deal">Reaffirmed Select MX status · supporting Magento → Plus migration via Michelle's eng form · app review pipeline clogged (no-code volume)</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">TKA-Chile <span class="status">Event</span></div>
+        <div class="deal">Shopify Day on <strong>May 26</strong> · Francisca handles breakfast + venue + sponsors · you present 20-min Shopify-in-LATAM intro</div>
       </div>
     </div>
 
     <div class="sidebar-card">
-      <h4>📊 Sprint Status (Mon May 12)</h4>
+      <h4>Q2/Q3 MDF Radar</h4>
+      <div class="pipeline-item">
+        <div class="partner">Latech <span class="status win">$3,500 ✓</span></div>
+        <div class="deal">Q2 MDF approved for migration campaign + E-commerce Connect (Argentina)</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Moxie Q3 <span class="status hot">Slipped</span></div>
+        <div class="deal">Q3 MDF status — original deadline Apr 24 missed. Reopen with Nico when Q3 window opens.</div>
+      </div>
+      <div class="pipeline-item">
+        <div class="partner">Atoms <span class="status">Open</span></div>
+        <div class="deal">MDF allocation — outstanding ask from prior week</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>This Week</h4>
+      <div class="week-item"><span class="day">Mon May 11</span> · <span class="done">✓</span> Top 50 Sprint shipped — 38/50 emails out, Blanket Send live</div>
+      <div class="week-item"><span class="day">Tue May 12</span> · <span class="done">✓</span> Website Analysis tab populated, 48 sites scored</div>
+      <div class="week-item"><span class="day">Wed May 13</span> · <span class="done">✓</span> Toronto travel, Burst pre-work</div>
+      <div class="week-item"><span class="day">Thu May 14</span> · <span class="urgent">Burst Day 1 · Alli PoC</span></div>
+      <div class="week-item"><span class="day">Fri May 15</span> · Burst Day 2 · flight CDMX</div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Next Week</h4>
+      <div class="week-item"><span class="day">Mon May 18</span> · Back in CDMX</div>
+      <div class="week-item"><span class="day">Sat May 17</span> · <span class="urgent">CBI Market HP-4 deadline</span></div>
+      <div class="week-item"><span class="day">May 26</span> · TKA-Chile Shopify Day (you present 20m)</div>
+      <div class="week-item"><span class="day">May 28</span> · Klaviyo + Shopify virtual event (markets functionality, ECD attending)</div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Quick Stats</h4>
       <div class="stat-row">
-        <div class="stat-box">
-          <div class="num">38</div>
-          <div class="label">of 50 reached</div>
-        </div>
-        <div class="stat-box">
-          <div class="num">48</div>
-          <div class="label">sites diagnosed</div>
-        </div>
+        <div class="stat-box"><div class="num">38/50</div><div class="label">Top 50 reached</div></div>
+        <div class="stat-box"><div class="num">17</div><div class="label">Personalized</div></div>
       </div>
-      <div class="action-item">
-        <div class="bullet green">●</div>
-        <div><strong>17 personalized</strong> Session 1 emails (HP·SP·EP)</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet green">●</div>
-        <div><strong>21 blanket BCC</strong> — Dormant + Select + holds</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet blue">●</div>
-        <div><strong>Triage replies</strong> — 38 sent Mon. Expect responses to start landing today–Fri.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>5 VERIFICAR</strong>: AdsolutionMKT, comcomcom, Paul Armenta, NTN, Lievant — manual browser check pending.</div>
-      </div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>📬 Open Commitments (live)</h4>
-      <div class="action-item">
-        <div class="bullet urgent">●</div>
-        <div><strong>CBI Market HP-4 by May 17</strong> — Saturday deadline, falls during travel home. Pre-load it.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet urgent">●</div>
-        <div><strong>Lama Bike case study</strong> — was due May 13. Past due. Status check with Rodolfo.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet gold">●</div>
-        <div><strong>Acromatico / Rafael</strong> — Triangulum commission + Fonart letter signature + gov call.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet gold">●</div>
-        <div><strong>EverestUP / Rodolfo</strong> — POS hardware info + Ricardo/Starronic intro.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>METARD</strong> — Riwi founder intro.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>Lab51</strong> — Bon Graven WhatsApp (meeting Mon 18 09:30).</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>Lop</strong> — B2B Plus PDF (meeting Mon 18 11:00).</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>VNS Premier</strong> follow-up (Tue May 19 14:00).</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>Atoms MDF</strong> (Wed May 20 09:30).</div>
-      </div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>📆 Next Week (Mon May 18+)</h4>
-      <div class="week-item"><span class="day">Mon</span> · Lobo · Lab51 · Amanda 1:1 · TKA-Chile · Lop · 2x partner holds</div>
-      <div class="week-item"><span class="day">Tue</span> · Moxie · IFC · XPRTS · Disco (w/ Marcelo) · Wualá · VNS Premier · Andre</div>
-      <div class="week-item"><span class="day">Wed</span> · El Mercurio interview · Atoms · AMER &amp; LATAM Monthly · Triciclo/Revie</div>
-      <div class="week-item"><span class="day">Thu</span> · Nico · Latech · Steph #RevCoach · B2B Partner Spotlight (TMG) · DNB · Cluster Monthly · Co-Mkt OH</div>
-      <div class="week-item"><span class="day">Fri</span> · Mango · Melissa · Alce · Kickass · Team Check In · Toño/Max 1:1</div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>🚦 Watch / Risks</h4>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>Inbox queue</strong> — 38 personalized sends from Mon will start replying mid-burst. You won't be at your desk. Set 20 min on Friday flight for triage.</div>
-      </div>
-      <div class="action-item">
-        <div class="bullet">●</div>
-        <div><strong>OOO this week</strong>: Shawn (11–16), Lyndsay (18–26), Steph half-day Fri.</div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="num">48</div><div class="label">Sites scored</div></div>
+        <div class="stat-box"><div class="num">10</div><div class="label">High (28-32)</div></div>
       </div>
     </div>
 
   </div>
 </div>
 
-<footer style="text-align: center; padding: 20px; font-size: 11px; color: #999; border-top: 1px solid #e0e0e0; margin-top: 30px;">
-  Generated 2026-05-14 · Sources: Google Calendar (14 today + week-ahead) · Memory (Top 50 Sprint, partner commitments) · Last brief 2026-05-13
-</footer>
+<div class="footer">
+  Generated 2026-05-14 · 10 Gemini notes synthesized · Burst Day 1 mid-flight · sources: calendar + Gemini Drive
+</div>
 
 </body>
 </html>
