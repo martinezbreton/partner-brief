@@ -1,6 +1,6 @@
 # Partner Brief Archive — Manifest
 
-_34 entries · 2026-03-25 → 2026-05-14_
+_35 entries · 2026-03-25 → 2026-05-15_
 
 Each row is one daily brief. The subtitle is the at-a-glance theme; the top alert is what was most urgent that day.
 
@@ -50,3 +50,5 @@ Each row is one daily brief. The subtitle is the at-a-glance theme; the top aler
   - 🔥 🔥 BURST WEEK IN TORONTO — Day 1 today (light/setup). Webinar #2 + Burst Day 2 TOMORROW. Bring the AI Growth Playbook story — LATAM has Phase 1 operationalized.
 - **2026-05-14** (Thu) — Toronto · AMER &amp; LATAM Scaled Burst Day 1 · Alli Stewart in the room → the PoC moment
   - 🔥 🎯 TODAY'S #1 MOVE: Walk Alli Stewart through the LATAM Send Sheet + Website Analysis tab in person. Phase 1 Manual MVP shipped Monday — 48 sites diagnosed, 38/5
+- **2026-05-15** (Fri) — Toronto · Burst Day 2 (closes 4pm) · AC 993 to CDMX 6:15pm · Hotel checkout window
+  - 🔥 ✈️ FLIGHT DAY: AC 993 → CDMX departs 6:15 PM, lands 11:25 PM. Burst Day 2 closes 4 PM. ≈2h window for hotel checkout + transit to YYZ. Pack tonight or before th
