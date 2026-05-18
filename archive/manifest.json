@@ -38,7 +38,7 @@
   {
     "date": "2026-03-31",
     "weekday": "Tue",
-    "title": "Partner Brief — Tuesday March 31, 2026 Q1 CLOSES TODAY",
+    "title": "Partner Brief",
     "subtitle": "",
     "top_alert": "",
     "file": "2026-03-31.html",
@@ -128,8 +128,8 @@
   {
     "date": "2026-04-15",
     "weekday": "Wed",
-    "title": "",
-    "subtitle": "— admin",
+    "title": "Partner Brief",
+    "subtitle": "",
     "top_alert": "",
     "file": "2026-04-15.html",
     "url": "https://martinezbreton.github.io/partner-brief/archive/2026-04-15.html"
@@ -137,8 +137,8 @@
   {
     "date": "2026-04-16",
     "weekday": "Thu",
-    "title": "",
-    "subtitle": "— 5 min",
+    "title": "Partner Brief",
+    "subtitle": "",
     "top_alert": "",
     "file": "2026-04-16.html",
     "url": "https://martinezbreton.github.io/partner-brief/archive/2026-04-16.html"
@@ -182,7 +182,7 @@
   {
     "date": "2026-04-23",
     "weekday": "Thu",
-    "title": "",
+    "title": "Partner Brief",
     "subtitle": "",
     "top_alert": "",
     "file": "2026-04-23.html",
@@ -191,7 +191,7 @@
   {
     "date": "2026-04-24",
     "weekday": "Fri",
-    "title": "",
+    "title": "Partner Brief",
     "subtitle": "",
     "top_alert": "",
     "file": "2026-04-24.html",
@@ -200,7 +200,7 @@
   {
     "date": "2026-04-27",
     "weekday": "Mon",
-    "title": "",
+    "title": "Partner Brief",
     "subtitle": "",
     "top_alert": "",
     "file": "2026-04-27.html",
@@ -301,7 +301,7 @@
     "weekday": "Thu",
     "title": "Partner Brief — Thursday, May 14",
     "subtitle": "Toronto · AMER &amp; LATAM Scaled Burst Day 1 · Alli Stewart in the room → the PoC moment",
-    "top_alert": "🎯 TODAY'S #1 MOVE: Walk Alli Stewart through the LATAM Send Sheet + Website Analysis tab in person. Phase 1 Manual MVP shipped Monday — 48 sites diagnosed, 38/50 reached. She authored the framework. T",
+    "top_alert": "🎯 TODAY'S #1 MOVE: Walk Alli Stewart through the LATAM Send Sheet + Website Analysis tab in person. Phase 1 Manual MVP shipped Monday — 48 sites diagnosed, 38/50 reached. She authored the framework. This is the live PoC window.",
     "file": "2026-05-14.html",
     "url": "https://martinezbreton.github.io/partner-brief/archive/2026-05-14.html"
   },
@@ -313,5 +313,14 @@
     "top_alert": "✈️ FLIGHT DAY: AC 993 → CDMX departs 6:15 PM, lands 11:25 PM. Burst Day 2 closes 4 PM. ≈2h window for hotel checkout + transit to YYZ. Pack tonight or before the 6:15 AM Burst session.",
     "file": "2026-05-15.html",
     "url": "https://martinezbreton.github.io/partner-brief/archive/2026-05-15.html"
+  },
+  {
+    "date": "2026-05-18",
+    "weekday": "Mon",
+    "title": "Partner Brief — Monday, May 18",
+    "subtitle": "Back in CDMX · 7 partner meetings (Lobo · Lab51 · TKA-Chile · Lop · Codefy · Maíz · Shopiguru) · Q3 MDF responses landing this week",
+    "top_alert": "⏰ TKA-Chile Shopify Day is T-8 (May 26). Today's 10:30 checkpoint must lock breakfast attendees, logistics, AND your 20m intro deck — all three were Francisca's open items from May 12.",
+    "file": "2026-05-18.html",
+    "url": "https://martinezbreton.github.io/partner-brief/archive/2026-05-18.html"
   }
 ]
