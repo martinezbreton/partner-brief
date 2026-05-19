@@ -1,6 +1,6 @@
 # Partner Brief Archive — Manifest
 
-_36 entries · 2026-03-25 → 2026-05-18_
+_37 entries · 2026-03-25 → 2026-05-19_
 
 Each row is one daily brief. The subtitle is the at-a-glance theme; the top alert is what was most urgent that day.
 
@@ -54,3 +54,5 @@ Each row is one daily brief. The subtitle is the at-a-glance theme; the top aler
   - ⚠️ ✈️ FLIGHT DAY: AC 993 → CDMX departs 6:15 PM, lands 11:25 PM. Burst Day 2 closes 4 PM. ≈2h window for hotel checkout + transit to YYZ. Pack tonight or before the 6:15 AM Burst session.
 - **2026-05-18** (Mon) — Partner Brief — Monday, May 18 · _Back in CDMX · 7 partner meetings (Lobo · Lab51 · TKA-Chile · Lop · Codefy · Maíz · Shopiguru) · Q3 MDF responses landing this week_
   - ⚠️ ⏰ TKA-Chile Shopify Day is T-8 (May 26). Today's 10:30 checkpoint must lock breakfast attendees, logistics, AND your 20m intro deck — all three were Francisca's open items from May 12.
+- **2026-05-19** (Tue) — Partner Brief — Tuesday, May 19 · _CDMX Day 2 · 9 partner-facing slots · conflicts at 11:00 (Sadeira ↔ Disco) and 14:30 (TKA ↔ Lop prep ↔ Andre)_
+  - ⚠️ ⏰ TKA-Chile Shopify Day is T-7 (May 26). Yesterday's checkpoint locked the open items — today's 14:30 slot (if you take it) is the last weekly checkpoint before showtime. Conflicts with Lop prep + Andre block — see below.
